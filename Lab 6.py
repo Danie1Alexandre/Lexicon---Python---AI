@@ -246,4 +246,8 @@ print(A, B)
 A, B = B, A
 print(A, B)
 
+#Part E - sorted and lambda
+
+
+
 
