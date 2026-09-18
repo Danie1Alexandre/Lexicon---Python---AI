@@ -308,4 +308,13 @@ list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 
 flatten_list = [number for sub_list in list_of_lists for number in sub_list]
 print(flatten_list)
+
+# G2 using neste comprehension
+multiplication = [x*y for x in range(1,11) for y in range(1,11) ] 
+# comprehension can be hard to read 
+#if you try to do to many things in one line of code
+#in this case i think its still readabel
+
+
+
        
