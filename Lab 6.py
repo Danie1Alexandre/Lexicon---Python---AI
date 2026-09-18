@@ -284,7 +284,7 @@ for product in sort_products:
     print(f"product {product['name']} price {product['price']}")
 
 
- # 4
+ # E4
     
 people = [
     {"first_name": "Johan", "last_name": "Andersson"},
@@ -299,21 +299,48 @@ print(sorted_people)
 for person in sorted_people:
     print(f'Namn: {person["first_name"]} {person["last_name"]}')
 
-# 5
+# E5
+students = [
+    {"name": "Alice", "score": 92.5, "is_active": True},
+    {"name": "Bob", "score": 78.0, "is_active": False},
+    {"name": "Charlie", "score": 85.0, "is_active": True},
+    {"name": "David", "score": 64.5, "is_active": True},
+    {"name": "Eva", "score": 95.0, "is_active": False}
+]
+
+def gest_score(students):
+    return students["score"]
+
+sort_student_score = sorted(students, key=gest_score)
+
+sort_student_lambda = sorted(students key= lambda student: student["score"])
+
+#lambda is a shorter code but more limted, can only use on expression
+# a "narmal "funtion can be reused whenevr i need a getscore
+#and can have way more advanved expressions, not just one codeline
+
+
+
+
+    
+
+
+    
+
     
 # Part G - Stretch challenges
 # G1
 
-list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+# list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
 
-flatten_list = [number for sub_list in list_of_lists for number in sub_list]
-print(flatten_list)
+# flatten_list = [number for sub_list in list_of_lists for number in sub_list]
+# print(flatten_list)
 
-# G2 using neste comprehension
-multiplication = [x*y for x in range(1,11) for y in range(1,11) ] 
-# comprehension can be hard to read 
-#if you try to do to many things in one line of code
-#in this case i think its still readabel
+# # G2 using neste comprehension
+# multiplication = [x*y for x in range(1,11) for y in range(1,11) ] 
+# # comprehension can be hard to read 
+# #if you try to do to many things in one line of code
+# #in this case i think its still readabel
 
 
 
