@@ -272,3 +272,16 @@ print("Descending",sorted_descending)
 
 # 3
 
+it_products = [
+    {"name": "Laptop", "price": 999.99},
+    {"name": "Mouse", "price": 25.50},
+    {"name": "Monitor", "price": 199.99},
+    {"name": "Keyboard", "price": 45.00}
+]
+
+sort_products = sorted(it_products, key= lambda product: product["price"])
+for product in sort_products:
+    print(f"product {product['name']} price {product['price']}")
+
+
+ 
