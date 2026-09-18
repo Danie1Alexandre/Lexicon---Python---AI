@@ -66,6 +66,11 @@ function_one()
 
 #5 
 
+numbers = [1, 2, 3]
+sum = 10
+#python crashes beacuse variable sum is shadowing function sum
+total = sum(numbers)
+
 
 # Part G- Stretch challenges
 #1 
