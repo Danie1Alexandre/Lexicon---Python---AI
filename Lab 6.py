@@ -247,7 +247,28 @@ A, B = B, A
 print(A, B)
 
 #Part E - sorted and lambda
+# 1
+fruits2 = ["apple", "banana", "orange", "kiwi"]
+print(fruits2)
+fruits2 = sorted(fruits2, key = len )
+print("sorted",fruits2)
 
+# 2
 
+students = [
+    {"name": "Alice", "score": 92.5, "is_active": True},
+    {"name": "Bob", "score": 78.0, "is_active": False},
+    {"name": "Charlie", "score": 85.0, "is_active": True},
+    {"name": "David", "score": 64.5, "is_active": True},
+    {"name": "Eva", "score": 95.0, "is_active": False}
+]
 
+sorted_ascending = sorted(students, key=lambda x: x["score"])
+print("ascending",sorted_ascending)
+
+sorted_descending = sorted(students, key=lambda student: student['score'], reverse=True)
+
+print("Descending",sorted_descending)
+
+# 3
 
