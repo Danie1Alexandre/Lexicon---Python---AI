@@ -284,4 +284,17 @@ for product in sort_products:
     print(f"product {product['name']} price {product['price']}")
 
 
- 
+ # 4
+    
+people = [
+    {"first_name": "Johan", "last_name": "Andersson"},
+    {"first_name": "Anna", "last_name": "Zetterberg"},
+    {"first_name": "Erik", "last_name": "Bergqvist"},
+    {"first_name": "Maria", "last_name": "Lindgren"}
+]
+
+sorted_people = sorted(people, key= lambda person: person["last_name"])
+print(sorted_people)
+
+for person in sorted_people:
+    print(f'Namn: {person["first_name"]} {person["last_name"]}')
