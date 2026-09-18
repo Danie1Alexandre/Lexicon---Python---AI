@@ -298,3 +298,14 @@ print(sorted_people)
 
 for person in sorted_people:
     print(f'Namn: {person["first_name"]} {person["last_name"]}')
+
+# 5
+    
+# Part G - Stretch challenges
+# G1
+
+list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+
+flatten_list = [number for sub_list in list_of_lists for number in sub_list]
+print(flatten_list)
+       
