@@ -313,13 +313,45 @@ def gest_score(students):
 
 sort_student_score = sorted(students, key=gest_score)
 
-sort_student_lambda = sorted(students key= lambda student: student["score"])
+sort_student_lambda = sorted(students, key= lambda student: student["score"])
 
 #lambda is a shorter code but more limted, can only use on expression
 # a "narmal "funtion can be reused whenevr i need a getscore
 #and can have way more advanved expressions, not just one codeline
 
+# Part F - Applied challenge: Data cleanup
+#F1
 
+messy_products = [
+    {"name": "  laptop ", "category": "ELECTRONICS", "price": "999.99", "stock": 5},
+    {"name": "mouse  ", "category": "electronics", "price": 25.50, "stock": "12"},
+    {"name": "KEYBOARD", "category": "Electronics", "price": 45.00, "stock": 0},
+    {"name": "  smart PHONE ", "category": "electronics", "price": "699.00", "stock": "8"},
+    {"name": "t-shirt", "category": "CLOTHING", "price": 19.99, "stock": 50},
+    {"name": "  JEANS ", "category": "clothing", "price": "49.95", "stock": "22"},
+    {"name": " hoodie", "category": "Clothing", "price": 39.99, "stock": 15},
+    {"name": "running SHOES", "category": "CLOTHING", "price": "89.95", "stock": 0},
+    {"name": "coffee maker", "category": "KITCHEN", "price": 79.00, "stock": "4"},
+    {"name": " BLENDER  ", "category": "kitchen", "price": "34.50", "stock": 7},
+    {"name": "toaster", "category": "Kitchen", "price": 29.99, "stock": "0"},
+    {"name": "  air FRYER", "category": "KITCHEN", "price": 120.00, "stock": 3}
+]
+
+clean_name =[
+    {
+    "name": product["name"].strip().title(),
+
+    "category": product ["category"].strip().lower(),
+
+    "price": float(product["price"]),
+
+     "stock": int(product["stock"]),
+    }
+    for product in messy_products
+]
+
+for product in clean_name:
+    print(f" Product: {product['name']} | Kategori: {product['category']}")
 
 
     
