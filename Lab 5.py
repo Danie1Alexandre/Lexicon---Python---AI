@@ -33,27 +33,38 @@
 
 #3
 
-score = 10  #global
+# score = 10  #global
 
-#there will be a error
-#the function dont have a value for score
-def add_score():  
-    score +=1
-    print("score")
-#add_score()
+# #there will be a error
+# #the function dont have a value for score
+# def add_score():  
+#     score +=1
+#     print("score")
+# #add_score()
 
-#solution
-def new_add_score(score):  
-    return score + 1
+# #solution
+# def new_add_score(score):  
+#     return score + 1
 
-print (new_add_score(score))
+# print (new_add_score(score))
 
 
 
 
 #4
 
+def function_one():
+    this_is = "first function"
 
+    def function_two():
+        #"enclosing-scope lookup" second function kan us baribaels from first in nessted function
+        print(this_is)
+    
+    function_two()
+
+function_one()
+
+#5 
 
 
 # Part G- Stretch challenges
