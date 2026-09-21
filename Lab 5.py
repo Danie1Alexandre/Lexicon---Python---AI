@@ -105,8 +105,6 @@ print(average())
 
 #3B----------
 
-
-
 def longest_word(*words):
     longest_word = ""
     for word in words:
@@ -116,6 +114,13 @@ def longest_word(*words):
 
 print(longest_word("apple", "banana", "computer", "python", "galaxy"))
       
+
+#4B
+
+def build_sentence(separator, *words):
+    return separator.join(words)
+
+print(build_sentence(", ","apple", "banana", "computer", "python", "galaxy"))
 
 
 # Part G- Stretch challenges
