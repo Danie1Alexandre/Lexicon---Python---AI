@@ -90,6 +90,20 @@ def add_all(*numbers):
 
 print(add_all(1, 3, 8))
 
+#2B-----
+
+def average(*numbers):
+    if len(numbers) == 0:
+        return None
+    
+    total = 0
+    for number in numbers:
+        total += number
+    return total/len(numbers)
+
+print(average())
+
+#3B----------
 
 # Part G- Stretch challenges
 #1 
