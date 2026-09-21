@@ -57,7 +57,8 @@ def function_one():
     this_is = "first function"
 
     def function_two():
-        #"enclosing-scope lookup" second function kan us baribaels from first in nessted function
+        #"enclosing-scope lookup" second function can use Variables from the first function 
+        # in nessted function
         print(this_is)
     
     function_two()
@@ -67,24 +68,42 @@ function_one()
 #5 
 
 # numbers = [1, 2, 3]
-# sum = 10
-# #python crashes beacuse variable sum is shadowing function sum
+# # sum = 10 
+# #python crashes beacuse variable sum is shadowing built in function sum
 # total = sum(numbers)
+
+# #soultion
+# _sum = 10  # rename sum to something else
+# total = sum(numbers) + _sum
+# print(total)
+
+
+#part B - *args
+
+#1B-------------
+
+def add_all(*numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+print(add_all(1, 3, 8))
 
 
 # Part G- Stretch challenges
 #1 
 
-def merge_settings(defaults, **overrides):
+# def merge_settings(defaults, **overrides):
 
-    return {**defaults, **overrides}
+#     return {**defaults, **overrides}
 
-default_settings = {"theme": "light", "volume": 50, "show_notifications": True}
+# default_settings = {"theme": "light", "volume": 50, "show_notifications": True}
 
-user_settings = merge_settings(default_settings, theme="dark", volume=75)
+# user_settings = merge_settings(default_settings, theme="dark", volume=75)
 
-print("Original defaults:", default_settings)
-print("New merged settings:", user_settings)
+# print("Original defaults:", default_settings)
+# print("New merged settings:", user_settings)
 
 
 
