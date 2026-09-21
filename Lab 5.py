@@ -105,6 +105,19 @@ print(average())
 
 #3B----------
 
+
+
+def longest_word(*words):
+    longest_word = ""
+    for word in words:
+        if len(word) > len(longest_word):
+            longest_word = word
+    return longest_word
+
+print(longest_word("apple", "banana", "computer", "python", "galaxy"))
+      
+
+
 # Part G- Stretch challenges
 #1 
 
