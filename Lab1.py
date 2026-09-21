@@ -298,3 +298,16 @@ print(hundreds)
 print(tens)
 print(ones)
 
+# 3F -------------
+
+word = "windows"
+hidden_text = ""
+
+for position  in range (len(word)):
+    if position  > 1 and position  < len(word) -2:
+        hidden_text += "*"
+    
+
+hidden_word = word[:2] + hidden_text + word[-2:]
+
+print(hidden_word)
