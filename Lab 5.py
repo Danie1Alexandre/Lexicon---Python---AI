@@ -66,22 +66,25 @@ function_one()
 
 #5 
 
-numbers = [1, 2, 3]
-sum = 10
-#python crashes beacuse variable sum is shadowing function sum
-total = sum(numbers)
+# numbers = [1, 2, 3]
+# sum = 10
+# #python crashes beacuse variable sum is shadowing function sum
+# total = sum(numbers)
 
 
 # Part G- Stretch challenges
 #1 
+
 def merge_settings(defaults, **overrides):
-    # Vi skapar en NY ordbok genom att packa upp båda två.
-    # overrides kommer sist, så de skriver över värden från defaults om samma nyckel finns.
+
     return {**defaults, **overrides}
 
+default_settings = {"theme": "light", "volume": 50, "show_notifications": True}
 
+user_settings = merge_settings(default_settings, theme="dark", volume=75)
 
-
+print("Original defaults:", default_settings)
+print("New merged settings:", user_settings)
 
 
 
