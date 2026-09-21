@@ -122,6 +122,28 @@ def build_sentence(separator, *words):
 
 print(build_sentence(", ","apple", "banana", "computer", "python", "galaxy"))
 
+#5B
+
+def describe_scores(student_name, *scores):
+    if len(scores) == 0:
+         return student_name, 0, 0 
+  
+    
+    score_lenght = len(scores)
+    total = 0
+
+    for score in scores:
+        total += score
+
+    average = total/len(scores)
+
+    return student_name, score_lenght, average
+
+print(describe_scores("noa", 4, 6, 8, 2))
+
+
+
+
 
 # Part G- Stretch challenges
 #1 
