@@ -141,6 +141,28 @@ def describe_scores(student_name, *scores):
 
 print(describe_scores("noa", 4, 6, 8, 2))
 
+# part C - Postional unpacking
+
+#1 ---- 
+positinal_numbers_list = [10, 20, 30]
+
+def positinal_numbers(a,b,c):
+    print(a,b,c)
+
+positinal_numbers(*positinal_numbers_list)
+
+#2 -----
+
+info =("adrian","gunther", "Berlin")
+
+def peron_info(fist_name,last_name,city):
+    print(fist_name, last_name, city)
+
+peron_info(*info)
+
+#3----------------
+
+
 
 
 
