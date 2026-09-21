@@ -311,3 +311,22 @@ for position  in range (len(word)):
 hidden_word = word[:2] + hidden_text + word[-2:]
 
 print(hidden_word)
+
+# 4F
+
+word = "windows"
+print(word[3:])
+
+word = "windows"
+print(word[:-4])
+
+x = 4
+y = "7"
+print(x+ int (y))
+
+number = 55
+print(number % 10 + number // 10)
+
+a = "13"
+b= "37"
+print(a+b)
