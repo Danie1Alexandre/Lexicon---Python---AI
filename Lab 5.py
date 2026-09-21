@@ -177,18 +177,23 @@ unpacking(["A", "B", "C", "D", "E","F", "G"])
 
 # In a function definition, * lets the function accept
 # an unknown amount of arguments.
-def print_scores(*scores):
-    print(scores)
+# def print_scores(*scores):
+#     print(scores)
 
 # In a function call, * unpacks a collection to send
 # an unknown amount of arguments.
-my_list = [10, 20, 30]
-print_scores(*my_list)
+# my_list = [10, 20, 30]
+# print_scores(*my_list)
 
 #Part D - ** kwargs
 
+#1
 
+def show_profile(**students_info):
+    for key, value in students_info.items():
+        print(key,value)
 
+show_profile(name = "Alice", score = 92.5, is_active = True)
 
 
 
