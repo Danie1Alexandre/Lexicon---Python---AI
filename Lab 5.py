@@ -143,7 +143,7 @@ print(describe_scores("noa", 4, 6, 8, 2))
 
 # part C - Postional unpacking
 
-#1 ---- 
+#1c ---- 
 positinal_numbers_list = [10, 20, 30]
 
 def positinal_numbers(a,b,c):
@@ -151,16 +151,39 @@ def positinal_numbers(a,b,c):
 
 positinal_numbers(*positinal_numbers_list)
 
-#2 -----
+#2c -----
 
 info =("adrian","gunther", "Berlin")
 
-def peron_info(fist_name,last_name,city):
+def person_info(fist_name,last_name,city):
     print(fist_name, last_name, city)
 
-peron_info(*info)
+person_info(*info)
 
-#3----------------
+#3C----------------
+
+
+
+def unpacking(values):#unpacking 
+    print("original list", values)
+
+    first, *middle, last = values
+
+    print("first", first)
+    print("middle", middle) #starred assignment
+    print("last",last)
+
+unpacking([1, 2, 3, 4, 5])
+unpacking(["A", "B", "C", "D", "E","F", "G"])
+
+#4----
+
+
+
+
+
+
+
 
 
 
