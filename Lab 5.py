@@ -143,7 +143,7 @@ print(describe_scores("noa", 4, 6, 8, 2))
 
 # part C - Postional unpacking
 
-#1c ---- 
+#1c ------- 
 positinal_numbers_list = [10, 20, 30]
 
 def positinal_numbers(a,b,c):
@@ -151,7 +151,7 @@ def positinal_numbers(a,b,c):
 
 positinal_numbers(*positinal_numbers_list)
 
-#2c -----
+#2c --------
 
 info =("adrian","gunther", "Berlin")
 
@@ -161,9 +161,6 @@ def person_info(fist_name,last_name,city):
 person_info(*info)
 
 #3C----------------
-
-
-
 def unpacking(values):#unpacking 
     print("original list", values)
 
@@ -176,7 +173,19 @@ def unpacking(values):#unpacking
 unpacking([1, 2, 3, 4, 5])
 unpacking(["A", "B", "C", "D", "E","F", "G"])
 
-#4----
+#4-------
+
+# In a function definition, * lets the function accept
+# an unknown amount of arguments.
+def print_scores(*scores):
+    print(scores)
+
+# In a function call, * unpacks a collection to send
+# an unknown amount of arguments.
+my_list = [10, 20, 30]
+print_scores(*my_list)
+
+#Part D - ** kwargs
 
 
 
