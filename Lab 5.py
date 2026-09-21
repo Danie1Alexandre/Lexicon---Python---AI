@@ -74,7 +74,10 @@ total = sum(numbers)
 
 # Part G- Stretch challenges
 #1 
-
+def merge_settings(defaults, **overrides):
+    # Vi skapar en NY ordbok genom att packa upp båda två.
+    # overrides kommer sist, så de skriver över värden från defaults om samma nyckel finns.
+    return {**defaults, **overrides}
 
 
 

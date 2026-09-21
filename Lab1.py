@@ -68,7 +68,7 @@
 
 # # User input and calculation
 
-# #1
+# #1B
 # from datetime import datetime
 
 # name = input("What is your name? ")
@@ -79,7 +79,7 @@
 
 # print ("your name:",name, "age:",age)
 
-# #2
+# #2B
 # price = int (input ("how much does your iteam coast"))
 # discount = int (input ("how much is the discount in percentage"))
 # discount_in_number = price * discount / 100
@@ -88,12 +88,12 @@
 
 # print(final_price)
 
-# #3
+# #3B
 # celsius = int (input ("what is the temprature in celsius"))
 # F = celsius*9/5+32
 # print("temprature in fahrenheit: ", F)
 
-# #4
+# #4B
 # lenght = int (input ("what is the lenght"))
 # width = int (input ("what is the width"))
 
@@ -102,7 +102,7 @@
 
 # print("area is:", area, "perimeter is:", perimeter)
 
-# #5 
+# #5B
 # # users needs to enter correct value-type 
 # # python will give a valueError if wrong value is used. 
 # #  e.g. if python ask for a number
@@ -172,7 +172,7 @@
 
 #part D string investigation
 
-#1
+#1D
 
 # text="paradise"
 #                 #prediction
@@ -185,7 +185,7 @@
 # print(text[-6:]) # ise
 # print(text[0:6:2]) # prds
 
-# #2
+# #2D
 
 # text2 ="Artifical Intelligence"
 #                 #name
@@ -198,7 +198,7 @@
 # print(text2[-6:]) # negative index slicing
 # print(text2[0:6:2]) # slicing with steps
 
-#3
+#3D
 
 # data = "apple, banana, mango"
 
@@ -224,7 +224,7 @@
 
 # # in check if a letter is used in the string
 
-#4
+#4D
 
 # word= "Dog"
 
@@ -234,7 +234,7 @@
 
 # #part E applied challenge: Registration summary
 
-# #1
+# #1E
 # first_name = input("type first name")
 
 # last_name  = input("type last name")
@@ -281,3 +281,20 @@
 # second= remaining_seconds%60
 
 # print(f"{hour_left} timmar, {minutes} minuter och {second} sekunder.")
+
+
+#2F
+
+number = 1818
+
+thousands = number // 1000
+hundreds = (number // 100) % 10
+tens = (number // 10) % 10
+ones = number % 10
+
+# Skriv ut varje siffra
+print(thousands)
+print(hundreds)
+print(tens)
+print(ones)
+
