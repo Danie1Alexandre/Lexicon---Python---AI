@@ -53,26 +53,65 @@
 
 #3----
 
-# Part B---------
+# Part B- mathod and state ---------
 
 #1
 
-class Book:
-    def __init__(self,title,author,pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+# class Book:
+#     def __init__(self,title,author,pages):
+#         self.title = title
+#         self.author = author
+#         self.pages = pages
 
-    def is_long(self):
-        if self.pages > 300:
-            return True
-        else:
-            return False
+#     def is_long(self):
+#         if self.pages > 300:
+#             return True
+#         else:
+#             return False
 
-book1 = Book(
-    title = "REd",
-    author= "ben",
-    pages = 200
-)
+# book1 = Book(
+#     title = "REd",
+#     author= "ben",
+#     pages = 200
+# )
 
-print(book1.is_long())
+# print(book1.is_long())
+
+
+# part C - Instance and class attributes -----
+
+#1 ----------
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name  #Instance attribute
+#         self.price = price
+
+# product1 = Product("banana", 45)
+
+# print(product1.name)
+# print(product1.price)
+
+
+# 2 ------------------
+
+# class Product:
+#     tax_rate =  0.1 #class attribute
+
+#     def __init__(self, name, price):
+#         self.name = name  #Instance attribute
+#         self.price = price
+
+# 3 -------------------------
+
+class Product:
+    tax_rate =  0.1 #class attribute
+
+    def __init__(self, name, price):
+        self.name = name  #Instance attribute
+        self.price = price
+    
+    def price_with_tax(self):
+        return self.price * (1 + self.tax_rate)
+
+product1 = Product("banana", 45)
+print(product1.price_with_tax())
