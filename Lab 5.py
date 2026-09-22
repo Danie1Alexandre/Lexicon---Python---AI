@@ -196,6 +196,14 @@ def show_profile(**students_info):
 show_profile(name = "Alice", score = 92.5, is_active = True)
 
 
+#2 ----
+
+def creat_user(username,**details):
+    return {"username": username, **details}
+
+user = creat_user("Alice", score = 92.5, is_active = True)
+
+print(user)
 
 
 
