@@ -103,15 +103,39 @@
 
 # 3 -------------------------
 
-class Product:
-    tax_rate =  0.1 #class attribute
+# class Product:
+#     tax_rate =  0.1 #class attribute
 
-    def __init__(self, name, price):
-        self.name = name  #Instance attribute
-        self.price = price
+#     def __init__(self, name, price):
+#         self.name = name  #Instance attribute
+#         self.price = price
     
-    def price_with_tax(self):
-        return self.price * (1 + self.tax_rate)
+#     def price_with_tax(self):
+#         return self.price * (1 + self.tax_rate)
 
-product1 = Product("banana", 45)
-print(product1.price_with_tax())
+# product1 = Product("banana", 45)
+# print(product1.price_with_tax())
+
+
+# Part D - Collections of objects
+
+# 1
+
+class Student:
+    def __init__(self, name, score):
+        self.name = name    # Instansattribut för namn
+        self.score = score
+
+student1 = Student(name="Alice", score=81)
+student2 = Student(name="Mikael", score=85)
+student3 = Student(name="Ben", score=78)
+student4 = Student(name="Anna", score=90)
+student5 = Student(name="David", score=64)
+student6 = Student(name="Charlie", score=88)
+
+print(f"{student1.name}: {student1.score} poäng")
+print(f"{student2.name}: {student2.score} poäng")
+print(f"{student3.name}: {student3.score} poäng")
+print(f"{student4.name}: {student4.score} poäng")
+print(f"{student5.name}: {student5.score} poäng")
+print(f"{student6.name}: {student6.score} poäng")
