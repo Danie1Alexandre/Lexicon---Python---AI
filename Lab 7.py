@@ -175,3 +175,9 @@ students = [ student1, student2, student3, student4, student5, student6]
 #5--------
 for student in students:
     print ("student:", student.name, student.get_status())
+
+# 6 -------
+
+passed_students = [student for student in students if student.get_status() == "pass"]
+for student in passed_students:
+    print ("student pass:", student.name, student.get_status())
