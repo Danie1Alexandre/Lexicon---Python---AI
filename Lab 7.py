@@ -201,9 +201,54 @@ teacher1 = Teacher("Ulf")
 
 course1= Course("Python", teacher1)
 
-#4
+#E4----------
 
 print(course1.name, course1.teacher.name)
+
+#E5------------
+# class Course:
+
+#     def __init__(self, name , teacher):
+#         self.name = name
+#         self.teacher = teacher
+#         self.students = []
+
+#6 ------
+class Course:
+    def __init__(self, name , teacher):
+        self.name = name
+        self.teacher = teacher
+        self.students = []
+
+    def add_student(self,student):
+        self.students.append(student)
+
+course2= Course("Python", teacher1)
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+student1 = Student("moa student 1")
+student2 = Student("sven student 2")
+student3 = Student("ben student 3")
+
+course2.add_student(student1)
+course2.add_student(student2)
+course2.add_student(student3)
+
+#course2.students.append(student3)
+
+
+#7 ----------- 
+
+for student in course2.students:
+    print(student.name)
+
+
+
+            
+
 
 
 
