@@ -151,33 +151,60 @@
 
 # 4 -------
 
-class Student:
-    def __init__(self, name, score):
-        self.name = name    
-        self.score = score
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name    
+#         self.score = score
 
-    def get_status(self):
-        if self.score >= 70:
-            return "pass"
-        else:
-            return "Fail"
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "pass"
+#         else:
+#             return "Fail"
 
 
-student1 = Student(name="Alice", score=61)
-student2 = Student(name="Mikael", score=85)
-student3 = Student(name="Ben", score=78)
-student4 = Student(name="Anna", score=90)
-student5 = Student(name="David", score=64)
-student6 = Student(name="Charlie", score=88)
+# student1 = Student(name="Alice", score=61)
+# student2 = Student(name="Mikael", score=85)
+# student3 = Student(name="Ben", score=78)
+# student4 = Student(name="Anna", score=90)
+# student5 = Student(name="David", score=64)
+# student6 = Student(name="Charlie", score=88)
 
-students = [ student1, student2, student3, student4, student5, student6]
+# students = [ student1, student2, student3, student4, student5, student6]
 
-#5--------
-for student in students:
-    print ("student:", student.name, student.get_status())
+# #5--------
+# for student in students:
+#     print ("student:", student.name, student.get_status())
 
-# 6 -------
+# # D6 -------
 
-passed_students = [student for student in students if student.get_status() == "pass"]
-for student in passed_students:
-    print ("student pass:", student.name, student.get_status())
+# passed_students = [student for student in students if student.get_status() == "pass"]
+# for student in passed_students:
+#     print ("student pass:", student.name, student.get_status())
+
+#Part E - Objects inside objects
+
+# 1--------
+class Teacher:
+    def __init__(self, name):
+        self.name = name
+
+# 2------
+class Course:
+    def __init__(self, name , teacher):
+        self.name = name
+        self.teacher = teacher
+
+#3--------
+
+teacher1 = Teacher("Ulf")
+
+course1= Course("Python", teacher1)
+
+#4
+
+print(course1.name, course1.teacher.name)
+
+
+
+
