@@ -123,7 +123,7 @@
 
 class Student:
     def __init__(self, name, score):
-        self.name = name    # Instansattribut för namn
+        self.name = name    
         self.score = score
 
 student1 = Student(name="Alice", score=81)
@@ -133,9 +133,17 @@ student4 = Student(name="Anna", score=90)
 student5 = Student(name="David", score=64)
 student6 = Student(name="Charlie", score=88)
 
-print(f"{student1.name}: {student1.score} poäng")
-print(f"{student2.name}: {student2.score} poäng")
-print(f"{student3.name}: {student3.score} poäng")
-print(f"{student4.name}: {student4.score} poäng")
-print(f"{student5.name}: {student5.score} poäng")
-print(f"{student6.name}: {student6.score} poäng")
+# print(f"{student1.name}: {student1.score} poäng")
+# print(f"{student2.name}: {student2.score} poäng")
+# print(f"{student3.name}: {student3.score} poäng")
+# print(f"{student4.name}: {student4.score} poäng")
+# print(f"{student5.name}: {student5.score} poäng")
+# print(f"{student6.name}: {student6.score} poäng")
+
+#2 
+
+students = [ student1, student2, student3, student4, student5, student6]
+
+#3 
+for student in students:
+    print ("student:", student.name, student.score)
