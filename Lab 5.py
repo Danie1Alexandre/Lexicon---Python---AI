@@ -215,6 +215,9 @@ print(product)
 
 #4
 
+def settings(**settings):
+    return settings
+
 
 
 
