@@ -121,17 +121,17 @@
 
 # 1
 
-class Student:
-    def __init__(self, name, score):
-        self.name = name    
-        self.score = score
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name    
+#         self.score = score
 
-student1 = Student(name="Alice", score=81)
-student2 = Student(name="Mikael", score=85)
-student3 = Student(name="Ben", score=78)
-student4 = Student(name="Anna", score=90)
-student5 = Student(name="David", score=64)
-student6 = Student(name="Charlie", score=88)
+# student1 = Student(name="Alice", score=81)
+# student2 = Student(name="Mikael", score=85)
+# student3 = Student(name="Ben", score=78)
+# student4 = Student(name="Anna", score=90)
+# student5 = Student(name="David", score=64)
+# student6 = Student(name="Charlie", score=88)
 
 # print(f"{student1.name}: {student1.score} poäng")
 # print(f"{student2.name}: {student2.score} poäng")
@@ -142,8 +142,36 @@ student6 = Student(name="Charlie", score=88)
 
 #2 
 
-students = [ student1, student2, student3, student4, student5, student6]
+# students = [ student1, student2, student3, student4, student5, student6]
 
 #3 
+# for student in students:
+#     print ("student:", student.name, student.score)
+
+
+# 4 -------
+
+class Student:
+    def __init__(self, name, score):
+        self.name = name    
+        self.score = score
+
+    def get_status(self):
+        if self.score >= 70:
+            return "pass"
+        else:
+            return "Fail"
+
+
+student1 = Student(name="Alice", score=61)
+student2 = Student(name="Mikael", score=85)
+student3 = Student(name="Ben", score=78)
+student4 = Student(name="Anna", score=90)
+student5 = Student(name="David", score=64)
+student6 = Student(name="Charlie", score=88)
+
+students = [ student1, student2, student3, student4, student5, student6]
+
+#5--------
 for student in students:
-    print ("student:", student.name, student.score)
+    print ("student:", student.name, student.get_status())
