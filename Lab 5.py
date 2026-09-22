@@ -205,8 +205,15 @@ user = creat_user("Alice", score = 92.5, is_active = True)
 
 print(user)
 
+#3 --- 
 
+def build_product(name, price, **metadata):
+    return {"name": name, "price": price, **metadata}
 
+product=build_product("computer", 900, brand = "apple", color = "rose gold" )
+print(product)
+
+#4
 
 
 
