@@ -75,6 +75,18 @@
 # print(student1.score)
 # print(student2.score) #Student2 use deafult value
 
+#5
+
+# class Student:
+#     def __init__(self, name, score = 10):
+#         self.name = name
+#         self.score = score
+
+# student3 = Student(name="Oliver", score=90)
+
+# print(student3.name)
+# print(student3.score)
+
 # Part B- mathod and state ---------
 
 #1
