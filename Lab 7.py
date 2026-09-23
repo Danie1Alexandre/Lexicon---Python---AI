@@ -123,7 +123,7 @@
 
 class Student:
     def __init__(self, name, score):
-        self.name = name    # Instansattribut för namn
+        self.name = name
         self.score = score
 
 student1 = Student(name="Alice", score=81)
