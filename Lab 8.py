@@ -42,3 +42,67 @@ club1.add_member("anna")
 print("good", club1.members) 
 print(club2.members)
 
+
+# Part H - Applied challenge: User accounts
+
+# H1 and 2
+
+class User:
+    def __init__(self, user, email):
+        self.user = user
+        self.email = email
+        self.active = True
+
+#H3
+    def change_email(self,email):
+        self.email = email
+
+#H4
+
+class AdminUser(User):
+    def __init__(self, user, email):
+        self.user = user
+        self.email = email        
+
+        self.user_list = []
+
+    def delete_user(self, user):
+        self.user_list.remove(user)
+
+class PremiumUser(User):
+
+    def __init__(self, user, email):
+        self.user = user
+        self.email = email        
+        self.premium = "I got premium"
+    
+    def emote(self):
+        print(self.user, "=)")
+
+
+#H5
+
+class AdminUser(User):
+    def __init__(self, user, email):
+        super().__init__(user,email)
+
+        self.user_list = []
+
+    def add_user(self, user):
+        self.user_list.append(user)
+
+
+class PremiumUser(User):
+
+    def __init__(self, user, email):
+        super().__init__(user,email)
+
+        self.premium = "I got premium"
+    
+    def emote(self):
+        print(self.user, "=)")
+
+#6
+
+
+
