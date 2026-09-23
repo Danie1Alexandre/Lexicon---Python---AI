@@ -121,21 +121,135 @@
 
 # 1
 
-class Student:
-    def __init__(self, name, score):
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name    
+#         self.score = score
+
+# student1 = Student(name="Alice", score=81)
+# student2 = Student(name="Mikael", score=85)
+# student3 = Student(name="Ben", score=78)
+# student4 = Student(name="Anna", score=90)
+# student5 = Student(name="David", score=64)
+# student6 = Student(name="Charlie", score=88)
+
+# print(f"{student1.name}: {student1.score} poäng")
+# print(f"{student2.name}: {student2.score} poäng")
+# print(f"{student3.name}: {student3.score} poäng")
+# print(f"{student4.name}: {student4.score} poäng")
+# print(f"{student5.name}: {student5.score} poäng")
+# print(f"{student6.name}: {student6.score} poäng")
+
+#2 
+
+# students = [ student1, student2, student3, student4, student5, student6]
+
+#3 
+# for student in students:
+#     print ("student:", student.name, student.score)
+
+
+# 4 -------
+
+# class Student:
+#     def __init__(self, name, score):
+#         self.name = name    
+#         self.score = score
+
+#     def get_status(self):
+#         if self.score >= 70:
+#             return "pass"
+#         else:
+#             return "Fail"
+
+
+# student1 = Student(name="Alice", score=61)
+# student2 = Student(name="Mikael", score=85)
+# student3 = Student(name="Ben", score=78)
+# student4 = Student(name="Anna", score=90)
+# student5 = Student(name="David", score=64)
+# student6 = Student(name="Charlie", score=88)
+
+# students = [ student1, student2, student3, student4, student5, student6]
+
+# #5--------
+# for student in students:
+#     print ("student:", student.name, student.get_status())
+
+# # D6 -------
+
+# passed_students = [student for student in students if student.get_status() == "pass"]
+# for student in passed_students:
+#     print ("student pass:", student.name, student.get_status())
+
+#Part E - Objects inside objects
+
+# 1--------
+class Teacher:
+    def __init__(self, name):
         self.name = name
-        self.score = score
 
-student1 = Student(name="Alice", score=81)
-student2 = Student(name="Mikael", score=85)
-student3 = Student(name="Ben", score=78)
-student4 = Student(name="Anna", score=90)
-student5 = Student(name="David", score=64)
-student6 = Student(name="Charlie", score=88)
+# 2------
+class Course:
+    def __init__(self, name , teacher):
+        self.name = name
+        self.teacher = teacher
 
-print(f"{student1.name}: {student1.score} poäng")
-print(f"{student2.name}: {student2.score} poäng")
-print(f"{student3.name}: {student3.score} poäng")
-print(f"{student4.name}: {student4.score} poäng")
-print(f"{student5.name}: {student5.score} poäng")
-print(f"{student6.name}: {student6.score} poäng")
+#3--------
+
+teacher1 = Teacher("Ulf")
+
+course1= Course("Python", teacher1)
+
+#E4----------
+
+print(course1.name, course1.teacher.name)
+
+#E5------------
+# class Course:
+
+#     def __init__(self, name , teacher):
+#         self.name = name
+#         self.teacher = teacher
+#         self.students = []
+
+#6 ------
+class Course:
+    def __init__(self, name , teacher):
+        self.name = name
+        self.teacher = teacher
+        self.students = []
+
+    def add_student(self,student):
+        self.students.append(student)
+
+course2= Course("Python", teacher1)
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+student1 = Student("moa student 1")
+student2 = Student("sven student 2")
+student3 = Student("ben student 3")
+
+course2.add_student(student1)
+course2.add_student(student2)
+course2.add_student(student3)
+
+#course2.students.append(student3)
+
+
+#7 ----------- 
+
+for student in course2.students:
+    print(student.name)
+
+
+
+            
+
+
+
+
+
