@@ -78,8 +78,32 @@ movie_BR = Movie("Blade Runner", "Ridley Scott", 4)
 print(movie_BR.rating)
 print(movie_BR.highly_rated())
 
+#4
+
 #for simpel info i use dictionary. a product list
 #if the dictionary needs to do something , "have a method",  then class is better 
+
+# Part C - Inheritance fundamentals
+
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+        
+account1 = Account("anna", 1200)
+account2 = SavingsAccount("ben", 1000, 0.03)
+
+print(account1.owner, account1.balance)
+print(account2.owner, account2.balance, account2.interest_rate)
+
+# 5 
+# "is-a" statement:
+# A SavingsAccount IS-A type of Account.
 
 
 # Part H - Applied challenge: User accounts
