@@ -57,10 +57,17 @@ class Movie:
         self.title = title
         self.director = director
         self.rating = rating
+
+    def highly_rated(self):
+        if self.rating > 3:
+            return "The Movie Is Higly Rated"
             
 movie_BR = Movie("Blade Runner", "Ridley Scott", 4)
 
 print(movie_BR.rating)
+print(movie_BR.highly_rated())
+
+
 
 # Part H - Applied challenge: User accounts
 # # H1 and 2
