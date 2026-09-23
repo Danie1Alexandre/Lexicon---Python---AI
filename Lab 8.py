@@ -2,45 +2,45 @@
 
 #1 --------
 
-class BadTeam:
-    def __init__(self, name, members = []): #bad
-        self.name = name
-        self.members = members 
+# class BadTeam:
+#     def __init__(self, name, members = []): #bad
+#         self.name = name
+#         self.members = members 
 
-    def add_member(self,member):
-        self.members.append(member)
+#     def add_member(self,member):
+#         self.members.append(member)
 
-#2------
-club1 = BadTeam("aik")
-club2 = BadTeam("dif")
+# #2------
+# club1 = BadTeam("aik")
+# club2 = BadTeam("dif")
 
-club1.add_member("anna")
+# club1.add_member("anna")
 
-print(club1.members) 
-print(club2.members)
-# anna added on both clubs, since both clubs uses the same list
+# print(club1.members) 
+# print(club2.members)
+# # anna added on both clubs, since both clubs uses the same list
 
-# 3---------------
+# # 3---------------
 
-class GoodTeam:
-    def __init__(self, name, members = None): #bad
-        self.name = name
-        if members == None:
-            members = []
+# class GoodTeam:
+#     def __init__(self, name, members = None): #bad
+#         self.name = name
+#         if members == None:
+#             members = []
             
-        self.members = members
+#         self.members = members
 
-    def add_member(self,member):
-        self.members.append(member)
+#     def add_member(self,member):
+#         self.members.append(member)
 
-#4--------------
-club1 = GoodTeam("aik")
-club2 = GoodTeam("dif")
+# #4--------------
+# club1 = GoodTeam("aik")
+# club2 = GoodTeam("dif")
 
-club1.add_member("anna")
+# club1.add_member("anna")
 
-print("good", club1.members) 
-print(club2.members)
+# print("good", club1.members) 
+# print(club2.members)
 
 
 # Part H - Applied challenge: User accounts
@@ -48,8 +48,8 @@ print(club2.members)
 # H1 and 2
 
 class User:
-    def __init__(self, user, email):
-        self.user = user
+    def __init__(self, username, email):
+        self.username = username
         self.email = email
         self.active = True
 
@@ -57,11 +57,14 @@ class User:
     def change_email(self,email):
         self.email = email
 
+user1 = User("Anna", "anna@mail.com")
+print(user1.username, user1.email)
+
 #H4
 
 class AdminUser(User):
-    def __init__(self, user, email):
-        self.user = user
+    def __init__(self, username, email):
+        self.username = username
         self.email = email        
 
         self.user_list = []
@@ -69,22 +72,28 @@ class AdminUser(User):
     def delete_user(self, user):
         self.user_list.remove(user)
 
+
+
 class PremiumUser(User):
 
-    def __init__(self, user, email):
-        self.user = user
+    def __init__(self, username, email):
+        self.username = username
         self.email = email        
         self.premium = "I got premium"
     
     def emote(self):
-        print(self.user, "=)")
+        print(self.username, "=)")
+
+user2 = PremiumUser("Lisa", "lisa@mail.com")
+print(user2.username, user2.email, user2.premium)
+user2.emote()
 
 
 #H5
 
 class AdminUser(User):
-    def __init__(self, user, email):
-        super().__init__(user,email)
+    def __init__(self, username, email):
+        super().__init__(username,email)
 
         self.user_list = []
 
@@ -94,13 +103,13 @@ class AdminUser(User):
 
 class PremiumUser(User):
 
-    def __init__(self, user, email):
-        super().__init__(user,email)
+    def __init__(self, username, email):
+        super().__init__(username,email)
 
         self.premium = "I got premium"
     
     def emote(self):
-        print(self.user, "=)")
+        print(self.username, "=)")
 
 #6
 
