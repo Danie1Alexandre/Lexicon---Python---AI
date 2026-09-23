@@ -105,6 +105,27 @@ print(account2.owner, account2.balance, account2.interest_rate)
 # "is-a" statement:
 # A SavingsAccount IS-A type of Account.
 
+#Part F - Method overriding
+
+class Notification:
+    def send():
+        return("this is a message")
+
+class EmailNotification(Notification):
+    def send():
+        return("this is a email message")
+class SMSNotification(Notification):
+    def send():
+        return("this is a sms message")
+
+vanilla = Notification
+email = EmailNotification
+sms = SMSNotification
+
+print(vanilla.send()) # using method from base class
+print(email.send()) #using method from EmailNotification
+print(sms.send()) #using method from smsNotification
+
 
 # Part H - Applied challenge: User accounts
 # # H1 and 2
