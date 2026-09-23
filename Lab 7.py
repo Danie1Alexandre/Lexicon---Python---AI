@@ -53,6 +53,17 @@
 
 #3----
 
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+student1 = Student("anna")
+student2 = Student("Ben")
+
+print ("the same object?  ",student1 is student2)
+
+#4
+
 # Part B- mathod and state ---------
 
 #1
