@@ -51,7 +51,18 @@ movie ={
     "director" :"Ridley Scott",
     "rating" : 4
 }
-#2
+# #2
+# class Movie:
+#     def __init__(self, title, director, rating ):
+#         self.title = title
+#         self.director = director
+#         self.rating = rating
+            
+# movie_BR = Movie("Blade Runner", "Ridley Scott", 4)
+
+# print(movie_BR.rating)
+
+#3
 class Movie:
     def __init__(self, title, director, rating ):
         self.title = title
@@ -67,6 +78,8 @@ movie_BR = Movie("Blade Runner", "Ridley Scott", 4)
 print(movie_BR.rating)
 print(movie_BR.highly_rated())
 
+#for simpel info i use dictionary. a product list
+#if the dictionary needs to do something , "have a method",  then class is better 
 
 
 # Part H - Applied challenge: User accounts
