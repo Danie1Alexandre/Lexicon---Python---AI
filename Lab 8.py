@@ -33,7 +33,7 @@
 #     def add_member(self,member):
 #         self.members.append(member)
 
-# #4--------------
+# #4A--------------
 # club1 = GoodTeam("aik")
 # club2 = GoodTeam("dif")
 
@@ -43,75 +43,93 @@
 # print(club2.members)
 
 
+
+# Part B - Dictionary or class?
+#1
+movie ={
+    "title": "Blade Runner",
+    "director" :"Ridley Scott",
+    "rating" : 4
+}
+#2
+class Movie:
+    def __init__(self, title, director, rating ):
+        self.title = title
+        self.director = director
+        self.rating = rating
+            
+movie_BR = Movie("Blade Runner", "Ridley Scott", 4)
+
+print(movie_BR.rating)
+
 # Part H - Applied challenge: User accounts
+# # H1 and 2
 
-# H1 and 2
+# class User:
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email
+#         self.active = True
 
-class User:
-    def __init__(self, username, email):
-        self.username = username
-        self.email = email
-        self.active = True
+# #H3
+#     def change_email(self,email):
+#         self.email = email
 
-#H3
-    def change_email(self,email):
-        self.email = email
+# user1 = User("Anna", "anna@mail.com")
+# print(user1.username, user1.email)
 
-user1 = User("Anna", "anna@mail.com")
-print(user1.username, user1.email)
+# #H4
 
-#H4
+# class AdminUser(User):
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email        
 
-class AdminUser(User):
-    def __init__(self, username, email):
-        self.username = username
-        self.email = email        
+#         self.user_list = []
 
-        self.user_list = []
-
-    def delete_user(self, user):
-        self.user_list.remove(user)
-
+#     def delete_user(self, user):
+#         self.user_list.remove(user)
 
 
-class PremiumUser(User):
 
-    def __init__(self, username, email):
-        self.username = username
-        self.email = email        
-        self.premium = "I got premium"
+# class PremiumUser(User):
+
+#     def __init__(self, username, email):
+#         self.username = username
+#         self.email = email        
+#         self.premium = "I got premium"
     
-    def emote(self):
-        print(self.username, "=)")
+#     def emote(self):
+#         print(self.username, "=)")
 
-user2 = PremiumUser("Lisa", "lisa@mail.com")
-print(user2.username, user2.email, user2.premium)
-user2.emote()
-
-
-#H5
-
-class AdminUser(User):
-    def __init__(self, username, email):
-        super().__init__(username,email)
-
-        self.user_list = []
-
-    def add_user(self, user):
-        self.user_list.append(user)
+# user2 = PremiumUser("Lisa", "lisa@mail.com")
+# print(user2.username, user2.email, user2.premium)
+# user2.emote()
 
 
-class PremiumUser(User):
+# #H5
 
-    def __init__(self, username, email):
-        super().__init__(username,email)
+# class AdminUser(User):
+#     def __init__(self, username, email):
+#         super().__init__(username,email)
 
-        self.premium = "I got premium"
+#         self.user_list = []
+
+#     def add_user(self, user):
+#         self.user_list.append(user)
+
+
+# class PremiumUser(User):
+
+#     def __init__(self, username, email):
+#         super().__init__(username,email)
+
+#         self.premium = "I got premium"
     
-    def emote(self):
-        print(self.username, "=)")
+#     def emote(self):
+#         print(self.username, "=)")
 
-#6
+# #6
 
 
 
