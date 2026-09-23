@@ -53,16 +53,27 @@
 
 #3----
 
-class Student:
-    def __init__(self, name):
-        self.name = name
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
 
-student1 = Student("anna")
-student2 = Student("Ben")
+# student1 = Student("anna")
+# student2 = Student("Ben")
 
-print ("the same object?  ",student1 is student2)
+# print ("the same object?  ",student1 is student2)
 
 #4
+
+# class Student:
+#     def __init__(self, name, score = 10):
+#         self.name = name
+#         self.score = score
+
+# student1 = Student("anna", 7)
+# student2 = Student("Ben")
+
+# print(student1.score)
+# print(student2.score) #Student2 use deafult value
 
 # Part B- mathod and state ---------
 
