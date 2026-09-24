@@ -47,3 +47,24 @@ documnets = [text1, text2, text3, pdf1, pdf2, pdf3]
 
 for document in documnets:
     print(f"Title: {document.title} - Description: {document.describe()}")
+
+# Part C - Duck typing
+
+class Printer:
+    def display_status(self):
+        return("my Printer status")
+
+class Screen:
+    def display_status(self):
+        return("my Screen status")
+
+printer = Printer()
+screen = Screen()
+
+hardwears = [printer, screen]
+
+for hardwear in hardwears:
+    print (hardwear.display_status())
+    
+#all objects have a display_status method, so there is no need too name the exact class.
+#classes dosent have too be in same baseclass for Duck typing
