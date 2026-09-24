@@ -118,3 +118,26 @@ store =str(product3)
 print(store)
 print(type(store))
 
+#Part F - __str__ with inheritance
+
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+        
+    def __str__(self):
+        return f"{self.owner} - {self.balance}"
+    
+class SavingsAccount(Account):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+    
+    def __str__(self):
+        return f"{self.owner} - {self.balance} - {self.interest_rate}"        
+
+account1 = Account("anna", 1200)
+account2 = SavingsAccount("ben", 1000, 0.03)
+
+print(account1)
+print(account2)
