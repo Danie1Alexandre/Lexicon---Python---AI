@@ -213,17 +213,17 @@ print("admins user list",user3.user_list)
 user3.delete_user("smeagol")
 print("admins user list, empty aftre delte",user3.user_list)
 
-
+print(user1.say_hello())
+print(user2.say_hello())
 
 #9
 print(user2.age)
 print(user3.age)
 
-print(user1.say_hello())
-print(user2.say_hello())
 
 
-#10 admin is still a user of the app, therefor admin belongs to user class
+
+#10 admin and premium user is a user of the app, therefor they belongs to user class
 
 
 
