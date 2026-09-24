@@ -168,3 +168,65 @@ print(computer.cpu.model)
 # Manger is a employee
 # Course has a teacher
 #Phone is a dvice
+
+#Part H - Applied challenge: Export system
+data_input = "python data"
+class Exporter:
+    def __init__(self, name):
+        self.name = name
+    
+    def export(self, data):
+        return("data exported:", data)
+   
+    def __str__(self):
+        return f"{self.name}"  
+        
+class ConsoleExporte(Exporter):
+    def export(self, data):
+        return("console exported:", data) 
+    
+class TextExporter(Exporter):
+    def export(self,data):
+        return("text exported:", data)
+    
+
+class SummaryExporter(Exporter):
+    def export(self, data):
+        return("summary exported", data)
+
+data = Exporter("d1")   
+console = ConsoleExporte("C1")
+text = TextExporter("T1")
+summary = SummaryExporter("s1")
+
+
+class Printer:
+    def __init__(self, name, model):
+        self.name = name
+        self.model = model
+    
+    def __str__(self):
+        return f"{self.name} - {self.model}"
+
+    def export(self, data):
+        return("printer exported", data)
+    
+class Laser:
+    def __init__(self, model):
+        self.model = model
+    def __str__(self):
+        return f"{self.model}"
+
+laser = Laser("HP_Laser")
+
+printer = Printer("p1", laser)
+
+export_list = [console, text, summary, data, printer]
+for export in export_list:
+    print(export.name,export.export(data_input))
+
+print(isinstance(summary,SummaryExporter))
+
+print(printer)
+
+# Composition: Printer HAS-A Laser
