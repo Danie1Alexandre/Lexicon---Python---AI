@@ -144,32 +144,38 @@ class User:
     def change_email(self,email):
         self.email = email
 
-user1 = User("Anna", "anna@mail.com")
-print(user1.username, user1.email)
 
 #H4
 
 class AdminUser(User):
     def __init__(self, username, email):
-        self.username = username
-        self.email = email        
-
+        super().__init__(username,email)
+     
         self.user_list = []
 
     def delete_user(self, user):
         self.user_list.remove(user)
+
+    def add_user(self, user):
+        self.user_list.append(user)
+
+    def say_hello(self):
+        return ("Hello im a Admin")
 
 
 
 class PremiumUser(User):
 
     def __init__(self, username, email):
-        self.username = username
-        self.email = email        
+
+        super().__init__(username,email)    
         self.premium = "I got premium"
     
     def emote(self):
         print(self.username, "=)")
+
+    def say_hello(self):
+        return ("Hello im a premiumuser")
 
 user2 = PremiumUser("Lisa", "lisa@mail.com")
 print(user2.username, user2.email, user2.premium)
@@ -178,32 +184,18 @@ user2.emote()
 
 #H5
 
-class AdminUser(User):
-    def __init__(self, username, email):
-        super().__init__(username,email)
-
-        self.user_list = []
-
-    def add_user(self, user):
-        self.user_list.append(user)
-
 user3 = AdminUser("ben", "admin@mail.com")
 print(user3.username, user3.email,)
 
 
-class PremiumUser(User):
-
-    def __init__(self, username, email):
-        super().__init__(username,email)
-
-        self.premium = "I got premium"
-    
-    def emote(self):
-        print(self.username, "=)")
+user1 = User("Anna", "anna@mail.com")
+print(user1.username, user1.email)
 
 #6
+print(user1.username, user1.say_hello())
+print(user2.username, user2.say_hello())
+print(user3.username, user3.say_hello())
 
-print(user1.username, user1.email, user1.say_hello())
 
 
 
