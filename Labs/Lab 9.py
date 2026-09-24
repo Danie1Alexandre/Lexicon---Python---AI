@@ -88,4 +88,33 @@ print(isinstance(user3,str))
 
 #A user can be a admin, so a admin is also a user
 
+# Part E - __str__
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+        
+
+product1 = Product("apple", 5)
+print(product1)
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.name} - price: {self.price}"
+                
+product1 = Product("apple", 5)
+product2 = Product("banana", 10)
+product3 = Product("mango", 14)
+print(product1)
+print(product2)
+print(product3)
+
+store =str(product3)
+print(store)
+print(type(store))
 
