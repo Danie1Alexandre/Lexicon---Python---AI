@@ -68,3 +68,24 @@ for hardwear in hardwears:
     
 #all objects have a display_status method, so there is no need too name the exact class.
 #classes dosent have too be in same baseclass for Duck typing
+
+#Part D - isinstance()
+
+class User:
+    def __init__(self, username):
+        self.username = username
+
+
+class AdminUser(User):
+    def __init__(self, username):
+        super().__init__(username)
+     
+user3 = AdminUser("ben")
+
+print(isinstance(user3,User))
+print(isinstance(user3,AdminUser))
+print(isinstance(user3,str))
+
+#A user can be a admin, so a admin is also a user
+
+
