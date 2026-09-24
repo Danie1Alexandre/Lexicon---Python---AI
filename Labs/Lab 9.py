@@ -124,7 +124,7 @@ class Account:
     def __init__(self, owner, balance):
         self.owner = owner
         self.balance = balance
-        
+
     def __str__(self):
         return f"{self.owner} - {self.balance}"
     
@@ -141,3 +141,30 @@ account2 = SavingsAccount("ben", 1000, 0.03)
 
 print(account1)
 print(account2)
+
+# Part G - Inheritance or composition?
+
+class CPU:
+    def __init__(self, model):
+        self.model = model
+
+class Computer:
+    def __init__(self, brand, cpu):
+
+        self.cpu = cpu
+        self.brand = brand
+
+cpu = CPU("intel")
+
+computer = Computer("msi", cpu)
+
+print(computer.brand)
+print(computer.cpu.model)
+
+#a cpu us is not a computer but a computer has a cpu
+
+
+#car Has a engine 
+# Manger is a employee
+# Course has a teacher
+#Phone is a dvice
