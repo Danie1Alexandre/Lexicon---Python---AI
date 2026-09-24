@@ -137,7 +137,7 @@ class User:
         self.active = True
 
     def say_hello(self):
-        return ("Hello im a user")
+        return "Hello im a user"
 
 
 #H3
@@ -160,7 +160,8 @@ class AdminUser(User):
         self.user_list.append(user)
 
     def say_hello(self):
-        return ("Hello im a Admin")
+        base_text = super().say_hello()
+        return f" {base_text} and a Admin"
 
 
 
@@ -175,7 +176,7 @@ class PremiumUser(User):
         print(self.username, "=)")
 
     def say_hello(self):
-        return ("Hello im a premiumuser")
+        return "Hello im a premiumuser"
 
 user2 = PremiumUser("Lisa", "lisa@mail.com")
 print(user2.username, user2.email, user2.premium)
@@ -194,7 +195,9 @@ print(user1.username, user1.email)
 #6
 print(user1.username, user1.say_hello())
 print(user2.username, user2.say_hello())
-print(user3.username, user3.say_hello())
+print(user3.username, user3.say_hello()) #7
+
+#8
 
 
 
