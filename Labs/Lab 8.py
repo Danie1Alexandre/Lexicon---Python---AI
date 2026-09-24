@@ -105,6 +105,7 @@
 # "is-a" statement:
 # A SavingsAccount IS-A type of Account.
 
+
 # #Part F - Method overriding
 
 # class Notification:
@@ -131,13 +132,17 @@
 # H1 and 2
 
 class User:
-    def __init__(self, username, email):
+    def __init__(self, username, email, age):
         self.username = username
         self.email = email
         self.active = True
+        self.age = age
+        if self.age < 0:
+            raise ValueError("age cannot be negative!")
 
     def say_hello(self):
         return "Hello im a user"
+    
 
 
 #H3
@@ -148,8 +153,8 @@ class User:
 #H4
 
 class AdminUser(User):
-    def __init__(self, username, email):
-        super().__init__(username,email)
+    def __init__(self, username, email, age):
+        super().__init__(username,email,age)
      
         self.user_list = []
 
@@ -167,29 +172,29 @@ class AdminUser(User):
 
 class PremiumUser(User):
 
-    def __init__(self, username, email):
+    def __init__(self, username, email, age):
 
-        super().__init__(username,email)    
+        super().__init__(username,email,age)    
         self.premium = "I got premium"
     
     def emote(self):
         print(self.username, "=)")
 
     def say_hello(self):
-        return "Hello im a premiumuser"
+        return "Hello im a premium user"
 
-user2 = PremiumUser("Lisa", "lisa@mail.com")
+user2 = PremiumUser("Lisa", "lisa@mail.com", 17)
 print(user2.username, user2.email, user2.premium)
 user2.emote()
 
 
 #H5
 
-user3 = AdminUser("ben", "admin@mail.com")
+user3 = AdminUser("ben", "admin@mail.com", 21)
 print(user3.username, user3.email,)
 
 
-user1 = User("Anna", "anna@mail.com")
+user1 = User("Anna", "anna@mail.com", 24)
 print(user1.username, user1.email)
 
 #6
@@ -199,6 +204,26 @@ print(user3.username, user3.say_hello()) #7
 
 #8
 
+print("old email", user2.email)
+user2.change_email("l.new@mail.com")
+print("new email", user2.email)
+
+user3.add_user("smeagol")
+print("admins user list",user3.user_list)
+user3.delete_user("smeagol")
+print("admins user list, empty aftre delte",user3.user_list)
+
+
+
+#9
+print(user2.age)
+print(user3.age)
+
+print(user1.say_hello())
+print(user2.say_hello())
+
+
+#10 admin is still a user of the app, therefor admin belongs to user class
 
 
 
