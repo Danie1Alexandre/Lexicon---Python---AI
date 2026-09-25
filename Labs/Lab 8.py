@@ -135,8 +135,29 @@
 # #print(employee.my_status())
 #  #dosent work a  base-class can not Inherited from subclass
 
+# part E - super() and shared initialization
+class Device:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+        if self.year < 0:
+            raise ValueError("Year can not be negative")
+        self.is_active = True
 
+class Laptop(Device):
+    def __init__(self, brand, year, ram_gb):
+        super().__init__(brand, year)
+        self.ram_gb = ram_gb   
 
+class Phone(Device):
+    def __init__(self, brand, year, color):
+        super().__init__(brand, year)
+        self.color = color
+
+#phone = Phone("Samsung", -5, "red") #this raise value error
+phone = Phone("Samsung", 2026, "red") 
+print(phone.is_active)
+print(phone.year)
 
 # #Part F - Method overriding
 
