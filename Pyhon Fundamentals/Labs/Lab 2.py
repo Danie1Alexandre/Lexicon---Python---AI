@@ -296,48 +296,61 @@
 
 # Part F - Applied challenge: Personal meida catalogue
 
-catalogue = [
-    {"title": "Inception", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV101", 2010)},
-    {"title": "The Matrix", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV102", 1999)},
-    {"title": "The Hobbit", "type": "book", "genre": "Fantasy", "meta": ("BOK201", 1937)},
-    {"title": "Harry Potter", "type": "book", "genre": "Fantasy", "meta": ("BOK202", 1997)},
-    {"title": "Witcher 3", "type": "game", "genre": "RPG", "meta": ("GAM301", 2015)},
-    {"title": "Skyrim", "type": "game", "genre": "RPG", "meta": ("GAM302", 2011)},
-    {"title": "Interstellar", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV103", 2014)},
-    {"title": "1984", "type": "book", "genre": "Dystopian", "meta": ("BOK203", 1949)}
-]
+# catalogue = [
+#     {"title": "Inception", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV101", 2010)},
+#     {"title": "The Matrix", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV102", 1999)},
+#     {"title": "The Hobbit", "type": "book", "genre": "Fantasy", "meta": ("BOK201", 1937)},
+#     {"title": "Harry Potter", "type": "book", "genre": "Fantasy", "meta": ("BOK202", 1997)},
+#     {"title": "Witcher 3", "type": "game", "genre": "RPG", "meta": ("GAM301", 2015)},
+#     {"title": "Skyrim", "type": "game", "genre": "RPG", "meta": ("GAM302", 2011)},
+#     {"title": "Interstellar", "type": "movie", "genre": "Sci-Fi", "meta": ("MOV103", 2014)},
+#     {"title": "1984", "type": "book", "genre": "Dystopian", "meta": ("BOK203", 1949)}
+# ]
 
 
 
-unique_genres = set()
+# unique_genres = set()
 
-for item in catalogue:
-    unique_genres.add(item["genre"])
+# for item in catalogue:
+#     unique_genres.add(item["genre"])
 
-print("Unique Genres:", unique_genres)
+# print("Unique Genres:", unique_genres)
 
-print(catalogue[2]["meta"])
-print(catalogue[3]["meta"][0])
-print(catalogue[0]["type"])
-print(catalogue[1]["title"])
-catalogue[3]["title"] = "Harry Potter 4 directors cut"
-print("uppdate,", catalogue[3]['title'] )
-catalogue[4]["genre"]  = "dark fantasy rgp"
+# print(catalogue[2]["meta"])
+# print(catalogue[3]["meta"][0])
+# print(catalogue[0]["type"])
+# print(catalogue[1]["title"])
+# catalogue[3]["title"] = "Harry Potter 4 directors cut"
+# print("uppdate,", catalogue[3]['title'] )
+# catalogue[4]["genre"]  = "dark fantasy rgp"
 
-has_sci_fi = "Sci-Fi" in unique_genres
-print(has_sci_fi)
-print("Action" in unique_genres)
-unique_genres.add("comedy")
-print("Unique Genres uppdate:", unique_genres)
+# has_sci_fi = "Sci-Fi" in unique_genres
+# print(has_sci_fi)
+# print("Action" in unique_genres)
+# unique_genres.add("comedy")
+# print("Unique Genres uppdate:", unique_genres)
 
-catalogue[7]["type"] = "audiobook"
+# catalogue[7]["type"] = "audiobook"
 
 
-print(f"1. {catalogue[0]['title']} ({catalogue[0]['type']}) - Genre: {catalogue[0]['genre']}, Release: {catalogue[0]['meta'][1]} ")
-print(f"2. {catalogue[1]['title']} ({catalogue[1]['type']}) - Genre: {catalogue[1]['genre']}, Release: {catalogue[1]['meta'][1]} ")
-print(f"3. {catalogue[2]['title']} ({catalogue[2]['type']}) - Genre: {catalogue[2]['genre']}, Release: {catalogue[2]['meta'][1]} ")
-print(f"4. {catalogue[3]['title']} ({catalogue[3]['type']}) - Genre: {catalogue[3]['genre']}, Release: {catalogue[3]['meta'][1]} ")
-print(f"5. {catalogue[4]['title']} ({catalogue[4]['type']}) - Genre: {catalogue[4]['genre']}, Release: {catalogue[4]['meta'][1]} ")
-print(f"6. {catalogue[5]['title']} ({catalogue[5]['type']}) - Genre: {catalogue[5]['genre']}, Release: {catalogue[5]['meta'][1]} ")
-print(f"7. {catalogue[6]['title']} ({catalogue[6]['type']}) - Genre: {catalogue[6]['genre']}, Release: {catalogue[6]['meta'][1]} ")
-print(f"8. {catalogue[7]['title']} ({catalogue[7]['type']}) - Genre: {catalogue[7]['genre']}, Release: {catalogue[7]['meta'][1]} ")
+# print(f"1. {catalogue[0]['title']} ({catalogue[0]['type']}) - Genre: {catalogue[0]['genre']}, Release: {catalogue[0]['meta'][1]} ")
+# print(f"2. {catalogue[1]['title']} ({catalogue[1]['type']}) - Genre: {catalogue[1]['genre']}, Release: {catalogue[1]['meta'][1]} ")
+# print(f"3. {catalogue[2]['title']} ({catalogue[2]['type']}) - Genre: {catalogue[2]['genre']}, Release: {catalogue[2]['meta'][1]} ")
+# print(f"4. {catalogue[3]['title']} ({catalogue[3]['type']}) - Genre: {catalogue[3]['genre']}, Release: {catalogue[3]['meta'][1]} ")
+# print(f"5. {catalogue[4]['title']} ({catalogue[4]['type']}) - Genre: {catalogue[4]['genre']}, Release: {catalogue[4]['meta'][1]} ")
+# print(f"6. {catalogue[5]['title']} ({catalogue[5]['type']}) - Genre: {catalogue[5]['genre']}, Release: {catalogue[5]['meta'][1]} ")
+# print(f"7. {catalogue[6]['title']} ({catalogue[6]['type']}) - Genre: {catalogue[6]['genre']}, Release: {catalogue[6]['meta'][1]} ")
+# print(f"8. {catalogue[7]['title']} ({catalogue[7]['type']}) - Genre: {catalogue[7]['genre']}, Release: {catalogue[7]['meta'][1]} ")
+
+#G 
+names1 = [ "Alice", "Liam","Lucas", "Astrid",  "Freja", "Leo", "Alma", "Charlie" ]
+names2 = [  "Maja", "Noah", "Ebba", "Oliver", "Lucas", "Astrid", "William", "Hugo", "Freja", "Alma", "Charlie" ]
+
+set1 = set(names1)
+set2 = set(names2)
+
+duplicates = set1.intersection(set2)
+unique = set1.symmetric_difference(set2)
+
+print("Duplicates:", duplicates)
+print("Unique usernames:", unique)
