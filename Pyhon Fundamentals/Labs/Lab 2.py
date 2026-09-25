@@ -214,58 +214,82 @@
 
 # Part E - Nested Collections 
 
-books = [
-    {
-        "title": "book1",
-        "author": "author1",
-        "pages": 500,
-        "available": True
-    },
-    {
-        "title": "book2",
-        "author": "author2",
-        "pages": 500,
-        "available": True
-    },
-    {
-        "title": "book3",
-        "author": "author3",
-        "pages": 500,
-        "available": True
-    },
-    {
-        "title": "book4",
-        "author": "author4",
-        "pages": 500,
-        "available": True
-    },
-    {
-        "title": "book5",
-        "author": "author5",
-        "pages": 500,
-        "available": False
-    }
-]
-#2
-print(books[2]["title"])
-print(books[-1]["available"])
+# books = [
+#     {
+#         "title": "book1",
+#         "author": "author1",
+#         "pages": 500,
+#         "available": True
+#     },
+#     {
+#         "title": "book2",
+#         "author": "author2",
+#         "pages": 500,
+#         "available": True
+#     },
+#     {
+#         "title": "book3",
+#         "author": "author3",
+#         "pages": 500,
+#         "available": True
+#     },
+#     {
+#         "title": "book4",
+#         "author": "author4",
+#         "pages": 500,
+#         "available": True
+#     },
+#     {
+#         "title": "book5",
+#         "author": "author5",
+#         "pages": 500,
+#         "available": False
+#     }
+# ]
+# #2
+# print(books[2]["title"])
+# print(books[-1]["available"])
 
-#3
-print(books[0]["title"])
-books[0]["title"] = "robinhood"
-print(books[0]["title"])
+# #3
+# print(books[0]["title"])
+# books[0]["title"] = "robinhood"
+# print(books[0]["title"])
 
-books[3]["color"] = "red"
-print(books[3])
+# books[3]["color"] = "red"
+# print(books[3])
 
-#4
+# #4
 
-department_dictionary = {
-    "department1": {"robin", "joker"},
-    "department2": {"max", "anna"},
-    "department3": {"even", "steven"}
-}
+# department_dictionary = {
+#     "department1": ["robin", "joker"],
+#     "department2": ["max", "anna"],
+#     "department3": ["even", "steven"]
+# }
 
-print(department_dictionary["department1"])
+# print(department_dictionary["department1"])
+# print(department_dictionary["department1"][1])
 
-#5
+# #5
+
+# courses = [
+#     {
+#         "name": "Python",
+#         "teacher": "bob",
+#         "topics": ["str", "class", "loops"]
+#     },
+
+#     {
+#         "name": "english",
+#         "teacher": "sven",
+#         "topics": ["words", "spelling", "talk"]
+#     },
+
+#     {
+#         "name": "math",
+#         "teacher": "anna",
+#         "topics": ["adition", "subtractcion", "division"]
+#     }
+# ]
+
+# print(courses[1]["teacher"])
+# print(courses[2]["topics"][2])
