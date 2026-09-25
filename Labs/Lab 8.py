@@ -106,26 +106,37 @@
 # A SavingsAccount IS-A type of Account.
 
 # Part D - Inherited and subclass-specific behaviour
-class Employee:
-    def __init__(self, name):
-        self.name = name
+# class Employee:
+#     def __init__(self, name):
+#         self.name = name
 
-    def get_information(self):
-        return "my info"
+#     def get_information(self):
+#         return "my info"
     
-class Developer(Employee):
-    def my_statues():
-        return "online"
+# class Developer(Employee):
+#     def my_statues(self):
+#         return "online"
 
-class Maneger(Employee):
-    def say_hello(self):
-        return "Hello"
+# class Manager(Employee):
+#     def say_hello(self):
+#         return "Hello"
 
 
-developer = Developer("john")
-maneger = Maneger("bob")
+# developer = Developer("john")
+# manager = Manager("bob")
+# employee = Employee("joe")
 
-print(developer.get_information)
+# print(developer.get_information())
+# print(manager.get_information())
+
+# print(developer.my_statues())
+# print(manager.say_hello())
+
+# #print(employee.my_status())
+#  #dosent work a  base-class can not Inherited from subclass
+
+
+
 
 # #Part F - Method overriding
 
@@ -150,17 +161,17 @@ print(developer.get_information)
 
 #Part G - Override and still use the base method
 
-class Report:
-    def get_summary(self):
-        return "summary"
+# class Report:
+#     def get_summary(self):
+#         return "summary"
     
-class SalesReport(Report):
-    def get_summary(self):
-        base_info = super().get_summary()
-        return f"sales {base_info}"
+# class SalesReport(Report):
+#     def get_summary(self):
+#         base_info = super().get_summary()
+#         return f"sales {base_info}"
     
-sales = SalesReport()    
-print(sales.get_summary())
+# sales = SalesReport()    
+# print(sales.get_summary())
 
 
 # # Part H - Applied challenge: User accounts
