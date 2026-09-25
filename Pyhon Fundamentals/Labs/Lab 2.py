@@ -160,16 +160,6 @@
 
 # part D - Dictionaries
 
-1#  
-Laptop ={
-    "brand": "intel",
-    "model": "ai 1",
-    "RAM"  : 8,
-
-}
-
-
-
 #5
 
 study_hours = {

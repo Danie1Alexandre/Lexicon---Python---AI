@@ -286,10 +286,6 @@ print(phone.year)
 # #9
 # print(user2.age)
 # print(user3.age)
-
-
-
-
 #10 admin and premium user is a user of the app, therefor they belongs to user class
 
 
