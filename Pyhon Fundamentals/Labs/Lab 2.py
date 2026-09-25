@@ -293,3 +293,6 @@
 
 # print(courses[1]["teacher"])
 # print(courses[2]["topics"][2])
+
+# Part F - Applied challenge: Personal meida catalogue
+

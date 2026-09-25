@@ -414,28 +414,6 @@ study_sessions= [
 ]
 
 
-#G2 ------------
-
-# total_minutes = 0
-
-# for session in study_sessions:
-#     total_minutes += session["minutes"]
-# print(total_minutes)
-
-#G3------------
-# total_minutes_in_subjects = {}
-
-# for session in study_sessions:
-#     subject=session["subjects"]
-#     minutes =session["minutes"]
-
-#     if subject in total_minutes_in_subjects: #if true existera redan
-#         total_minutes_in_subjects[subject] += minutes
-#     else:
-#         total_minutes_in_subjects[subject] = minutes
-
-# print(total_minutes_in_subjects)
-
 #G4---------------------
 # longest_session= None
 # longest_time = 0
@@ -453,9 +431,13 @@ study_sessions= [
 #     if session["minutes"]> 45:
 #         print(session)
 
-#G6----------------
 
-# while(True):
+
+# #g6-G7----------------
+# import time
+
+# while True:
+#     print("\n--- MENU ---")
 #     print("1: view all sessions")
 #     print()
 #     print("2: view total time, ")
@@ -464,35 +446,59 @@ study_sessions= [
 #     print()
 #     print("4: Quit")
 
-#     user_input = int (input("pick a number"))
-
-#G7----------------
-
-while True:
-    print("1: view all sessions")
-    print()
-    print("2: view total time, ")
-    print()
-    print("3: filter by subject, ")
-    print()
-    print("4: Quit")
-
-    user_input = int (input("pick a number: "))
+#     user_input = int (input("pick a number: "))
     
 
-    if user_input == 4:
-        break
+#     if user_input == 4:
+#         break
 
-    elif user_input == 1:
-        print(study_sessions)
+#     elif user_input == 1:
+#         for session in study_sessions:
+#             print(f"Subject: {session['subjects']}, Minutes: {session['minutes']}")
+#         time.sleep(1)
 
-    elif user_input == 2:
-        total_minutes = 0
+#     elif user_input == 2:# G2 ------------
+#         total_minutes = 0
 
-        for session in study_sessions:
-            total_minutes += session["minutes"]
-        print(total_minutes)
+#         for session in study_sessions:
+#             total_minutes += session["minutes"]
+#         print(total_minutes)
+#         time.sleep(1)
 
-    elif user_input == 3:
+#     elif user_input == 3: #G3------------
+
+#         total_minutes_in_subjects = {}
+
+#         for session in study_sessions:
+#             subject=session["subjects"]
+#             minutes =session["minutes"]
+
+#             if subject in total_minutes_in_subjects: #if true existera redan
+#                 total_minutes_in_subjects[subject] += minutes
+#             else:
+#                 total_minutes_in_subjects[subject] = minutes
+
+#         print(total_minutes_in_subjects)
+#         time.sleep(1)
         
-        print("tt")
+# Part H - Strech challenges
+
+for number in range(1,101):
+    if number % 3 == 0 and number % 5 == 0:
+        print("fizzbuzz")    
+    elif number % 3 == 0:
+        print("fizz")
+    elif number % 5 == 0:
+        print("buzz")
+    else:
+        print(number)
+
+sentence = "Python programming is fun"
+vowels = "aeiouyAEIOUY"
+count = 0
+
+for char in sentence:
+    if char in vowels:
+        count += 1 
+
+print(count)
