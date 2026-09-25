@@ -127,98 +127,112 @@
 # print(email.send()) #using method from EmailNotification
 # print(sms.send()) #using method from smsNotification
 
+#Part G - Override and still use the base method
 
-# Part H - Applied challenge: User accounts
-# H1 and 2
+class Report:
+    def get_summary(self):
+        return "summary"
+    
+class SalesReport(Report):
+    def get_summary(self):
+        base_info = super().get_summary()
+        return f"sales {base_info}"
+    
+sales = SalesReport()    
+print(sales.get_summary())
 
-class User:
-    def __init__(self, username, email, age):
-        self.username = username
-        self.email = email
-        self.active = True
-        self.age = age
-        if self.age < 0:
-            raise ValueError("age cannot be negative!")
 
-    def say_hello(self):
-        return "Hello im a user"
+# # Part H - Applied challenge: User accounts
+# # H1 and 2
+
+# class User:
+#     def __init__(self, username, email, age):
+#         self.username = username
+#         self.email = email
+#         self.active = True
+#         self.age = age
+#         if self.age < 0:
+#             raise ValueError("age cannot be negative!")
+
+#     def say_hello(self):
+#         return "Hello im a user"
     
 
 
-#H3
-    def change_email(self,email):
-        self.email = email
+# #H3
+#     def change_email(self,email):
+#         self.email = email
 
 
-#H4
+# #H4
 
-class AdminUser(User):
-    def __init__(self, username, email, age):
-        super().__init__(username,email,age)
+# class AdminUser(User):
+#     def __init__(self, username, email, age):
+#         super().__init__(username,email,age)
      
-        self.user_list = []
+#         self.user_list = []
 
-    def delete_user(self, user):
-        self.user_list.remove(user)
+#     def delete_user(self, user):
+#         self.user_list.remove(user)
 
-    def add_user(self, user):
-        self.user_list.append(user)
+#     def add_user(self, user):
+#         self.user_list.append(user)
 
-    def say_hello(self):
-        base_text = super().say_hello()
-        return f" {base_text} and a Admin"
+#     def say_hello(self):
+#         base_text = super().say_hello()
+#         return f" {base_text} and a Admin"
 
 
 
-class PremiumUser(User):
+# class PremiumUser(User):
 
-    def __init__(self, username, email, age):
+#     def __init__(self, username, email, age):
 
-        super().__init__(username,email,age)    
-        self.premium = "I got premium"
+#         super().__init__(username,email,age)    
+#         self.premium = "I got premium"
     
-    def emote(self):
-        print(self.username, "=)")
+#     def emote(self):
+#         print(self.username, "=)")
 
-    def say_hello(self):
-        return "Hello im a premium user"
+#     def say_hello(self):
+#         return "Hello im a premium user"
 
-user2 = PremiumUser("Lisa", "lisa@mail.com", 17)
-print(user2.username, user2.email, user2.premium)
-user2.emote()
-
-
-#H5
-
-user3 = AdminUser("ben", "admin@mail.com", 21)
-print(user3.username, user3.email,)
+# user2 = PremiumUser("Lisa", "lisa@mail.com", 17)
+# print(user2.username, user2.email, user2.premium)
+# user2.emote()
 
 
-user1 = User("Anna", "anna@mail.com", 24)
-print(user1.username, user1.email)
+# #H5
 
-#6
-print(user1.username, user1.say_hello())
-print(user2.username, user2.say_hello())
-print(user3.username, user3.say_hello()) #7
+# user3 = AdminUser("ben", "admin@mail.com", 21)
+# print(user3.username, user3.email,)
 
-#8
 
-print("old email", user2.email)
-user2.change_email("l.new@mail.com")
-print("new email", user2.email)
+# user1 = User("Anna", "anna@mail.com", 24)
+# print(user1.username, user1.email)
 
-user3.add_user("smeagol")
-print("admins user list",user3.user_list)
-user3.delete_user("smeagol")
-print("admins user list, empty aftre delte",user3.user_list)
+# #6
+# print(user1.username, user1.say_hello())
+# print(user2.username, user2.say_hello())
+# print(user3.username, user3.say_hello()) #7
 
-print(user1.say_hello())
-print(user2.say_hello())
+# #8
 
-#9
-print(user2.age)
-print(user3.age)
+# print("old email", user2.email)
+# user2.change_email("l.new@mail.com")
+# print("new email", user2.email)
+
+# user3.add_user("smeagol")
+# print("admins user list",user3.user_list)
+# user3.delete_user("smeagol")
+# print("admins user list, empty aftre delte",user3.user_list)
+
+# print(user1.say_hello())
+# print(user2.say_hello())
+
+# #9
+# print(user2.age)
+# print(user3.age)
 
 
 
