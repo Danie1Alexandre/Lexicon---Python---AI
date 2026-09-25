@@ -160,37 +160,37 @@
 
 # part D - Dictionaries
 
-1#  
-Laptop ={
-    "brand": "intel",
-    "model": "ai 1",
-    "RAM"  : 8,
-    "storage_gb": 200,
-    "price": 2000
-}
+# 1#  
+# Laptop ={
+#     "brand": "intel",
+#     "model": "ai 1",
+#     "RAM"  : 8,
+#     "storage_gb": 200,
+#     "price": 2000
+# }
 
-print(Laptop["brand"])
-print(Laptop["model"])
-print(Laptop["RAM"])
-print(Laptop["storage_gb"])
-print(Laptop["price"])
+# print(Laptop["brand"])
+# print(Laptop["model"])
+# print(Laptop["RAM"])
+# print(Laptop["storage_gb"])
+# print(Laptop["price"])
 
-# 2
+# # 2
 
-Laptop["price"] = 2500
-print(f"new price {Laptop['price']}")
-Laptop["OS"] = "windows"
-del Laptop["RAM"]
+# Laptop["price"] = 2500
+# print(f"new price {Laptop['price']}")
+# Laptop["OS"] = "windows"
+# del Laptop["RAM"]
 
-#3
+# #3
 
-print (Laptop.get("model"))
-print (Laptop.get("cpu")) #cpu is not a key, so we get None instead
+# print (Laptop.get("model"))
+# print (Laptop.get("cpu")) #cpu is not a key, so we get None instead
 
-# #4 
-print("keys", list(Laptop.keys()))
-print("values", list(Laptop.values()))
-print("items", list(Laptop.items()))
+# # #4 
+# print("keys", list(Laptop.keys()))
+# print("values", list(Laptop.values()))
+# print("items", list(Laptop.items()))
 
 # for key, value in Laptop.items():
 #     print(f"{key.capitalize()}: {value}")
@@ -212,3 +212,60 @@ print("items", list(Laptop.items()))
 
 # print("Total:", total_hours_loop)
 
+# Part E - Nested Collections 
+
+books = [
+    {
+        "title": "book1",
+        "author": "author1",
+        "pages": 500,
+        "available": True
+    },
+    {
+        "title": "book2",
+        "author": "author2",
+        "pages": 500,
+        "available": True
+    },
+    {
+        "title": "book3",
+        "author": "author3",
+        "pages": 500,
+        "available": True
+    },
+    {
+        "title": "book4",
+        "author": "author4",
+        "pages": 500,
+        "available": True
+    },
+    {
+        "title": "book5",
+        "author": "author5",
+        "pages": 500,
+        "available": False
+    }
+]
+#2
+print(books[2]["title"])
+print(books[-1]["available"])
+
+#3
+print(books[0]["title"])
+books[0]["title"] = "robinhood"
+print(books[0]["title"])
+
+books[3]["color"] = "red"
+print(books[3])
+
+#4
+
+department_dictionary = {
+    "department1": {"robin", "joker"},
+    "department2": {"max", "anna"},
+    "department3": {"even", "steven"}
+}
+
+print(department_dictionary["department1"])
+
+#5
