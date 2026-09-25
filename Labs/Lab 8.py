@@ -105,6 +105,27 @@
 # "is-a" statement:
 # A SavingsAccount IS-A type of Account.
 
+# Part D - Inherited and subclass-specific behaviour
+class Employee:
+    def __init__(self, name):
+        self.name = name
+
+    def get_information(self):
+        return "my info"
+    
+class Developer(Employee):
+    def my_statues():
+        return "online"
+
+class Maneger(Employee):
+    def say_hello(self):
+        return "Hello"
+
+
+developer = Developer("john")
+maneger = Maneger("bob")
+
+print(developer.get_information)
 
 # #Part F - Method overriding
 
