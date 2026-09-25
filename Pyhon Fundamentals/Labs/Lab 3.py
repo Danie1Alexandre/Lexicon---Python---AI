@@ -515,3 +515,8 @@ for number in numbers:
         seen.append(number)
 
 print(f"duplicates: {duplicates}")
+
+numbers = [3,5,2]
+
+for number in numbers:
+    print("*"*number)
