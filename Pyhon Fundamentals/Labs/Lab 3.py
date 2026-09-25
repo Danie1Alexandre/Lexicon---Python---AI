@@ -502,3 +502,16 @@ for char in sentence:
         count += 1 
 
 print(count)
+
+numbers = [1, 2, 3, 2, 4, 5, 3, 2]
+seen = []
+duplicates = []
+
+for number in numbers:
+    if number in seen:
+        if number not in duplicates:
+            duplicates.append(number)
+    else:
+        seen.append(number)
+
+print(f"duplicates: {duplicates}")
