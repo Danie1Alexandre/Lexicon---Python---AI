@@ -160,19 +160,55 @@
 
 # part D - Dictionaries
 
-#5
-
-study_hours = {
-    "Math": 15,
-    "Python": 25,
-    "English": 10,
-    "Physics": 20,
-    "History": 8
+1#  
+Laptop ={
+    "brand": "intel",
+    "model": "ai 1",
+    "RAM"  : 8,
+    "storage_gb": 200,
+    "price": 2000
 }
 
-total_hours_loop = 0
-for hours in study_hours.values():
-    total_hours_loop += hours
+print(Laptop["brand"])
+print(Laptop["model"])
+print(Laptop["RAM"])
+print(Laptop["storage_gb"])
+print(Laptop["price"])
 
-print("Total:", total_hours_loop)
+# 2
+
+Laptop["price"] = 2500
+print(f"new price {Laptop['price']}")
+Laptop["OS"] = "windows"
+del Laptop["RAM"]
+
+#3
+
+print (Laptop.get("model"))
+print (Laptop.get("cpu")) #cpu is not a key, so we get None instead
+
+# #4 
+print("keys", list(Laptop.keys()))
+print("values", list(Laptop.values()))
+print("items", list(Laptop.items()))
+
+# for key, value in Laptop.items():
+#     print(f"{key.capitalize()}: {value}")
+
+
+#5
+
+# study_hours = {
+#     "Math": 15,
+#     "Python": 25,
+#     "English": 10,
+#     "Physics": 20,
+#     "History": 8
+# }
+
+# total_hours_loop = 0
+# for hours in study_hours.values():
+#     total_hours_loop += hours
+
+# print("Total:", total_hours_loop)
 
