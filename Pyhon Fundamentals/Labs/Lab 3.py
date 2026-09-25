@@ -199,21 +199,21 @@
 
 #C7------------------
 
-# student = {
-#     "name" : "ada",
-#     "age" : 24,
-#     "course" : "AI",
-#     "course2" : "Python"
-# }
+student = {
+    "name" : "ada",
+    "age" : 24,
+    "course" : "AI",
+    "course2" : "Python"
+}
 
-# for key in student.keys():
-#     print(key)
+for key in student.keys():
+    print(key)
 
-# for values in student.values():
-#     print(values)
+for values in student.values():
+    print(values)
 
-# for item in student.items():
-#     print(item)
+for item in student.items():
+    print(item)
 
     
 # Part D - Range, enumerate and nested loops
@@ -400,18 +400,18 @@
 # part G Applied challenge: Console study tracker
 
 #G1  ------------
-study_sessions= [
-    {"subjects": "math", "minutes": 45},
-    {"subjects": "python", "minutes": 59},
-    {"subjects": "swedish", "minutes": 50},
-    {"subjects": "math", "minutes": 57},
-    {"subjects": "python", "minutes": 53},
-    {"subjects": "swedish", "minutes": 120},
-    {"subjects": "swedish", "minutes": 34},
-    {"subjects": "math", "minutes": 30},
-    {"subjects": "math", "minutes": 40},
-    {"subjects": "python", "minutes": 55}
-]
+# study_sessions= [
+#     {"subjects": "math", "minutes": 45},
+#     {"subjects": "python", "minutes": 59},
+#     {"subjects": "swedish", "minutes": 50},
+#     {"subjects": "math", "minutes": 57},
+#     {"subjects": "python", "minutes": 53},
+#     {"subjects": "swedish", "minutes": 120},
+#     {"subjects": "swedish", "minutes": 34},
+#     {"subjects": "math", "minutes": 30},
+#     {"subjects": "math", "minutes": 40},
+#     {"subjects": "python", "minutes": 55}
+# ]
 
 
 #G4---------------------
@@ -483,40 +483,40 @@ study_sessions= [
         
 # Part H - Strech challenges
 
-for number in range(1,101):
-    if number % 3 == 0 and number % 5 == 0:
-        print("fizzbuzz")    
-    elif number % 3 == 0:
-        print("fizz")
-    elif number % 5 == 0:
-        print("buzz")
-    else:
-        print(number)
+# for number in range(1,101):
+#     if number % 3 == 0 and number % 5 == 0:
+#         print("fizzbuzz")    
+#     elif number % 3 == 0:
+#         print("fizz")
+#     elif number % 5 == 0:
+#         print("buzz")
+#     else:
+#         print(number)
 
-sentence = "Python programming is fun"
-vowels = "aeiouyAEIOUY"
-count = 0
+# sentence = "Python programming is fun"
+# vowels = "aeiouyAEIOUY"
+# count = 0
 
-for char in sentence:
-    if char in vowels:
-        count += 1 
+# for char in sentence:
+#     if char in vowels:
+#         count += 1 
 
-print(count)
+# print(count)
 
-numbers = [1, 2, 3, 2, 4, 5, 3, 2]
-seen = []
-duplicates = []
+# numbers = [1, 2, 3, 2, 4, 5, 3, 2]
+# seen = []
+# duplicates = []
 
-for number in numbers:
-    if number in seen:
-        if number not in duplicates:
-            duplicates.append(number)
-    else:
-        seen.append(number)
+# for number in numbers:
+#     if number in seen:
+#         if number not in duplicates:
+#             duplicates.append(number)
+#     else:
+#         seen.append(number)
 
-print(f"duplicates: {duplicates}")
+# print(f"duplicates: {duplicates}")
 
-numbers = [3,5,2]
+# numbers = [3,5,2]
 
-for number in numbers:
-    print("*"*number)
+# for number in numbers:
+#     print("*"*number)
