@@ -7,26 +7,28 @@ from zoo_functions.zoo_functions import health_check
 
 
 
-
-monkey = Monkey("monkey", "neutral", 1)
+zoo_is_alive = 1
+monkey = Monkey("monkey", "sad", 1)
 lion = Lion("lion", "neutral",2)
-dolphin = Dolphin("dolphin", "neutral", 3)
+dolphin = Dolphin("dolphin", "Happy", 3)
 animals =[monkey, lion, dolphin]
 animal_mood = ["Happy", "Neutral", "sad"]
 food = ["banana", "chicken", "fish"]
+
 print_separator()
 print("ZOO SIMULATION")
 print("use only numbers 1-3 for inputs")
 print_separator()
 
-while True:
+while zoo_is_alive == 1:
     print("\n================ MENY ================")
     print("1. Feed animlas")
     print("2. open the zoo")
     print("3. close")
-    print("========================================")
     for animal in animals:
-        print(f"{animal.animal_type} - {animal.health} - {animal.mood}")
+        print(f"{animal.animal_type}  - {animal.mood} ", end="  | ")
+    print("\n========================================")
+
 
     user_input = input("pick a number")
 
@@ -56,8 +58,23 @@ while True:
         else:
             print("Not a valid option")
             time.sleep(1)
+
+    elif user_input == "2":
+        print("zoo open")
+
+        for animal in animals:
+            animal.health -= 1
+            health_check(animal, animal_mood)
+            if animal.health < 1:
+                print("================ Game Over ================")
+                zoo_is_alive = 0
+                break
+    
+    elif user_input == "3":     
+        break           
    
 
     else:
         print("Not a valid option")
         time.sleep(1)
+
