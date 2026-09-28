@@ -1,9 +1,10 @@
 import time
-from zoo_class.zoo_class import Animal
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
-from zoo_functions.print_separator import print_separator
+from zoo_functions.zoo_functions import print_separator
+from zoo_functions.zoo_functions import health_check
+
 
 
 
@@ -39,13 +40,19 @@ while True:
         
         if user_input == "1":
             monkey.feed_animal()
+            health_check(monkey,animal_mood)
+               
+
    
         elif user_input == "2":
             lion.feed_animal()
+            health_check(lion, animal_mood)
+                           
    
         elif user_input == "3":
             dolphin.feed_animal()
-
+            health_check(dolphin, animal_mood)
+               
         else:
             print("Not a valid option")
             time.sleep(1)
