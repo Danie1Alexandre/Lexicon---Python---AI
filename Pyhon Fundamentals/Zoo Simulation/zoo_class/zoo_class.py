@@ -6,6 +6,17 @@ class Animal:
 
     def feed_animal(self):
         self.health +=1
+    
+    def weather_effect(self,weather):
+        if weather == "Sunny" or "Clear":
+            return f"{self.animal_type} feels happy in the sun"
+
+weather_types = [
+    "Sunny", "Clear", "Cloudy", "Partly cloudy", "Foggy",
+    "Rainy", "Drizzling", "Snowy", "Hailing", 
+    "Thunderstorm", "Stormy", "Windy"
+]
+
 
     
 class Monkey(Animal):

@@ -1,4 +1,5 @@
 import time
+import random
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
@@ -9,23 +10,42 @@ from zoo_functions.zoo_functions import pick_food
 
 
 zoo_is_alive = 1
+
 monkey = Monkey("Monkey", "sad", 1)
 lion = Lion("Lion", "neutral",2)
 dolphin = Dolphin("Dolphin", "Happy", 3)
 animals =[monkey, lion, dolphin]
+
+
 animal_mood = ["Happy", "Neutral", "sad"]
 food = ["banana", "chicken", "fish"]
+active_days = 0
+
+weather_types = [
+    "Sunny", "Clear", "Cloudy", "Partly cloudy", "Foggy",
+    "Rainy", "Drizzling", "Snowy", "Hailing", 
+    "Thunderstorm", "Stormy", "Windy"
+]
+
+
 
 print_separator()
 print("ZOO SIMULATION")
 print("use only numbers 1-3 for inputs")
 print_separator()
 
+
+
 while zoo_is_alive == 1:
+    todays_weather = random.choice(weather_types) #the day start at the zoo
+
+    print(f"\n================ WEATHER TODAY: {todays_weather} ================")
+
     print("\n================ MENY ================")
     print("1. Feed animlas")
     print("2. open the zoo")
-    print("3. close")
+    print("3. watch animals")
+    print("4. close")
     for animal in animals:
         print(f"{animal.animal_type}  - {animal.mood} ", end="  | ")
     print("\n========================================")
@@ -70,17 +90,22 @@ while zoo_is_alive == 1:
             time.sleep(1)
 
     elif user_input == "2":
+        active_days += 1
+        
         print("zoo open")
-
+        
         for animal in animals:
             animal.health -= 1
             health_check(animal, animal_mood)
+            
             if animal.health < 1:
                 print("================ Game Over ================")
                 zoo_is_alive = 0
                 break
     
-    elif user_input == "3":     
+    elif user_input == "3":
+        print("Good Bye")
+        time.sleep(1)     
         break           
    
 
