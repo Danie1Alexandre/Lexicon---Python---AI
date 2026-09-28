@@ -87,7 +87,7 @@
 # print(student3.name)
 # print(student3.score)
 
-# Part B- mathod and state ---------
+# Part B- mathod and mood  ---------
 
 #1
 

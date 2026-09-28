@@ -102,7 +102,7 @@
 # print(account2.owner, account2.balance, account2.interest_rate)
 
 # 5 
-# "is-a" statement:
+# "is-a" mood ment:
 # A SavingsAccount IS-A type of Account.
 
 # Part D - Inherited and subclass-specific behaviour
