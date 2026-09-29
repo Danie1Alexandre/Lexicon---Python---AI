@@ -7,30 +7,32 @@ class Animal:
     def feed_animal(self):
         self.health +=1
     
-    def weather_effect(self,weather):
-        if weather in ["sunny", "clear"]:
+    def weather_effect(self, weather):
+        
+        if weather in ["Sunny", "Clear"]:
             #self.mood += 1
-            return f"☀️{self.animal_type} feels happy in the sun. Mood increased."
+            return f"☀️  {self.animal_type} feels happy in the sun. Mood increased."
 
         elif weather in ["Rainy", "Drizzling"]:
-            self.mood -= 1
-            return f"🌧️ {self.name} gets damp and a bit sad. Mood decreased."  
+            #self.mood -= 1
+            return f"🌧️  the {self.animal_type} gets damp and a bit sad. Mood decreased."  
 
         
         elif weather in ["Thunderstorm", "Blizzard", "Stormy"]:
             self.health -= 1
             #self.mood -= 2
-            return f"⚡ EXTREME WEATHER! {self.name} takes damage and is scared!"
+            return f"⚡  EXTREME WEATHER! the {self.animal_type} takes damage and is scared!"
             
         else:
-            return f"☁️ The weather  is calm ({weather}). {self.animal_type} is doing fine."      
+            return f"☁️  The weather  is calm and {weather}. the {self.animal_type} is doing fine."      
 
 
 
 weather_types = [
-    "Sunny", "Clear", "Cloudy", "Partly cloudy", "Foggy",
-    "Rainy", "Drizzling", "Snowy", "Hailing", 
-    "Thunderstorm", "Stormy", "Windy"
+    "Sunny", "Clear",
+    "Rainy", "Snowy", 
+    "Thunderstorm", "Stormy"
+    "Cloudy", "Foggy",
 ]
 
 
