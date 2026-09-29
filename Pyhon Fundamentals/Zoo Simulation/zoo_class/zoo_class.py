@@ -78,20 +78,23 @@ class Weather:
         import random
         return random.choice(self.weather_types)
     
-    def weather_effect(self, weather):
-        
+    def weather_effect(self, weather, animals):
+        #weather effects animal class using this method    
         if weather in ["Sunny", "Clear"]:
-            #self.mood += 1
+            for animal in animals:
+                animal.mood += 1
             return f"☀️  The weather is {weather}"
 
         elif weather in ["Rainy", "snowy"]:
-            #self.mood -= 1
+            for animal in animals:
+                animal.mood -= 1
             return f"🌧️  The weather is {weather}"  
 
         
         elif weather in ["Thunderstorm", "Stormy"]:
             #self.health -= 1
-            #self.mood -= 2
+            for animal in animals:
+                animal.mood -= 1
             return f"⚡  EXTREME WEATHER! {weather}"
             
         else:
@@ -99,10 +102,6 @@ class Weather:
    
     
     
-
-
-
-
 #-----------------------------------
 # class people:
 #     def __init__(self, role):

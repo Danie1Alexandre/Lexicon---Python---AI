@@ -43,7 +43,7 @@ while zoo_is_alive == 1:
 
     print(f"\n================ WEATHER TODAY ================")
     print()
-    print(weather.weather_effect(todays_weather))
+    print(weather.weather_effect(todays_weather, animals))
     
     for animal in animals:
         print(animal.weather_effect(todays_weather))
@@ -57,7 +57,7 @@ while zoo_is_alive == 1:
     for animal in animals:
         print(f"{animal.animal_type}  - {animal.mood_check()} ", end="  | ")
     print("\n========================================")
-
+    print(monkey.mood)
 
     user_input = input("pick a number \n")
 
