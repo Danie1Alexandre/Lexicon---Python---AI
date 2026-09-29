@@ -26,8 +26,8 @@ class Animal:
         else:
             return f"☁️  The weather  is calm and {weather}. the {self.animal_type} is doing fine." 
 
-    def animal_behavioer(self):
-        return ""    
+    def animal_behaviour(self):
+        return f" the {self.animal_type} jumps in the air"  
 
 
 

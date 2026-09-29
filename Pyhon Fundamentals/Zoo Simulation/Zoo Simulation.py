@@ -108,6 +108,12 @@ while zoo_is_alive == 1:
                 break
     
     elif user_input == "3":
+        print("================ Watching Animals ================")
+        print()
+        for animal in animals:
+            print(animal.animal_behaviour())
+   
+    elif user_input == "4":
         print("Good Bye")
         time.sleep(1)     
         break           
