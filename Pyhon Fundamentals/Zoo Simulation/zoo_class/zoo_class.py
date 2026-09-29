@@ -24,7 +24,10 @@ class Animal:
             return f"⚡  EXTREME WEATHER! the {self.animal_type} takes damage and is scared!"
             
         else:
-            return f"☁️  The weather  is calm and {weather}. the {self.animal_type} is doing fine."      
+            return f"☁️  The weather  is calm and {weather}. the {self.animal_type} is doing fine." 
+
+    def animal_behavioer(self):
+        return ""    
 
 
 

@@ -11,9 +11,9 @@ from zoo_functions.zoo_functions import pick_food
 
 zoo_is_alive = 1
 
-monkey = Monkey("Monkey", "sad", 1)
-lion = Lion("Lion", "neutral",2)
-dolphin = Dolphin("Dolphin", "Happy", 3)
+monkey = Monkey("Monkey \U0001f435" , "sad", 1)
+lion = Lion("Lion \U0001f981", "neutral",2)
+dolphin = Dolphin("Dolphin \U0001f42c", "Happy", 3)
 
 animals =[monkey, lion, dolphin]
 
@@ -31,7 +31,7 @@ weather_types = [
 
 
 print_separator()
-print("ZOO SIMULATION")
+print("\nZOO SIMULATION")
 print("use only numbers 1-3 for inputs")
 print_separator()
 
@@ -44,9 +44,6 @@ while zoo_is_alive == 1:
     print()
     for animal in animals:
         print(animal.weather_effect(todays_weather))
-
-
-
 
     print("\n================ MENY ================")
     print("1. Feed animlas")
