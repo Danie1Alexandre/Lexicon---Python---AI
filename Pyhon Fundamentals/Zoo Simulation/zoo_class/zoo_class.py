@@ -6,8 +6,8 @@ class Animal:
         self.moods = ["Happy", "Neutral", "sad"]
         self.mood = mood # in int
 
-    def feed_animal(self):
-        self.health +=1
+    def feed_animal(self, hp):
+        self.health += hp
     
     def weather_effect(self, weather):
         
@@ -39,6 +39,13 @@ class Animal:
         
         else:
             return self.moods[0]
+    
+    def bad_care_penalty(self):
+        if self.mood <= 0:
+            self.health -= 1
+
+        if self.hunger <= 0:
+            self.health -= 1
 
     
 class Monkey(Animal):
@@ -90,7 +97,6 @@ class Weather:
                 animal.mood -= 1
             return f"🌧️  The weather is {weather}"  
 
-        
         elif weather in ["Thunderstorm", "Stormy"]:
             #self.health -= 1
             for animal in animals:
