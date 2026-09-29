@@ -8,8 +8,24 @@ class Animal:
         self.health +=1
     
     def weather_effect(self,weather):
-        if weather == "Sunny" or "Clear":
-            return f"{self.animal_type} feels happy in the sun"
+        if weather in ["sunny", "clear"]:
+            #self.mood += 1
+            return f"☀️{self.animal_type} feels happy in the sun. Mood increased."
+
+        elif weather in ["Rainy", "Drizzling"]:
+            self.mood -= 1
+            return f"🌧️ {self.name} gets damp and a bit sad. Mood decreased."  
+
+        
+        elif weather in ["Thunderstorm", "Blizzard", "Stormy"]:
+            self.health -= 1
+            #self.mood -= 2
+            return f"⚡ EXTREME WEATHER! {self.name} takes damage and is scared!"
+            
+        else:
+            return f"☁️ The weather  is calm ({weather}). {self.animal_type} is doing fine."      
+
+
 
 weather_types = [
     "Sunny", "Clear", "Cloudy", "Partly cloudy", "Foggy",

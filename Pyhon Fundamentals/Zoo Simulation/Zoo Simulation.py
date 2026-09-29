@@ -14,6 +14,7 @@ zoo_is_alive = 1
 monkey = Monkey("Monkey", "sad", 1)
 lion = Lion("Lion", "neutral",2)
 dolphin = Dolphin("Dolphin", "Happy", 3)
+
 animals =[monkey, lion, dolphin]
 
 
@@ -40,6 +41,12 @@ while zoo_is_alive == 1:
     todays_weather = random.choice(weather_types) #the day start at the zoo
 
     print(f"\n================ WEATHER TODAY: {todays_weather} ================")
+    print()
+    for animal in animals:
+        print(animal.weather_effect(todays_weather))
+
+
+
 
     print("\n================ MENY ================")
     print("1. Feed animlas")
