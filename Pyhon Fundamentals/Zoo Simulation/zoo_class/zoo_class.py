@@ -9,6 +9,7 @@ class Animal:
     def feed_animal(self, hp):
         self.health += hp
         self.hunger += 1
+        self.mood += 1
     
     def weather_effect(self, weather):
         if weather in ["Sunny", "Clear"]:
@@ -86,22 +87,22 @@ class Weather:
         if weather in ["Sunny", "Clear"]:
             for animal in animals:
                 animal.mood += 1
-            return f"☀️  The weather is {weather}"
+            return f"☀️  The weather is {weather}."
 
         elif weather in ["Rainy", "snowy"]:
             for animal in animals:
                 animal.mood -= 1
-            return f"🌧️  The weather is {weather}"  
+            return f"🌧️  The weather is {weather}."  
 
         elif weather in ["Thunderstorm", "Stormy"]:
 
             for animal in animals:
                 animal.mood -= 1
                 animal.health -= 1
-            return f"⚡  EXTREME WEATHER! {weather}"
+            return f"⚡  EXTREME WEATHER! {weather}."
             
         else:
-            return f"☁️  The weather is calm and {weather}" 
+            return f"☁️  The weather is calm and {weather}." 
    
     
     

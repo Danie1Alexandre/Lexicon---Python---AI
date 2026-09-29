@@ -11,7 +11,7 @@ from zoo_class.zoo_class import Weather
 
 zoo_is_alive = 1
 
-monkey = Monkey("Monkey \U0001f435", 5, 5, 0)
+monkey = Monkey("Monkey \U0001f435", 5, 5, 1)
 lion = Lion("Lion \U0001f981", 5, 5, 1)
 dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 
@@ -29,21 +29,44 @@ food = ["banana", "chicken", "fish"]
 
 
 weather = Weather()
-active_days = 0
+
+active_days = 1
+day_lenght_sec = 60
+day_start_time = time.time()
+
 
 print_separator()
 print("\nZOO SIMULATION")
 print("use only numbers 1-4 for inputs")
 print_separator()
+time.sleep(3) # sleep improves game flow by slowing it down
 
-
+print(f"\n================  DAY {active_days} HAS STARTED ================")
+time.sleep(2)
+todays_weather = weather.todays_weather() #give the weather of the day
 
 while zoo_is_alive == 1:
-    todays_weather = weather.todays_weather()
+
+    #calculate time until new day
+    current_time = time.time()
+    time_left = current_time - day_start_time
+
+    if time_left >= day_lenght_sec:
+        active_days += 1
+        print(f"\nA new day has dawned! Welcome to DAY {active_days}")
+        time.sleep(3)
+
+        for animal in animals:
+            animal.health -= 1
+            animal.bad_care_penalty()
+
+        day_start_time = time.time
+    
+    todays_weather = weather.todays_weather() 
 
     print(f"\n================ WEATHER TODAY ================")
     print()
-    print(weather.weather_effect(todays_weather, animals))
+    print(weather.weather_effect(todays_weather, animals), "Day:", active_days)
     
     for animal in animals:
         print(animal.weather_effect(todays_weather))
@@ -54,9 +77,6 @@ while zoo_is_alive == 1:
     print("3. watch animals")
     print("4. close")
     print("\nAnimal Mood")
-
-    for animal in animals:
-        animal.bad_care_penalty()
     
     for animal in animals:
         print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="  | ")
@@ -119,7 +139,7 @@ while zoo_is_alive == 1:
                 print(f"\n{dolphin.animal_type} got happy")
                 time.sleep(1.5)
             
-            elif user_input == 1 or 2:    
+            elif user_input == "1" or "2":    
                 print(dolphin.animal_type, "got disappointed")
                 time.sleep(1.5)
             
@@ -158,8 +178,7 @@ while zoo_is_alive == 1:
         time.sleep(1)     
         break           
    
-
     else:
-        print("Not a valid option")
+        print("Not a valid option") #handel user input error
         time.sleep(1)
 
