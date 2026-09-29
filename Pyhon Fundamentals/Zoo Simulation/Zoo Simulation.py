@@ -23,11 +23,11 @@ food = ["banana", "chicken", "fish"]
 active_days = 0
 
 weather_types = [
-    "Sunny", "Clear", "Cloudy", "Partly cloudy", "Foggy",
-    "Rainy", "Drizzling", "Snowy", "Hailing", 
-    "Thunderstorm", "Stormy", "Windy"
+    "Sunny", "Clear",
+    "Rainy", "Snowy", 
+    "Thunderstorm", "Stormy"
+    "Cloudy", "Foggy",
 ]
-
 
 
 print_separator()
