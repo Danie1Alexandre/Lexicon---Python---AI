@@ -1,5 +1,5 @@
 import time
-
+from zoo_class.zoo_class import Animal
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
@@ -11,18 +11,25 @@ from zoo_class.zoo_class import Weather
 
 zoo_is_alive = 1
 
-monkey = Monkey("Monkey \U0001f435" , "sad", 1)
-lion = Lion("Lion \U0001f981", "neutral",2)
-dolphin = Dolphin("Dolphin \U0001f42c", "Happy", 3)
+monkey = Monkey("Monkey \U0001f435", 5, 5, 0)
+lion = Lion("Lion \U0001f981", 5, 5, 1)
+dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 
 animals =[monkey, lion, dolphin]
 
+# animals2 = [
+#     Monkey("Monkey \U0001f435" , "sad", 1),
+#     Lion("Lion \U0001f981", "neutral",2),
+#     Dolphin("Dolphin \U0001f42c", "Happy", 3)
+# ]
 
-animal_mood = ["Happy", "Neutral", "sad"]
+
+
 food = ["banana", "chicken", "fish"]
-active_days = 0
+
 
 weather = Weather()
+active_days = 0
 
 print_separator()
 print("\nZOO SIMULATION")
@@ -34,8 +41,10 @@ print_separator()
 while zoo_is_alive == 1:
     todays_weather = weather.todays_weather()
 
-    print(f"\n================ WEATHER TODAY: {todays_weather} ================")
+    print(f"\n================ WEATHER TODAY ================")
     print()
+    print(weather.weather_effect(todays_weather))
+    
     for animal in animals:
         print(animal.weather_effect(todays_weather))
 
@@ -46,7 +55,7 @@ while zoo_is_alive == 1:
     print("4. close")
     print("\nAnimal Mood")
     for animal in animals:
-        print(f"{animal.animal_type}  - {animal.mood} ", end="  | ")
+        print(f"{animal.animal_type}  - {animal.mood_check()} ", end="  | ")
     print("\n========================================")
 
 
@@ -73,16 +82,16 @@ while zoo_is_alive == 1:
                 print(monkey.animal_type, "got disappointed")
      
             monkey.feed_animal()
-            health_check(monkey,animal_mood)
+            health_check(monkey,Animal.moods)
                
         elif user_input == "2":
             lion.feed_animal()
-            health_check(lion, animal_mood)
+            health_check(lion, Animal.moods)
                            
    
         elif user_input == "3":
             dolphin.feed_animal()
-            health_check(dolphin, animal_mood)
+            health_check(dolphin, Animal.moods)
                
         else:
             print("Not a valid option")

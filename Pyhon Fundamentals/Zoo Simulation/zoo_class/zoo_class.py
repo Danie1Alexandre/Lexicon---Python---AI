@@ -1,9 +1,10 @@
 class Animal:
-    def __init__(self, animal_type, mood, health):
+    def __init__(self, animal_type, health, hunger, mood):
         self.animal_type = animal_type
-        self.mood = mood 
-        self.health = health 
-        #self.hunger = hunger
+        self.health = health         
+        self.hunger = hunger        
+        self.moods = ["Happy", "Neutral", "sad"]
+        self.mood = mood # in int
 
     def feed_animal(self):
         self.health +=1
@@ -19,7 +20,7 @@ class Animal:
             return f"{self.animal_type} gets damp and a bit sad. Mood decreased."  
       
         elif weather in ["Thunderstorm", "Stormy"]:
-            self.health -= 1
+            #self.health -= 1
             #self.mood -= 2
             return f"{self.animal_type} takes damage and is scared!"
             
@@ -28,26 +29,36 @@ class Animal:
 
     def animal_behaviour(self):
         return f" The {self.animal_type} moves around quietly."  
+    
+    def mood_check(self):
+        if self.mood < 1:
+            return self.moods[2]
+
+        elif self.mood >= 1 and self.mood < 2:
+            return self.moods[1]
+        
+        else:
+            return self.moods[0]
 
     
 class Monkey(Animal):
-    def __init__(self, animal_type, mood, health ):
-        super().__init__(animal_type,mood, health )
+    def __init__(self, animal_type, health, hunger, mood):
+        super().__init__(animal_type, health, hunger, mood)
     
     def animal_behaviour(self):
         return f"The {self.animal_type} swings between the branches!" 
      
 class Lion(Animal):
-    def __init__(self, animal_type, mood, health ):
-        super().__init__(animal_type,mood, health )
+    def __init__(self, animal_type, health, hunger, mood):
+        super().__init__(animal_type, health, hunger, mood)
 
     def animal_behaviour(self):
         return f"The {self.animal_type} roars loudly!"
     
 
 class Dolphin(Animal):
-    def __init__(self, animal_type, mood, health ):
-        super().__init__(animal_type,mood, health )
+    def __init__(self, animal_type, health, hunger, mood):
+        super().__init__(animal_type, health, hunger, mood)
     
     def animal_behaviour(self):
         return f"The {self.animal_type} jumps high in the air and splashes!"
@@ -79,12 +90,12 @@ class Weather:
 
         
         elif weather in ["Thunderstorm", "Stormy"]:
-            self.health -= 1
+            #self.health -= 1
             #self.mood -= 2
             return f"⚡  EXTREME WEATHER! {weather}"
             
         else:
-            return f"☁️  The weather  is calm and {weather}" 
+            return f"☁️  The weather is calm and {weather}" 
    
     
     
