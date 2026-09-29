@@ -59,7 +59,9 @@ while zoo_is_alive == 1:
         animal.bad_care_penalty()
     
     for animal in animals:
-        print(f"{animal.animal_type}  - {animal.mood_check()} ", end="  | ")
+        print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="  | ")
+
+
     print("\n========================================")
     print(monkey.mood)
     print(monkey.health)
@@ -116,6 +118,7 @@ while zoo_is_alive == 1:
         print()
         for animal in animals:
             print(animal.animal_behaviour())
+            time.sleep(2)
         time.sleep(2)
    
     elif user_input == "4":
