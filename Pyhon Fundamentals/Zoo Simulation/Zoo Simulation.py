@@ -32,7 +32,7 @@ weather_types = [
 
 print_separator()
 print("\nZOO SIMULATION")
-print("use only numbers 1-3 for inputs")
+print("use only numbers 1-4 for inputs")
 print_separator()
 
 
@@ -50,20 +50,21 @@ while zoo_is_alive == 1:
     print("2. open the zoo")
     print("3. watch animals")
     print("4. close")
+    print("\nAnimal Mood")
     for animal in animals:
         print(f"{animal.animal_type}  - {animal.mood} ", end="  | ")
     print("\n========================================")
 
 
-    user_input = input("pick a number")
+    user_input = input("pick a number \n")
 
     if user_input == "1":
         print("\n================ Feed animlas ================")
-        print("1. Feed Monkey")
-        print("2. Feed Lion")
-        print("3. Feed Dolphin")
+        print("1. Monkey")
+        print("2. Lion")
+        print("3. Dolphin")
         print("========================================")
-        user_input = input("pick a number")
+        user_input = input("pick a number \n")
         
         if user_input == "1":
             pick_food(food)
