@@ -1,8 +1,9 @@
 class Animal:
     def __init__(self, animal_type, mood, health):
         self.animal_type = animal_type
-        self. mood = mood 
-        self. health = health 
+        self.mood = mood 
+        self.health = health 
+        #self.hunger = hunger
 
     def feed_animal(self):
         self.health +=1
@@ -11,20 +12,19 @@ class Animal:
         
         if weather in ["Sunny", "Clear"]:
             #self.mood += 1
-            return f"☀️  The weather is {weather}, the {self.animal_type} feels happy in the sun. Mood increased."
+            return f"{self.animal_type} feels happy in the sun. Mood increased."
 
         elif weather in ["Rainy", "snowy"]:
             #self.mood -= 1
-            return f"🌧️  The weather is {weather},  the {self.animal_type} gets damp and a bit sad. Mood decreased."  
-
-        
+            return f"{self.animal_type} gets damp and a bit sad. Mood decreased."  
+      
         elif weather in ["Thunderstorm", "Stormy"]:
             self.health -= 1
             #self.mood -= 2
-            return f"⚡  EXTREME WEATHER! the {self.animal_type} takes damage and is scared!"
+            return f"{self.animal_type} takes damage and is scared!"
             
         else:
-            return f"☁️  The weather  is calm and {weather}. the {self.animal_type} is doing fine." 
+            return f"{self.animal_type} is doing fine." 
 
     def animal_behaviour(self):
         return f" The {self.animal_type} moves around quietly."  
@@ -35,7 +35,7 @@ class Monkey(Animal):
         super().__init__(animal_type,mood, health )
     
     def animal_behaviour(self):
-        return f" The {self.animal_type} swings between the branches!" 
+        return f"The {self.animal_type} swings between the branches!" 
      
 class Lion(Animal):
     def __init__(self, animal_type, mood, health ):
@@ -51,7 +51,47 @@ class Dolphin(Animal):
     
     def animal_behaviour(self):
         return f"The {self.animal_type} jumps high in the air and splashes!"
+
+class Weather:
+   
+    def __init__(self):
+
+        self.weather_types = [
+        "Sunny", "Clear",
+        "Rainy", "Snowy", 
+        "Thunderstorm", "Stormy"
+        "Cloudy", "Foggy",
+        ]
+
+    def todays_weather(self): 
+        import random
+        return random.choice(self.weather_types)
+    
+    def weather_effect(self, weather):
         
+        if weather in ["Sunny", "Clear"]:
+            #self.mood += 1
+            return f"☀️  The weather is {weather}"
+
+        elif weather in ["Rainy", "snowy"]:
+            #self.mood -= 1
+            return f"🌧️  The weather is {weather}"  
+
+        
+        elif weather in ["Thunderstorm", "Stormy"]:
+            self.health -= 1
+            #self.mood -= 2
+            return f"⚡  EXTREME WEATHER! {weather}"
+            
+        else:
+            return f"☁️  The weather  is calm and {weather}" 
+   
+    
+    
+
+
+
+
 #-----------------------------------
 # class people:
 #     def __init__(self, role):

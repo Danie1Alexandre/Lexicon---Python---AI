@@ -1,12 +1,12 @@
 import time
-import random
+
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
 from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import health_check
 from zoo_functions.zoo_functions import pick_food
-
+from zoo_class.zoo_class import Weather
 
 
 zoo_is_alive = 1
@@ -22,13 +22,7 @@ animal_mood = ["Happy", "Neutral", "sad"]
 food = ["banana", "chicken", "fish"]
 active_days = 0
 
-weather_types = [
-    "Sunny", "Clear",
-    "Rainy", "Snowy", 
-    "Thunderstorm", "Stormy"
-    "Cloudy", "Foggy",
-]
-
+weather = Weather()
 
 print_separator()
 print("\nZOO SIMULATION")
@@ -38,7 +32,7 @@ print_separator()
 
 
 while zoo_is_alive == 1:
-    todays_weather = random.choice(weather_types) #the day start at the zoo
+    todays_weather = weather.todays_weather()
 
     print(f"\n================ WEATHER TODAY: {todays_weather} ================")
     print()
@@ -113,6 +107,7 @@ while zoo_is_alive == 1:
         print()
         for animal in animals:
             print(animal.animal_behaviour())
+        time.sleep(2)
    
     elif user_input == "4":
         print("Good Bye")
