@@ -19,3 +19,5 @@ def pick_food(food):
      print("2.", food[1])
      print("3.", food[2])
      print("========================================")
+
+# def feed_animals(animal_type)

@@ -73,7 +73,7 @@ class Weather:
         self.weather_types = [
         "Sunny", "Clear",
         "Rainy", "Snowy", 
-        "Thunderstorm", "Stormy"
+        "Thunderstorm", "Stormy",
         "Cloudy", "Foggy",
         ]
 

@@ -85,16 +85,48 @@ while zoo_is_alive == 1:
                 print(f"\n{monkey.animal_type} got happy")
                 time.sleep(1.5)
      
-            else:
+            elif user_input == "2" or user_input == "3" :
                 print(monkey.animal_type, "got disappointed")
+                time.sleep(1.5)            
+            else:
+                print("Not a valid option")
+                time.sleep(1)
+
      
         elif user_input == "2":
-            lion.feed_animal()
-                           
-   
+            pick_food(food)
+            user_input = input("pick a number \n")            
+            
+            if user_input == "2":            
+                lion.feed_animal(2)
+                print(f"\n{lion.animal_type} got happy")
+                time.sleep(1.5)
+            
+            elif user_input == "1" or user_input == "3" :
+                print(lion.animal_type, "got disappointed")
+                time.sleep(1.5)   
+
+            else:
+                print("Not a valid option")
+                time.sleep(1)
+
         elif user_input == "3":
-            dolphin.feed_animal()
-               
+            pick_food(food)
+            user_input = input("pick a number \n")            
+            
+            if user_input == "3":            
+                dolphin.feed_animal(2)
+                print(f"\n{dolphin.animal_type} got happy")
+                time.sleep(1.5)
+            
+            elif user_input == 1 or 2:    
+                print(dolphin.animal_type, "got disappointed")
+                time.sleep(1.5)
+            
+            else:            
+                print("Not a valid option")
+                time.sleep(1)
+                           
         else:
             print("Not a valid option")
             time.sleep(1)
@@ -105,12 +137,12 @@ while zoo_is_alive == 1:
         print("zoo open")
         
         for animal in animals:
-            animal.health -= 1
-            health_check(animal, animal_mood)
-            
+            animal.health -= 1           
             if animal.health < 1:
+                print("oh no, the animals did not get enough food")                
                 print("================ Game Over ================")
                 zoo_is_alive = 0
+
                 break
     
     elif user_input == "3":
