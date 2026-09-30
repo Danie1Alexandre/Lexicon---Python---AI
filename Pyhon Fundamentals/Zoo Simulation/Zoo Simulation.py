@@ -4,7 +4,7 @@ from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
 from zoo_functions.zoo_functions import print_separator
-
+from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
 from zoo_class.zoo_class import Weather
 
@@ -34,7 +34,6 @@ active_days = 1
 day_lenght_sec = 60
 day_start_time = time.time()
 
-
 print_separator()
 print("\nZOO SIMULATION")
 print("use only numbers 1-4 for inputs")
@@ -47,9 +46,8 @@ todays_weather = weather.todays_weather() #give the weather of the day
 
 while zoo_is_alive == 1:
 
-    #calculate time until new day
     current_time = time.time()
-    time_left = current_time - day_start_time
+    time_left = current_time - day_start_time #calculate time until new day
 
     if time_left >= day_lenght_sec:
         active_days += 1
@@ -60,7 +58,7 @@ while zoo_is_alive == 1:
             animal.health -= 1
             animal.bad_care_penalty()
 
-        day_start_time = time.time
+        day_start_time = time.time()
     
     todays_weather = weather.todays_weather() 
 
@@ -86,7 +84,7 @@ while zoo_is_alive == 1:
     print(monkey.mood)
     print(monkey.health)
 
-    user_input = input("pick a number \n")
+    user_input = take_user_input()
 
     if user_input == "1":
         print("\n================ Feed animlas ================")
@@ -94,63 +92,51 @@ while zoo_is_alive == 1:
         print("2. Lion")
         print("3. Dolphin")
         print("========================================")
-        user_input = input("pick a number \n")
+        
+        user_input = take_user_input()
         
         if user_input == "1":
             pick_food(food)
-            user_input = input("pick a number \n")
+            user_input = take_user_input
 
             if user_input == "1":
                 monkey.feed_animal(2)
                 print(f"\n{monkey.animal_type} got happy")
                 time.sleep(1.5)
      
-            elif user_input == "2" or user_input == "3" :
+            elif user_input == "2" or user_input == "3" or user_input == "4":
                 print(monkey.animal_type, "got disappointed")
                 time.sleep(1.5)            
-            else:
-                print("Not a valid option")
-                time.sleep(1)
+
 
      
         elif user_input == "2":
             pick_food(food)
-            user_input = input("pick a number \n")            
+            user_input = take_user_input           
             
             if user_input == "2":            
                 lion.feed_animal(2)
                 print(f"\n{lion.animal_type} got happy")
                 time.sleep(1.5)
             
-            elif user_input == "1" or user_input == "3" :
+            elif user_input == "1" or user_input == "3" or user_input == "4" :
                 print(lion.animal_type, "got disappointed")
                 time.sleep(1.5)   
 
-            else:
-                print("Not a valid option")
-                time.sleep(1)
 
         elif user_input == "3":
             pick_food(food)
-            user_input = input("pick a number \n")            
+            user_input = take_user_input           
             
             if user_input == "3":            
                 dolphin.feed_animal(2)
                 print(f"\n{dolphin.animal_type} got happy")
                 time.sleep(1.5)
             
-            elif user_input == "1" or "2":    
+            elif user_input == "1" or "2" or user_input == "4":    
                 print(dolphin.animal_type, "got disappointed")
                 time.sleep(1.5)
-            
-            else:            
-                print("Not a valid option")
-                time.sleep(1)
-                           
-        else:
-            print("Not a valid option")
-            time.sleep(1)
-
+                                   
     elif user_input == "2":
         active_days += 1
         
@@ -171,14 +157,11 @@ while zoo_is_alive == 1:
         for animal in animals:
             print(animal.animal_behaviour())
             time.sleep(2)
-        time.sleep(2)
+        time.sleep(1)
    
     elif user_input == "4":
         print("Good Bye")
         time.sleep(1)     
         break           
    
-    else:
-        print("Not a valid option") #handel user input error
-        time.sleep(1)
 
