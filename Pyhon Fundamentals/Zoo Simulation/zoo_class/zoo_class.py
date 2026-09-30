@@ -139,16 +139,18 @@ class people:
     def __init__(self, role):
         self.name = role
     
-    def cheer():
-        print("Visitors are excited and applauding!")
-
 class Visitors(people):
-    def __init__(self, role):
+    def __init__(self, role, amount):
+        self.amount = amount
         super().__init__(role)
 
     def amount_visitors(self):
         self.amount = random.randint(10,20)
         return self.amount
+    
+    def cheer(self):
+        print ("Visitors are excited and applauding!")
+
 
 class ZooKeeper(people):
     def __init__(self, role):

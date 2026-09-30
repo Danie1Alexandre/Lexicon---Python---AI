@@ -12,7 +12,7 @@ from zoo_functions.zoo_functions import end_game_condition
 from zoo_functions.zoo_functions import run_animal_behaviour
 
                    
-monkey = Monkey("Monkey \U0001f435", 5, 5, 1)   # \U0001f435 Unicode-code for emoji
+monkey = Monkey("Monkey \U0001f435", 5, 5, 3)   # \U0001f435 Unicode-code for emoji
 lion = Lion("Lion \U0001f981", 5, 5, 1)
 dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 animals =[monkey, lion, dolphin]
@@ -147,6 +147,9 @@ while zoo_is_alive == 1:
         time.sleep(1)
         if visitors.amount > 15:
             print(monkey.animal_behaviour(visitors.amount))
+            if monkey.mood >= 4:
+                visitors.cheer()
+                time.sleep(0.5)
             time.sleep(3)
 
     #watch animals
