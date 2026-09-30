@@ -69,7 +69,7 @@ while zoo_is_alive == 1:
     
     for animal in animals:
         print(animal.weather_effect(todays_weather))
-        time.sleep(2)
+
 
     print("\n================ MENY ================")
     print("1. Feed animlas")

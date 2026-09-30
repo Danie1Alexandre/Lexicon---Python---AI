@@ -60,6 +60,7 @@ class Monkey(Animal):
     
     def animal_behaviour(self,visitors_amount = 0):
         if visitors_amount > 15:
+            self.mood +=2
             return f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!"
         else:
             return f"The {self.animal_type} swings between the branches!"    
@@ -137,10 +138,12 @@ class Weather:
 class people:
     def __init__(self, role):
         self.name = role
+    
+    def cheer():
+        print("Visitors are excited and applauding!")
 
 class Visitors(people):
-    def __init__(self, role, amount):
-        self.amount = amount
+    def __init__(self, role):
         super().__init__(role)
 
     def amount_visitors(self):
