@@ -15,15 +15,22 @@ class Animal:
         if weather in ["Sunny", "Clear"]:
             return f"{self.animal_type} feels happy in the sun. Mood increased."
 
-        elif weather in ["Rainy", "Snowy"]:
+        elif weather in ["Rainy"]:
             return f"{self.animal_type} gets damp and a bit sad. Mood decreased."  
+        
+        elif weather in ["Snowy"]:
+            return f"{self.animal_type} gets cold and a bit sad. Mood decreased."  
       
         elif weather in ["Thunderstorm", "Stormy"]:
             return f"{self.animal_type} takes damage and is scared!"
             
         else:
             return f"{self.animal_type} is doing fine." 
-
+        
+    def apply_weather_effect(self,weather):
+        if weather in ["Rainy", "Snowy"]:
+            self.mood -=1
+    
     def animal_behaviour(self):
         return f" The {self.animal_type} moves around quietly."  
     
@@ -66,7 +73,19 @@ class Dolphin(Animal):
     
     def animal_behaviour(self):
         return f"The {self.animal_type} jumps high in the air and splashes!"
-
+    
+    def weather_effect(self, weather):
+        if weather in ["Rainy"]:
+            return f"🐬 {self.animal_type} loves the splashy rain! Mood increased."
+        else:
+            return super().weather_effect(weather)
+    
+    def apply_weather_effect(self, weather): # dolpin gets it own effect on rain, Polymorphism 
+        if weather in "Rainy":
+            self.mood += 1 
+        else:
+            return super().apply_weather_effect(weather)
+    
 class Weather:
    
     def __init__(self):
@@ -91,7 +110,8 @@ class Weather:
 
         elif weather in ["Rainy", "Snowy"]:
             for animal in animals:
-                animal.mood -= 1
+                animal.apply_weather_effect(weather)
+
             if weather == "Snowy":
                 return f"❄️  The weather is {weather}."  
             else:                    
