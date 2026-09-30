@@ -6,6 +6,8 @@ from zoo_class.zoo_class import Dolphin
 from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
+from zoo_functions.zoo_functions import end_game_condition
+
 from zoo_class.zoo_class import Weather
                    
 monkey = Monkey("Monkey \U0001f435", 5, 5, 1)   # \U0001f435 Unicode-code for emoji
@@ -33,10 +35,10 @@ print_separator()
 print("\nZOO SIMULATION")
 print("use only numbers 1-4 for inputs")
 print_separator()
-#time.sleep(3) # sleep improves game flow by slowing it down
+time.sleep(3) # sleep improves game flow by slowing it down
 
 print(f"\n================  DAY {active_days} HAS STARTED ================")
-#time.sleep(2)
+time.sleep(2)
 todays_weather = weather.todays_weather() #give the weather of the day
 
 while zoo_is_alive == 1:
@@ -53,8 +55,10 @@ while zoo_is_alive == 1:
             animal.health -= 1
             animal.bad_care_penalty()
 
+        end_game_condition(animals)       
+        
         day_start_time = time.time()
-    
+
     todays_weather = weather.todays_weather() 
 
     print(f"\n================ WEATHER TODAY ================")
@@ -92,7 +96,7 @@ while zoo_is_alive == 1:
         
         if user_input == "1":
             pick_food(food)
-            user_input = take_user_input
+            user_input = take_user_input()
 
             if user_input == "1":
                 monkey.feed_animal(2)
@@ -105,7 +109,7 @@ while zoo_is_alive == 1:
 
         elif user_input == "2":
             pick_food(food)
-            user_input = take_user_input           
+            user_input = take_user_input()           
             
             if user_input == "2":            
                 lion.feed_animal(2)
@@ -119,7 +123,7 @@ while zoo_is_alive == 1:
 
         elif user_input == "3":
             pick_food(food)
-            user_input = take_user_input           
+            user_input = take_user_input()           
             
             if user_input == "3":            
                 dolphin.feed_animal(2)
@@ -129,21 +133,14 @@ while zoo_is_alive == 1:
             elif user_input == "1" or "2" or user_input == "4":    
                 print(dolphin.animal_type, "got disappointed")
                 time.sleep(1.5)
-                                   
-    elif user_input == "2":
-        active_days += 1
-        
-        print("zoo open")
-        
-        for animal in animals:
-            animal.health -= 1           
-            if animal.health < 1:
-                print("oh no, the animals did not get enough food")                
-                print("================ Game Over ================")
-                zoo_is_alive = 0
-
-                break
     
+    # open zoo                               
+    elif user_input == "2":
+        for animal in animals:        
+            animal.health -= 1       
+        print("zoo open")
+
+    #watch animals
     elif user_input == "3":
         print("================ Watching Animals ================")
         print()

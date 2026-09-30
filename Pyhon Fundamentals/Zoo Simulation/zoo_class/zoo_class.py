@@ -76,7 +76,7 @@ class Dolphin(Animal):
     
     def weather_effect(self, weather):
         if weather in ["Rainy"]:
-            return f"🐬 {self.animal_type} loves the splashy rain! Mood increased."
+            return f"{self.animal_type} loves the splashy rain! Mood increased."
         else:
             return super().weather_effect(weather)
     

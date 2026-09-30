@@ -1,3 +1,6 @@
+import sys
+import time
+
 def print_separator():
      print("_"*40)
 
@@ -12,9 +15,7 @@ def pick_food(food):
 
 
 def take_user_input(): #handel user input error
-     import time
      x = 1
-
      while x == 1:
           user_input = input("pick a number \n")
           
@@ -33,3 +34,13 @@ def take_user_input(): #handel user input error
           else:
                print("Not a valid option")
                time.sleep(1)
+
+def end_game_condition(animals):
+     for animal in animals:        
+          if animal.health < 1:
+               print(f"oh no, {animal.animal_type} did not get enough food  or care!")                
+               print("================ Game Over ================")
+               sys.exit()
+
+
+
