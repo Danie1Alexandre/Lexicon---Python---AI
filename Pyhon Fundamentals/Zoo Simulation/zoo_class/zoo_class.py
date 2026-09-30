@@ -65,15 +65,14 @@ class Monkey(Animal):
             self.mood +=2
             special_behaviours = [
                 "The monkeys got incredibly lively, chattering happily and waving back at the big crowd of visitors!",
-                "Energized by the large crowd, the monkeys started clapping their hands and playfully mimicking the visitors!"
+                "Energized by the large crowd, the monkeys started clapping their hands and playfully mimicking the visitors!",
+                "enjoyed the crowd of visitors and started doing acrobatic flips to show off!"
             ]
-            if self.mood >= 4: 
-                print (f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!")
-                time.sleep(1)
-                reaction = visitors.cheer()
-                return reaction
-            else:
-                return f"The {self.animal_type} {random.choice(special_behaviours)}"
+            print (f"The {self.animal_type} {random.choice(special_behaviours)}")
+            time.sleep(1)
+            reaction = visitors.cheer()
+            return reaction
+
              
         else:
             behaviours = [
@@ -179,7 +178,7 @@ class Visitors(people):
         super().__init__(role)
 
     def amount_visitors(self):
-        self.amount = random.randint(19,20)
+        self.amount = random.randint(10,20)
         return self.amount
     
     def cheer(self):

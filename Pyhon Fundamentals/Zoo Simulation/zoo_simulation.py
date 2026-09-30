@@ -145,11 +145,6 @@ while zoo_is_alive == 1:
         time.sleep(3)
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
-        if visitors.amount > 14 and  monkey.mood >= 4:
-            print(monkey.animal_behaviour(visitors))
-            time.sleep(2)
-            visitors.cheer()
-            
 
     #watch animals
     elif user_input == "3":
