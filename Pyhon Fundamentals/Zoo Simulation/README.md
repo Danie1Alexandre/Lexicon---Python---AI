@@ -10,11 +10,11 @@ where you manage a zoo featuring various animals.
 
 * **Interactive Menu:** Feed animals the correct type of food, open the park, or observe their behavior.
 
-* **Dynamic visitors :** visitors can react on animal behaviors
+* **Dynamic visitors :** if condtions are meet visitors can react on animal behaviors
 
 ## Project Structure
 * `Zoo Simulation.py` - The main program running the `while` loop and the time system.
-* `zoo_class/` - Contains the classes for `Animal`, its subclasses, `people` and `Weather`.
+* `zoo_class/` - Contains the classes for `Animal`, its subclasses, `People`, its subclasses and `Weather`.
 
 * `zoo_functions/` - Contains helper functions for menus and game-over scenarios.
 

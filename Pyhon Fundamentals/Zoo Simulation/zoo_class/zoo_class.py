@@ -59,27 +59,48 @@ class Monkey(Animal):
         super().__init__(animal_type, health, hunger, mood)
     
     def animal_behaviour(self,visitors_amount = 0):
-        if visitors_amount > 15:
+        if visitors_amount > 14:
             self.mood +=2
             return f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!"
         else:
-            return f"The {self.animal_type} swings between the branches!"    
-     
+            behaviours = [
+                f"swings between the branches!",
+                f"is scratching its head while carefully peeling a hidden banana.",
+                f"is making funny faces and pointing at you through the glass!"
+            ]
+
+            return f"The {self.animal_type} {random.choice(behaviours)}"
+
 class Lion(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
 
     def animal_behaviour(self, visitors_amount = 0):
-        return f"The {self.animal_type} roars loudly!"
-    
+        if visitors_amount > 19:
+            return f"The {self.animal_type} paces back and forth proudly for the large crowd!"
+        else:
+            behaviours = [
+                "roars loudly!",
+                "stretches its heavy paws and takes a lazy nap in the sun.",
+                "sharpens its claws against a large wooden log."
+            ]
+            return f"The {self.animal_type} {random.choice(behaviours)}"
 
 class Dolphin(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
     
-    def animal_behaviour(self, visitors_amount = 0):
-        return f"The {self.animal_type} jumps high in the air and splashes!"
-    
+    def animal_behaviour(self, visitors_amount=0):
+        if visitors_amount > 17:
+            return f"The {self.animal_type} does extra high jumps to please the huge crowd!"
+        else:
+            behaviours = [
+                "jumps high in the air and splashes!",
+                "swims in fast, elegant circles around the pool.",
+                "blows a perfect ring of bubbles through its blowhole!"
+            ]
+            return f"The {self.animal_type} {random.choice(behaviours)}"
+  
     def weather_effect(self, weather):
         if weather in ["Rainy"]:
             return f"{self.animal_type} loves the splashy rain! Mood increased."

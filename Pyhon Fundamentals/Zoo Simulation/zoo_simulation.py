@@ -147,6 +147,7 @@ while zoo_is_alive == 1:
         time.sleep(1)
         if visitors.amount > 15:
             print(monkey.animal_behaviour(visitors.amount))
+            time.sleep(2)
             if monkey.mood >= 4:
                 visitors.cheer()
                 time.sleep(0.5)
