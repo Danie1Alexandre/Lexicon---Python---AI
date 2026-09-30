@@ -3,12 +3,12 @@ from zoo_class.zoo_class import Animal
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
+from zoo_class.zoo_class import Weather
 from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
 from zoo_functions.zoo_functions import end_game_condition
 
-from zoo_class.zoo_class import Weather
                    
 monkey = Monkey("Monkey \U0001f435", 5, 5, 1)   # \U0001f435 Unicode-code for emoji
 lion = Lion("Lion \U0001f981", 5, 5, 1)
@@ -28,7 +28,7 @@ food = ["banana", "chicken", "fish"]
 zoo_is_alive = 1
 weather = Weather()
 active_days = 1
-day_lenght_sec = 60
+day_lenght_sec = 30
 day_start_time = time.time()
 
 print_separator()
@@ -73,7 +73,7 @@ while zoo_is_alive == 1:
     print("2. open the zoo")
     print("3. watch animals")
     print("4. close")
-    print("\nAnimal Mood")
+    print("\nAnimal Stats")
     
     for animal in animals:
         print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="  | ")

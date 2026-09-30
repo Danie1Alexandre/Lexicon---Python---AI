@@ -38,7 +38,7 @@ def take_user_input(): #handel user input error
 def end_game_condition(animals):
      for animal in animals:        
           if animal.health < 1:
-               print(f"oh no, {animal.animal_type} did not get enough food  or care!")                
+               print(f"oh no, {animal.animal_type}  did not get enough food or care!")                
                print("================ Game Over ================")
                sys.exit()
 
