@@ -33,7 +33,7 @@ class Animal:
         if weather in ["Rainy", "Snowy"]:
             self.mood -=1
     
-    def animal_behaviour(self):
+    def animal_behaviour(self, visitors_amount = 0):
         return f" The {self.animal_type} moves around quietly."  
     
     def mood_check(self):
@@ -58,14 +58,17 @@ class Monkey(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
     
-    def animal_behaviour(self):
-        return f"The {self.animal_type} swings between the branches!" 
+    def animal_behaviour(self,visitors_amount = 0):
+        if visitors_amount > 15:
+            return f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!"
+        else:
+            return f"The {self.animal_type} swings between the branches!"    
      
 class Lion(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
 
-    def animal_behaviour(self):
+    def animal_behaviour(self, visitors_amount = 0):
         return f"The {self.animal_type} roars loudly!"
     
 
@@ -73,7 +76,7 @@ class Dolphin(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
     
-    def animal_behaviour(self):
+    def animal_behaviour(self, visitors_amount = 0):
         return f"The {self.animal_type} jumps high in the air and splashes!"
     
     def weather_effect(self, weather):
@@ -141,8 +144,8 @@ class Visitors(people):
         super().__init__(role)
 
     def amount_visitors(self):
-        amount = random.randint(10,20)
-        return amount
+        self.amount = random.randint(10,20)
+        return self.amount
 
 class ZooKeeper(people):
     def __init__(self, role):

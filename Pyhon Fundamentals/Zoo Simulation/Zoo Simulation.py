@@ -37,7 +37,7 @@ print_separator()
 print("\nZOO SIMULATION")
 print("use only numbers 1-4 for inputs")
 print_separator()
-time.sleep(3) # sleep improves game flow by slowing it down
+time.sleep(2) # sleep improves game flow by slowing it down
 
 print(f"\n================  DAY {active_days} HAS STARTED ================")
 time.sleep(2)
@@ -69,6 +69,7 @@ while zoo_is_alive == 1:
     
     for animal in animals:
         print(animal.weather_effect(todays_weather))
+        time.sleep(2)
 
     print("\n================ MENY ================")
     print("1. Feed animlas")
@@ -138,13 +139,16 @@ while zoo_is_alive == 1:
     
     # open zoo                               
     elif user_input == "2":
-        print(f"zoo open the whater is {todays_weather} the zoo have {visitors.amount_visitors()} ")
+        print(f"Zoo open the weather is {todays_weather}")
+        time.sleep(1)
+        print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
-        
-        
-        
-        for animal in animals:        
-            animal.health -= 1 
+        run_animal_behaviour(animals)
+        time.sleep(1)
+        if visitors.amount > 15:
+            print(monkey.animal_behaviour(visitors.amount))
+            time.sleep(3)
+
     #watch animals
     elif user_input == "3":
         print("================ Watching Animals ================")
