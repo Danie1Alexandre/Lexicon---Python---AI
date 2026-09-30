@@ -11,7 +11,7 @@ def pick_food(food):
 # def feed_animals(animal_type)
 
 
-def take_user_input():
+def take_user_input(): #handel user input error
      import time
      x = 1
 
@@ -30,7 +30,6 @@ def take_user_input():
           elif user_input == "4":
                return user_input
                x = 0
-          
           else:
-               print("Not a valid option") #handel user input error
+               print("Not a valid option")
                time.sleep(1)

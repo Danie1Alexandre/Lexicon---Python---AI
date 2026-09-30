@@ -15,7 +15,7 @@ class Animal:
         if weather in ["Sunny", "Clear"]:
             return f"{self.animal_type} feels happy in the sun. Mood increased."
 
-        elif weather in ["Rainy", "snowy"]:
+        elif weather in ["Rainy", "Snowy"]:
             return f"{self.animal_type} gets damp and a bit sad. Mood decreased."  
       
         elif weather in ["Thunderstorm", "Stormy"]:
@@ -89,10 +89,13 @@ class Weather:
                 animal.mood += 1
             return f"☀️  The weather is {weather}."
 
-        elif weather in ["Rainy", "snowy"]:
+        elif weather in ["Rainy", "Snowy"]:
             for animal in animals:
                 animal.mood -= 1
-            return f"🌧️  The weather is {weather}."  
+            if weather == "Snowy":
+                return f"❄️  The weather is {weather}."  
+            else:                    
+                return f"🌧️  The weather is {weather}."  
 
         elif weather in ["Thunderstorm", "Stormy"]:
 

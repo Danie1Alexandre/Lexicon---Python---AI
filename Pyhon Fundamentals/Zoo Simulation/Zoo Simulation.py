@@ -7,11 +7,8 @@ from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
 from zoo_class.zoo_class import Weather
-
-
-zoo_is_alive = 1
-
-monkey = Monkey("Monkey \U0001f435", 5, 5, 1)
+                   
+monkey = Monkey("Monkey \U0001f435", 5, 5, 1)   # \U0001f435 Unicode-code for emoji
 lion = Lion("Lion \U0001f981", 5, 5, 1)
 dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 
@@ -24,12 +21,10 @@ animals =[monkey, lion, dolphin]
 # ]
 
 
-
 food = ["banana", "chicken", "fish"]
 
-
+zoo_is_alive = 1
 weather = Weather()
-
 active_days = 1
 day_lenght_sec = 60
 day_start_time = time.time()
@@ -38,10 +33,10 @@ print_separator()
 print("\nZOO SIMULATION")
 print("use only numbers 1-4 for inputs")
 print_separator()
-time.sleep(3) # sleep improves game flow by slowing it down
+#time.sleep(3) # sleep improves game flow by slowing it down
 
 print(f"\n================  DAY {active_days} HAS STARTED ================")
-time.sleep(2)
+#time.sleep(2)
 todays_weather = weather.todays_weather() #give the weather of the day
 
 while zoo_is_alive == 1:
@@ -108,8 +103,6 @@ while zoo_is_alive == 1:
                 print(monkey.animal_type, "got disappointed")
                 time.sleep(1.5)            
 
-
-     
         elif user_input == "2":
             pick_food(food)
             user_input = take_user_input           
