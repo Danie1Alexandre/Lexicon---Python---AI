@@ -1,3 +1,5 @@
+import random
+
 class Animal:
     def __init__(self, animal_type, health, hunger, mood):
         self.animal_type = animal_type
@@ -98,7 +100,6 @@ class Weather:
         ]
 
     def todays_weather(self): 
-        import random
         return random.choice(self.weather_types)
     
     def weather_effect(self, weather, animals):
@@ -130,7 +131,26 @@ class Weather:
     
     
 #-----------------------------------
-# class people:
-#     def __init__(self, role):
-#         self.name = role
+class people:
+    def __init__(self, role):
+        self.name = role
+
+class Visitors(people):
+    def __init__(self, role, amount):
+        self.amount = amount
+        super().__init__(role)
+
+    def amount_visitors(self):
+        amount = random.randint(10,20)
+        return amount
+
+class ZooKeeper(people):
+    def __init__(self, role):
+        super().__init__(role)
+
+class TroubelMaker(people):
+    def __init__(self, role):
+        super().__init__(role)
+
+
 
