@@ -73,9 +73,9 @@ while zoo_is_alive == 1:
 
     print("\n================ MENY ================")
     print("1. Feed animlas")
-    print("2. open the zoo")
-    print("3. watch animals")
-    print("4. close")
+    print("2. Open the zoo")
+    print("3. Watch animals")
+    print("4. Close")
     print("\nAnimal Stats")
     
     for animal in animals:
@@ -143,15 +143,13 @@ while zoo_is_alive == 1:
         time.sleep(1)
         print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
-        run_animal_behaviour(animals)
+        run_animal_behaviour(animals,visitors)
         time.sleep(1)
-        if visitors.amount > 15:
-            print(monkey.animal_behaviour(visitors.amount))
+        if visitors.amount > 14 and  monkey.mood >= 4:
+            print(monkey.animal_behaviour(visitors))
             time.sleep(2)
-            if monkey.mood >= 4:
-                visitors.cheer()
-                time.sleep(0.5)
-            time.sleep(3)
+            visitors.cheer()
+            
 
     #watch animals
     elif user_input == "3":

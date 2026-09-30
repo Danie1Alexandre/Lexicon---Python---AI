@@ -1,4 +1,5 @@
 import random
+import time
 
 class Animal:
     def __init__(self, animal_type, health, hunger, mood):
@@ -58,10 +59,22 @@ class Monkey(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
     
-    def animal_behaviour(self,visitors_amount = 0):
-        if visitors_amount > 14:
+    def animal_behaviour(self, visitors = None):
+        
+        if visitors.amount > 14:
             self.mood +=2
-            return f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!"
+            special_behaviours = [
+                "The monkeys got incredibly lively, chattering happily and waving back at the big crowd of visitors!",
+                "Energized by the large crowd, the monkeys started clapping their hands and playfully mimicking the visitors!"
+            ]
+            if self.mood >= 4: 
+                print (f"The {self.animal_type} enjoyed the crowd of visitors and started doing acrobatic flips to show off!")
+                time.sleep(1)
+                reaction = visitors.cheer()
+                return reaction
+            else:
+                return f"The {self.animal_type} {random.choice(special_behaviours)}"
+             
         else:
             behaviours = [
                 f"swings between the branches!",
@@ -75,8 +88,8 @@ class Lion(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
 
-    def animal_behaviour(self, visitors_amount = 0):
-        if visitors_amount > 19:
+    def animal_behaviour(self, visitors = None):
+        if visitors.amount > 19:
             return f"The {self.animal_type} paces back and forth proudly for the large crowd!"
         else:
             behaviours = [
@@ -90,8 +103,8 @@ class Dolphin(Animal):
     def __init__(self, animal_type, health, hunger, mood):
         super().__init__(animal_type, health, hunger, mood)
     
-    def animal_behaviour(self, visitors_amount=0):
-        if visitors_amount > 17:
+    def animal_behaviour(self,visitors = None):
+        if visitors.amount > 17:
             return f"The {self.animal_type} does extra high jumps to please the huge crowd!"
         else:
             behaviours = [
@@ -166,11 +179,11 @@ class Visitors(people):
         super().__init__(role)
 
     def amount_visitors(self):
-        self.amount = random.randint(10,20)
+        self.amount = random.randint(19,20)
         return self.amount
     
     def cheer(self):
-        print ("Visitors are excited and applauding!")
+        return "Visitors are excited and applauding!"
 
 
 class ZooKeeper(people):

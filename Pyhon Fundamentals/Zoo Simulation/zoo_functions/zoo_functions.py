@@ -42,7 +42,7 @@ def end_game_condition(animals):
                print("================ Game Over ================")
                sys.exit()
 
-def run_animal_behaviour(animals):
+def run_animal_behaviour(animals,visitors = None):
      for animal in animals:
-          print(animal.animal_behaviour())
+          print(animal.animal_behaviour(visitors))
           time.sleep(2)
