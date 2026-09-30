@@ -43,4 +43,7 @@ def end_game_condition(animals):
                sys.exit()
 
 
-
+def run_animal_behaviour(animals):
+     for animal in animals:
+          print(animal.animal_behaviour())
+          time.sleep(2)

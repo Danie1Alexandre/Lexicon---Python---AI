@@ -9,6 +9,7 @@ from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
 from zoo_functions.zoo_functions import end_game_condition
+from zoo_functions.zoo_functions import run_animal_behaviour
 
                    
 monkey = Monkey("Monkey \U0001f435", 5, 5, 1)   # \U0001f435 Unicode-code for emoji
@@ -148,9 +149,7 @@ while zoo_is_alive == 1:
     elif user_input == "3":
         print("================ Watching Animals ================")
         print()
-        for animal in animals:
-            print(animal.animal_behaviour())
-            time.sleep(2)
+        run_animal_behaviour(animals)
         time.sleep(1)
    
     elif user_input == "4":
