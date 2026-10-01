@@ -1,10 +1,13 @@
 import time
+import random
 from zoo_class.zoo_class import Animal
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
 from zoo_class.zoo_class import Weather
 from zoo_class.zoo_class import Visitors
+from zoo_class.zoo_class import TroubelMaker
+
 from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
 from zoo_functions.zoo_functions import pick_food
@@ -17,6 +20,7 @@ lion = Lion("Lion \U0001f981", 5, 5, 1)
 dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 animals =[monkey, lion, dolphin]
 visitors = Visitors ("visitors", 10)
+troubelMaker = TroubelMaker("TroubelMaker")
 
 # animals2 = [
 #     Monkey("Monkey \U0001f435" , "sad", 1),
@@ -139,6 +143,20 @@ while zoo_is_alive == 1:
         time.sleep(1)
         print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
+        if random.random() < 0.90:
+            
+            print(troubelMaker.make_loud_noise())
+            time.sleep(1)
+
+            for animal in animals:
+                animal.mood -= 1
+                print_separator
+                print(f"{animal.animal_type}'s mood dropped because of the noise.")
+                time.sleep(1)
+
+                
+
+
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
         print (visitors.cheer())

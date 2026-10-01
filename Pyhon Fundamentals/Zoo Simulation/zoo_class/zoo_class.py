@@ -233,9 +233,14 @@ class Visitors(people):
 #     def __init__(self, role):
 #         super().__init__(role)
 
-# class TroubelMaker(people):
-#     def __init__(self, role):
-#         super().__init__(role)
+class TroubelMaker(people):
+    def __init__(self, role):
+        super().__init__(role)
+    
+    def make_loud_noise(self):
+        return "🚨 A hooligan makes a loud noise, scaring the animals!"
+        
+        
 
 
 
