@@ -142,7 +142,7 @@ while zoo_is_alive == 1:
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
         print (visitors.cheer())
-        time.sleep(2)
+        time.sleep(3)
 
     #watch animals
     elif user_input == "3":

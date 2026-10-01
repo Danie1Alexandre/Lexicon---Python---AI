@@ -1,6 +1,7 @@
 import random
 import time
 from zoo_functions.zoo_functions import print_separator
+
 class Animal:
     def __init__(self, animal_type, health, hunger, mood):
         self.animal_type = animal_type
@@ -14,23 +15,6 @@ class Animal:
         self.hunger += 1
         self.mood += 1
     
-    def weather_effect(self, weather):
-        if weather in ["Sunny", "Clear"]:
-            return f"{self.animal_type} feels happy in the sun. Mood increased."
-
-        elif weather in ["Rainy"]:
-            return f"{self.animal_type} gets damp and a bit sad. Mood decreased."  
-        
-        elif weather in ["Snowy"]:
-            return f"{self.animal_type} gets cold and a bit sad. Mood decreased."  
-      
-        elif weather in ["Thunderstorm", "Stormy"]:
-            return f"{self.animal_type} takes damage and is scared!"
-            
-        else:
-            return f"{self.animal_type} is doing fine." 
-        
-
     def weather_effect(self, weather):
         if weather in ["Sunny", "Clear"]:
             variations = [
@@ -72,12 +56,17 @@ class Animal:
             ]
             return random.choice(variations)
 
-
-
-        
+   
     def apply_weather_effect(self,weather):
         if weather in ["Rainy", "Snowy"]:
             self.mood -=1
+
+        elif weather in ["Sunny", "Clear"]:
+            self.mood += 1
+
+        elif weather in ["Thunderstorm", "Stormy"]:
+            self.mood -= 1
+            self.health -= 1
     
     def animal_behaviour(self, visitors_amount = 0):
         return f" The {self.animal_type} moves around quietly."  
@@ -190,7 +179,7 @@ class Weather:
         #weather effects animal class using this method    
         if weather in ["Sunny", "Clear"]:
             for animal in animals:
-                animal.mood += 1
+                animal.apply_weather_effect(weather)            
             return f"☀️  The weather is {weather}."
 
         elif weather in ["Rainy", "Snowy"]:
@@ -205,8 +194,8 @@ class Weather:
         elif weather in ["Thunderstorm", "Stormy"]:
 
             for animal in animals:
-                animal.mood -= 1
-                animal.health -= 1
+                animal.apply_weather_effect(weather)
+                
             return f"⚡  EXTREME WEATHER! {weather}."
             
         else:
