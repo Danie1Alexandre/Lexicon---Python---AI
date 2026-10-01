@@ -95,7 +95,7 @@ class Monkey(Animal):
     
     def animal_behaviour(self, visitors = None):
         
-        if visitors.amount > 14:
+        if visitors.amount > 14 and self.mood > 2:
             self.mood +=2
             special_behaviours = [
                 "The monkeys got incredibly lively, chattering happily and waving back at the big crowd of visitors!",
@@ -229,9 +229,9 @@ class Visitors(people):
         return random.choice(reactions)
 
 
-# class ZooKeeper(people):
-#     def __init__(self, role):
-#         super().__init__(role)
+class ZooKeeper(people):
+    def __init__(self, role):
+        super().__init__(role)
 
 class TroubelMaker(people):
     def __init__(self, role):
@@ -241,6 +241,21 @@ class TroubelMaker(people):
         return "🚨 A hooligan makes a loud noise, scaring the animals!"
         
         
+class Broom():
+    def __init__(self, emoji):
+        self.emoji = emoji
+
+
+class ZooKeeper(people):
+    def __init__(self, role):
+        super().__init__(role)
+        self.brew_stick = Broom("\U0001f9f9 ")
+
+    def clean_the_zoo(self):
+        print(f"{self.brew_stick.emoji} The ZooKeeper is cleaning the zoo!")
+    
+    def swing_in_the_air(self):
+        print(f"{self.brew_stick.emoji} swooosh! The ZooKeeper swings his broom in the air")
 
 
 

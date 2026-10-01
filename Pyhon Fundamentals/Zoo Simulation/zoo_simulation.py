@@ -143,7 +143,7 @@ while zoo_is_alive == 1:
         time.sleep(1)
         print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
-        if random.random() < 0.90:
+        if random.random() < 0.20:
             
             print(troubelMaker.make_loud_noise())
             time.sleep(1)
@@ -153,9 +153,6 @@ while zoo_is_alive == 1:
                 print_separator
                 print(f"{animal.animal_type}'s mood dropped because of the noise.")
                 time.sleep(1)
-
-                
-
 
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
