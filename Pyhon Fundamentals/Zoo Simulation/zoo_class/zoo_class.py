@@ -1,6 +1,6 @@
 import random
 import time
-
+from zoo_functions.zoo_functions import print_separator
 class Animal:
     def __init__(self, animal_type, health, hunger, mood):
         self.animal_type = animal_type
@@ -29,6 +29,51 @@ class Animal:
             
         else:
             return f"{self.animal_type} is doing fine." 
+        
+
+    def weather_effect(self, weather):
+        if weather in ["Sunny", "Clear"]:
+            variations = [
+                f"{self.animal_type} feels happy in the sun. Mood increased.",
+                f"{self.animal_type} is soaking up the sun and stretching out comfortably. Mood increased.",
+                f"{self.animal_type} is full of energy thanks to the clear sky! Mood increased."
+            ]
+            return random.choice(variations)
+
+        elif weather in ["Rainy"]:
+            variations = [
+                f"{self.animal_type} gets damp and a bit sad. Mood decreased.",
+                f"{self.animal_type} is trying to shake off the rainwater and looks grumpy. Mood decreased.",
+                f"{self.animal_type} huddles under a shelter to escape the drizzle. Mood decreased."
+            ]
+            return random.choice(variations)
+        
+        elif weather in ["Snowy"]:
+            variations = [
+                f"{self.animal_type} gets cold and a bit sad. Mood decreased.",
+                f"{self.animal_type} is shivering from the freezing snow. Mood decreased.",
+                f"{self.animal_type} looks blankly at the falling snowflakes. Mood decreased."
+            ]
+            return random.choice(variations)
+    
+        elif weather in ["Thunderstorm", "Stormy"]:
+            variations = [
+                f"{self.animal_type} takes damage and is scared!",
+                f"The loud thunder startles {self.animal_type}! Stress causes damage!",
+                f"Harsh winds and lightning strike the area! {self.animal_type} loses health!"
+            ]
+            return random.choice(variations)
+            
+        else:
+            variations = [
+                f"{self.animal_type} is doing fine.",
+                f"The weather is a bit dull, but {self.animal_type} is relaxed.",
+                f"{self.animal_type} is just chilling out in the calm weather."
+            ]
+            return random.choice(variations)
+
+
+
         
     def apply_weather_effect(self,weather):
         if weather in ["Rainy", "Snowy"]:
@@ -70,6 +115,8 @@ class Monkey(Animal):
             ]
             print (f"The {self.animal_type} {random.choice(special_behaviours)}")
             time.sleep(1)
+            print_separator()
+            print()
             reaction = visitors.cheer()
             return reaction
 

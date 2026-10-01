@@ -34,7 +34,7 @@ day_lenght_sec = 30
 day_start_time = time.time()
 
 print_separator()
-print("\nZOO SIMULATION")
+print("\n================ ZOO SIMULATION ================")
 print("use only numbers 1-4 for inputs")
 print_separator()
 time.sleep(2) # sleep improves game flow by slowing it down
@@ -70,7 +70,6 @@ while zoo_is_alive == 1:
     for animal in animals:
         print(animal.weather_effect(todays_weather))
 
-
     print("\n================ MENY ================")
     print("1. Feed animlas")
     print("2. Open the zoo")
@@ -79,12 +78,9 @@ while zoo_is_alive == 1:
     print("\nAnimal Stats")
     
     for animal in animals:
-        print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="|")
-
+        print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="| ")
 
     print("\n========================================")
-    print(monkey.mood)
-    print(monkey.health)
 
     user_input = take_user_input()
 
@@ -145,12 +141,14 @@ while zoo_is_alive == 1:
         time.sleep(3)
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
+        print (visitors.cheer())
+        time.sleep(2)
 
     #watch animals
     elif user_input == "3":
         print("================ Watching Animals ================")
         print()
-        run_animal_behaviour(animals)
+        run_animal_behaviour(animals,visitors)
         time.sleep(1)
    
     elif user_input == "4":

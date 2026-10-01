@@ -45,4 +45,6 @@ def end_game_condition(animals):
 def run_animal_behaviour(animals,visitors = None):
      for animal in animals:
           print(animal.animal_behaviour(visitors))
+          print_separator()
+          print()
           time.sleep(2)
