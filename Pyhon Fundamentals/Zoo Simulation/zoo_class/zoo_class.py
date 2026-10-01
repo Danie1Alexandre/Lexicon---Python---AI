@@ -182,16 +182,23 @@ class Visitors(people):
         return self.amount
     
     def cheer(self):
-        return "Visitors are excited and applauding!"
+        
+        reactions = [
+            "Visitors are excited and applauding!",
+            "The crowd gasps in awe and dozens of cameras start flashing!",
+            "The visitors burst into loud cheers and wave back enthusiastically!"
+        ]  
+        
+        return random.choice(reactions)
 
 
-class ZooKeeper(people):
-    def __init__(self, role):
-        super().__init__(role)
+# class ZooKeeper(people):
+#     def __init__(self, role):
+#         super().__init__(role)
 
-class TroubelMaker(people):
-    def __init__(self, role):
-        super().__init__(role)
+# class TroubelMaker(people):
+#     def __init__(self, role):
+#         super().__init__(role)
 
 
 

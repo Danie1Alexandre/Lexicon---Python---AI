@@ -79,7 +79,7 @@ while zoo_is_alive == 1:
     print("\nAnimal Stats")
     
     for animal in animals:
-        print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="  | ")
+        print(f"{animal.animal_type}  - {animal.mood_check()}, HP {animal.health}  ", end="|")
 
 
     print("\n========================================")
