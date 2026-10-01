@@ -1,6 +1,5 @@
 import time
 import random
-from zoo_class.zoo_class import Animal
 from zoo_class.zoo_class import Monkey
 from zoo_class.zoo_class import Lion
 from zoo_class.zoo_class import Dolphin
@@ -146,7 +145,7 @@ while zoo_is_alive == 1:
         time.sleep(1)
         print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
-        if random.random() < 0.90:
+        if random.random() < 0.20:
             
             print(troubelMaker.make_loud_noise())
             time.sleep(1)
