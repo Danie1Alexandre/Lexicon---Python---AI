@@ -7,6 +7,7 @@ from zoo_class.zoo_class import Dolphin
 from zoo_class.zoo_class import Weather
 from zoo_class.zoo_class import Visitors
 from zoo_class.zoo_class import TroubelMaker
+from zoo_class.zoo_class import ZooKeeper
 
 from zoo_functions.zoo_functions import print_separator
 from zoo_functions.zoo_functions import take_user_input
@@ -21,6 +22,7 @@ dolphin = Dolphin("Dolphin \U0001f42c", 5, 5, 2)
 animals =[monkey, lion, dolphin]
 visitors = Visitors ("visitors", 10)
 troubelMaker = TroubelMaker("TroubelMaker")
+zooKeeper = ZooKeeper("ZooKeeper")
 
 # animals2 = [
 #     Monkey("Monkey \U0001f435" , "sad", 1),
@@ -153,6 +155,9 @@ while zoo_is_alive == 1:
                 print_separator
                 print(f"{animal.animal_type}'s mood dropped because of the noise.")
                 time.sleep(1)
+            
+            print(f"The zoo keeper chases away the troublemaker!")       
+            print (zooKeeper.swing_in_the_air())
 
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
