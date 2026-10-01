@@ -41,7 +41,7 @@ day_start_time = time.time()
 
 print_separator()
 print("\n================ ZOO SIMULATION ================")
-print("use only numbers 1-4 for inputs")
+print("use only numbers 1-5 for inputs")
 print_separator()
 time.sleep(2) # sleep improves game flow by slowing it down
 
@@ -80,7 +80,8 @@ while zoo_is_alive == 1:
     print("1. Feed animlas")
     print("2. Open the zoo")
     print("3. Watch animals")
-    print("4. Close")
+    print("4. Clean the zoo")
+    print("5. Close")
     print("\nAnimal Stats")
     
     for animal in animals:
@@ -145,20 +146,28 @@ while zoo_is_alive == 1:
         time.sleep(1)
         print(f"The zoo have {visitors.amount_visitors()} visitors ")
         time.sleep(3)
-        if random.random() < 0.20:
+        if random.random() < 0.90:
             
             print(troubelMaker.make_loud_noise())
             time.sleep(1)
 
             for animal in animals:
                 animal.mood -= 1
-                print_separator
-                print(f"{animal.animal_type}'s mood dropped because of the noise.")
-                time.sleep(1)
-            
-            print(f"The zoo keeper chases away the troublemaker!")       
-            print (zooKeeper.swing_in_the_air())
 
+                print_separator()
+                print()
+                print(f"{animal.animal_type}'s mood dropped because of the noise.")
+                time.sleep(2)
+            
+            print_separator()
+            print()
+            time.sleep(0.5)
+            print (zooKeeper.swing_in_the_air())            
+            time.sleep(1)     
+            print(f"The zoo keeper chases away the troublemaker!")  
+            time.sleep(2)
+        
+        print_separator()
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
         print (visitors.cheer())
@@ -170,8 +179,15 @@ while zoo_is_alive == 1:
         print()
         run_animal_behaviour(animals,visitors)
         time.sleep(1)
-   
+
     elif user_input == "4":
+        print("\n================ Cleaning Zoo ================")
+        print (zooKeeper.clean_the_zoo(animals))
+        print("The mood on animals was increased")
+        time.sleep(4)              
+
+    
+    elif user_input == "5":
         print("Good Bye")
         time.sleep(1)     
         break           

@@ -31,6 +31,9 @@ def take_user_input(): #handel user input error
           elif user_input == "4":
                return user_input
                x = 0
+          elif user_input == "5":
+               return user_input
+               x = 0
           else:
                print("Not a valid option")
                time.sleep(1)

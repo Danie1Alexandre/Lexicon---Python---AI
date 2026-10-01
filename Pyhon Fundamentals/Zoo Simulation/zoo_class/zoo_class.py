@@ -251,11 +251,13 @@ class ZooKeeper(people):
         super().__init__(role)
         self.brew_stick = Broom("\U0001f9f9 ")
 
-    def clean_the_zoo(self):
-        print(f"{self.brew_stick.emoji} The ZooKeeper is cleaning the zoo!")
+    def clean_the_zoo(self, animals):
+        for animal in animals:
+            animal.mood += 1
+        return (f"{self.brew_stick.emoji} The ZooKeeper is cleaning the zoo!")
     
     def swing_in_the_air(self):
-        print(f"{self.brew_stick.emoji} swooosh! The ZooKeeper swings his broom in the air")
+        return (f"{self.brew_stick.emoji} swooosh! The ZooKeeper swings his broom in the air")
 
 
 
