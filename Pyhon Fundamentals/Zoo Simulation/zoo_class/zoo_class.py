@@ -85,7 +85,7 @@ class Animal:
         if self.mood <= 0:
             self.health -= 1
 
-        if self.hunger <= 0:
+        if self.hunger <= 3:
             self.health -= 1
 
     
@@ -151,6 +151,7 @@ class Dolphin(Animal):
   
     def weather_effect(self, weather):
         if weather in ["Rainy"]:
+            self.mood += 1
             return f"{self.animal_type} loves the splashy rain! Mood increased."
         else:
             return super().weather_effect(weather)
@@ -195,7 +196,7 @@ class Weather:
 
             for animal in animals:
                 animal.apply_weather_effect(weather)
-                
+
             return f"⚡  EXTREME WEATHER! {weather}."
             
         else:
