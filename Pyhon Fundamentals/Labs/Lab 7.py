@@ -89,27 +89,45 @@
 
 # Part B- mathod and mood  ---------
 
-#1
+1
 
-# class Book:
-#     def __init__(self,title,author,pages):
-#         self.title = title
-#         self.author = author
-#         self.pages = pages
+class Book:
+    def __init__(self,title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
 
-#     def is_long(self):
-#         if self.pages > 300:
-#             return True
-#         else:
-#             return False
+    def is_long(self):
+        if self.pages > 300:
+            return True
+        else:
+            return False
 
-# book1 = Book(
-#     title = "REd",
-#     author= "ben",
-#     pages = 200
-# )
+book1 = Book(
+    title = "REd",
+    author= "ben",
+    pages = 200
+)
 
-# print(book1.is_long())
+print(book1.is_long())
+
+#2 
+
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+    
+    def deposit(self,amount):
+        self.balance += amount
+        return self.balance
+   
+    def withdraw(self,amount):
+        if self.balance - amount < 0:
+            raise ValueError ("not enough money")
+        
+        self.balance -= amount    
+
 
 
 # part C - Instance and class attributes -----
