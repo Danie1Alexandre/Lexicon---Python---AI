@@ -151,12 +151,20 @@ class Task:
 
 my_task = Task("Wash the dishes") 
 
-print(my_task.completed)
-my_task.complete()
-print(my_task.completed)
-my_task.reopen()
-print(my_task.completed)
+# print(my_task.completed)
+# my_task.complete()
+# print(my_task.completed)
+# my_task.reopen()
+# print(my_task.completed)
 
+#B5
+my_task = Task("Wash the dishes") 
+my_task2 = Task("pay bill") 
+print(my_task.completed) #false
+print(my_task2.completed) #false
+my_task.complete()
+print(my_task.completed) #true
+print(my_task2.completed) #still false
 
 
 
