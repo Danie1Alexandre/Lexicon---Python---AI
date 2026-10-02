@@ -136,6 +136,28 @@
 
 # print(myaccount.balance)
 
+#B4
+
+class Task:
+    def __init__(self, title, completed=False):
+        self.title = title
+        self.completed = completed
+        
+    def complete(self):
+        self.completed = True
+
+    def reopen(self):
+        self.completed = False
+
+my_task = Task("Wash the dishes") 
+
+print(my_task.completed)
+my_task.complete()
+print(my_task.completed)
+my_task.reopen()
+print(my_task.completed)
+
+
 
 
 # part C - Instance and class attributes -----
