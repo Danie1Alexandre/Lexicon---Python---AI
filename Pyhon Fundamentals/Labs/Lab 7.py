@@ -89,44 +89,52 @@
 
 # Part B- mathod and mood  ---------
 
-1
+# 1
 
-class Book:
-    def __init__(self,title,author,pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
+# class Book:
+#     def __init__(self,title,author,pages):
+#         self.title = title
+#         self.author = author
+#         self.pages = pages
 
-    def is_long(self):
-        if self.pages > 300:
-            return True
-        else:
-            return False
+#     def is_long(self):
+#         if self.pages > 300:
+#             return True
+#         else:
+#             return False
 
-book1 = Book(
-    title = "REd",
-    author= "ben",
-    pages = 200
-)
+# book1 = Book(
+#     title = "REd",
+#     author= "ben",
+#     pages = 200
+# )
 
-print(book1.is_long())
+# print(book1.is_long())
 
-#2 
+# #2 
 
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
+# class BankAccount:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.balance = balance
     
-    def deposit(self,amount):
-        self.balance += amount
-        return self.balance
-   
-    def withdraw(self,amount):
-        if self.balance - amount < 0:
-            raise ValueError ("not enough money")
+#     def deposit(self,amount):
+#         self.balance += amount
+#         return self.balance
+#    #3
+#     def withdraw(self,amount):
+#         if self.balance - amount < 0:
+#             raise ValueError ("not enough money")
         
-        self.balance -= amount    
+#         self.balance -= amount    
+
+# myaccount = BankAccount ("peter", 10)
+
+# # myaccount.withdraw(50) #ValueError
+
+# myaccount.deposit(50)
+
+# print(myaccount.balance)
 
 
 
@@ -236,26 +244,26 @@ class BankAccount:
 
 #Part E - Objects inside objects
 
-# 1--------
-class Teacher:
-    def __init__(self, name):
-        self.name = name
+# # 1--------
+# class Teacher:
+#     def __init__(self, name):
+#         self.name = name
 
-# 2------
-class Course:
-    def __init__(self, name , teacher):
-        self.name = name
-        self.teacher = teacher
+# # 2------
+# class Course:
+#     def __init__(self, name , teacher):
+#         self.name = name
+#         self.teacher = teacher
 
-#3--------
+# #3--------
 
-teacher1 = Teacher("Ulf")
+# teacher1 = Teacher("Ulf")
 
-course1= Course("Python", teacher1)
+# course1= Course("Python", teacher1)
 
-#E4----------
+# #E4----------
 
-print(course1.name, course1.teacher.name)
+# print(course1.name, course1.teacher.name)
 
 #E5------------
 # class Course:
@@ -266,36 +274,36 @@ print(course1.name, course1.teacher.name)
 #         self.students = []
 
 #6 ------
-class Course:
-    def __init__(self, name , teacher):
-        self.name = name
-        self.teacher = teacher
-        self.students = []
+# class Course:
+#     def __init__(self, name , teacher):
+#         self.name = name
+#         self.teacher = teacher
+#         self.students = []
 
-    def add_student(self,student):
-        self.students.append(student)
+#     def add_student(self,student):
+#         self.students.append(student)
 
-course2= Course("Python", teacher1)
+# course2= Course("Python", teacher1)
 
-class Student:
-    def __init__(self, name):
-        self.name = name
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
 
-student1 = Student("moa student 1")
-student2 = Student("sven student 2")
-student3 = Student("ben student 3")
+# student1 = Student("moa student 1")
+# student2 = Student("sven student 2")
+# student3 = Student("ben student 3")
 
-course2.add_student(student1)
-course2.add_student(student2)
-course2.add_student(student3)
+# course2.add_student(student1)
+# course2.add_student(student2)
+# course2.add_student(student3)
 
-#course2.students.append(student3)
+# #course2.students.append(student3)
 
 
-#7 ----------- 
+# #7 ----------- 
 
-for student in course2.students:
-    print(student.name)
+# for student in course2.students:
+#     print(student.name)
 
 
 
