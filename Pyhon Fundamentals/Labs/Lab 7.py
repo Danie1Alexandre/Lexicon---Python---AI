@@ -138,39 +138,39 @@
 
 #B4
 
-class Task:
-    def __init__(self, title, completed=False):
-        self.title = title
-        self.completed = completed
+# class Task:
+#     def __init__(self, title, completed=False):
+#         self.title = title
+#         self.completed = completed
         
-    def complete(self):
-        self.completed = True
+#     def complete(self):
+#         self.completed = True
 
-    def reopen(self):
-        self.completed = False
+#     def reopen(self):
+#         self.completed = False
 
-my_task = Task("Wash the dishes") 
+# my_task = Task("Wash the dishes") 
 
-# print(my_task.completed)
+# # print(my_task.completed)
 # my_task.complete()
 # print(my_task.completed)
 # my_task.reopen()
 # print(my_task.completed)
 
 #B5
-my_task = Task("Wash the dishes") 
-my_task2 = Task("pay bill") 
-print(my_task.completed) #false
-print(my_task2.completed) #false
-my_task.complete()
-print(my_task.completed) #true
-print(my_task2.completed) #still false
+# my_task = Task("Wash the dishes") 
+# my_task2 = Task("pay bill") 
+# print(my_task.completed) #false
+# print(my_task2.completed) #false
+# my_task.complete()
+# print(my_task.completed) #true
+# print(my_task2.completed) #still false
 
 
 
 # part C - Instance and class attributes -----
 
-#1 ----------
+# #1 ----------
 # class Product:
 #     def __init__(self, name, price):
 #         self.name = name  #Instance attribute
@@ -182,7 +182,7 @@ print(my_task2.completed) #still false
 # print(product1.price)
 
 
-# 2 ------------------
+# #2 ------------------
 
 # class Product:
 #     tax_rate =  0.1 #class attribute
@@ -191,7 +191,7 @@ print(my_task2.completed) #still false
 #         self.name = name  #Instance attribute
 #         self.price = price
 
-# 3 -------------------------
+# #3 -------------------------
 
 # class Product:
 #     tax_rate =  0.1 #class attribute
@@ -206,6 +206,26 @@ print(my_task2.completed) #still false
 # product1 = Product("banana", 45)
 # print(product1.price_with_tax())
 
+# #4
+# product1 = Product("banana", 45)
+# product2 = Product("mango", 65)
+# product3 = Product("apple",75)
+# print(product1.price_with_tax())
+# print(product2.price_with_tax())
+# print(product3.price_with_tax())
+
+# Product.tax_rate =  0.5
+# print("high tax")
+# print(product1.price_with_tax())
+# print(product2.price_with_tax())
+# print(product3.price_with_tax())
+
+
+# product1.tax_rate = 0.2
+
+# print(product1.tax_rate)
+# print(product2.tax_rate) 
+# print(Product.tax_rate)
 
 # Part D - Collections of objects
 
