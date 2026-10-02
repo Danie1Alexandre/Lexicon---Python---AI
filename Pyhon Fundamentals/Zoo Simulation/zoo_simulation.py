@@ -76,7 +76,7 @@ while zoo_is_alive == 1:
         print(animal.weather_effect(todays_weather))
 
     print("\n================ MENY ================")
-    print("1. Feed animlas")
+    print("1. Feed animals")
     print("2. Open the zoo")
     print("3. Watch animals")
     print("4. Clean the zoo")
