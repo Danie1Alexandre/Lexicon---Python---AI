@@ -17,10 +17,10 @@ LIMIT 5 OFFSET 5;
 SELECT * FROM customers WHERE joined_date < 2025 AND NOT city = 'Uppsala'; 
 SELECT * FROM products 
 WHERE NOT category = 'Accessories' 
-	AND stock > 0
-	AND name like '% %' 
+AND stock > 0
+AND name like '% %' 
 ORDER BY category ASC, price DESC;
-
-SELECT * FROM customers WHERE city LIKE 's%' or city like 'M%' OR city IS NULL
-
-SELECT
+SELECT * FROM customers WHERE city LIKE 's%' or city like 'M%' OR city IS NULL;
+SELECT * FROM products WHERE category = 'Shoes' 
+ORDER by "price" DESC
+LIMIT 1 OFFSET 1
