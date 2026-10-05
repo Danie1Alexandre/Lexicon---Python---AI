@@ -11,5 +11,7 @@ SELECT name AS products, price AS price_sek FROM products;
 SELECT * FROM products WHERE (category = 'Clothing' OR category = 'Shoes') AND price > 1000;
 SELECT name, price, stock, price*stock AS stock_value FROM products WHERE stock > 1;
 SELECT first_name FROM customers WHERE first_name like '____';
-SELECT price FROM products ORDER BY price ASC
-LIMIT 5 OFFSET 5
+SELECT price FROM products 
+ORDER BY price ASC
+LIMIT 5 OFFSET 5;
+SELECT * FROM customers WHERE joined_date < 2025 AND NOT city = 'Uppsala' 
