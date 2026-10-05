@@ -6,3 +6,5 @@ SELECT * FROM products ORDER BY name ASC;
 SELECT * FROM customers ORDER BY joined_date;
 SELECT * FROM products WHERE stock = 0;
 SELECT * FROM customers ORDER BY joined_date DESC LIMIT 3;
+SELECT first_name, city FROM customers WHERE city = 'Stockholm' OR city = 'Göteborg';
+SELECT name AS products, price AS price_sek FROM products;
