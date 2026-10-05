@@ -15,12 +15,20 @@ SELECT price FROM products
 ORDER BY price ASC
 LIMIT 5 OFFSET 5;
 SELECT * FROM customers WHERE joined_date < 2025 AND NOT city = 'Uppsala'; 
+
 SELECT * FROM products 
 WHERE NOT category = 'Accessories' 
 AND stock > 0
 AND name like '% %' 
 ORDER BY category ASC, price DESC;
+
 SELECT * FROM customers WHERE city LIKE 's%' or city like 'M%' OR city IS NULL;
+
 SELECT * FROM products WHERE category = 'Shoes' 
 ORDER by "price" DESC
-LIMIT 1 OFFSET 1
+LIMIT 1 OFFSET 1;
+
+SELECT * FROM customers  
+where joined_date > '2023-12-31' 
+	AND joined_date < '2026-01-01' 
+LIMIT 3;
