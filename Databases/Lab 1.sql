@@ -5,3 +5,4 @@ SELECT name, price FROM products WHERE price = 199;
 SELECT * FROM products ORDER BY name ASC;
 SELECT * FROM customers ORDER BY joined_date;
 SELECT * FROM products WHERE stock = 0;
+SELECT * FROM customers ORDER BY joined_date DESC LIMIT 3;
