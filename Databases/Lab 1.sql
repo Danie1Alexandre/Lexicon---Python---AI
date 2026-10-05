@@ -20,3 +20,5 @@ WHERE NOT category = 'Accessories'
 	AND stock > 0
 	AND name like '% %' 
 ORDER BY category ASC, price DESC;
+
+SELECT * FROM customers WHERE city LIKE 's%' or city like 'M%' OR city IS NULL
