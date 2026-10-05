@@ -14,4 +14,9 @@ SELECT first_name FROM customers WHERE first_name like '____';
 SELECT price FROM products 
 ORDER BY price ASC
 LIMIT 5 OFFSET 5;
-SELECT * FROM customers WHERE joined_date < 2025 AND NOT city = 'Uppsala' 
+SELECT * FROM customers WHERE joined_date < 2025 AND NOT city = 'Uppsala'; 
+SELECT * FROM products 
+WHERE NOT category = 'Accessories' 
+	AND stock > 0
+	AND name like '% %' 
+ORDER BY category ASC, price DESC;
