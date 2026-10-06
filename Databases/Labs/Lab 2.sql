@@ -47,3 +47,6 @@ valid_until TEXT NOT NULL
 
 INSERT INTO coupons (code, discount, valid_until)
 VALUES ('summer20', 99 , 2026-12-01) -- Result: CHECK constraint failed: discount >= 1 AND discount <= 90
+
+INSERT INTO suppliers (name)
+VALUES ('Nordic Textiles') -- gets next available key number
