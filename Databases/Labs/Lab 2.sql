@@ -23,3 +23,15 @@ VALUES (6);
 
 INSERT INTO reviews (product_id, rating)
 VALUES (50, 5);
+
+CREATE TABLE suppliers (
+supplier INTEGER PRIMARY KEY,
+name TEXT NOT NULL UNIQUE,
+country TEXT  DEFAULT "Sweden",
+email TEXT
+);
+
+INSERT INTO suppliers(name)
+VALUES("volvo");
+
+SELECT * FROM suppliers;
