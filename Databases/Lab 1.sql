@@ -32,3 +32,6 @@ SELECT * FROM customers
 where joined_date > '2023-12-31' 
 	AND joined_date < '2026-01-01' 
 LIMIT 3;
+
+SELECT first_name||" "|| last_name as full_name  FROM customers
+ORDER BY last_name;
