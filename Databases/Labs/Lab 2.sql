@@ -35,3 +35,15 @@ INSERT INTO suppliers(name)
 VALUES("volvo");
 
 SELECT * FROM suppliers;
+
+INSERT INTO suppliers(name) 
+VALUES("volvo");--Result: UNIQUE constraint failed: suppliers.name
+
+CREATE TABLE coupons (
+code TEXT PRIMARY KEY,
+discount INTEGER CHECK (discount >= 1 AND discount <= 90),
+valid_until TEXT NOT NULL
+);
+
+INSERT INTO coupons (code, discount, valid_until)
+VALUES ('summer20', 99 , 2026-12-01) -- Result: CHECK constraint failed: discount >= 1 AND discount <= 90
