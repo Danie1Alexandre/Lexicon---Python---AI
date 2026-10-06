@@ -1,0 +1,6 @@
+CREATE TABLE books (
+bok_id INTEGER PRIMARY KEY,
+title TEXT NOTNULL
+author TEXT
+year INTEGER
+)
