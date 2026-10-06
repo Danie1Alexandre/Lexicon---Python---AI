@@ -50,3 +50,20 @@ VALUES ('summer20', 99 , 2026-12-01) -- Result: CHECK constraint failed: discoun
 
 INSERT INTO suppliers (name)
 VALUES ('Nordic Textiles') -- gets next available key number
+
+ALTER TABLE suppliers 
+RENAME COLUMN email TO contact_email;
+
+PRAGMA table_info(products)
+
+CREATE TABLE product_suppliers(
+product_id INTEGER,
+supplier_id INTEGER,
+price CHECK (price > 0),
+PRIMARY KEY (product_id, supplier_id),
+FOREIGN KEY (product_id) REFERENCES products(product_id),
+FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier)
+);
+
+INSERT INTO product_suppliers(product_id, supplier_id, price)
+VALUES(1,99, 15);
