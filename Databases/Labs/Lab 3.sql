@@ -65,7 +65,19 @@ CREATE TABLE order_sheet
 -- Products should not be a list of products, they need a separate table like order_items. 
 -- Breaks 2NF since city and email should be in customers. 
 -- An order doesn't have an email; a person does.
-	
+
+-- order_id | customer_id | customer_email | order_date. 
+-- customer_email doesn't belong here since the table is an ORDER. 
+-- email should be in the customer TABLE.
+
+-- "main objects": students - lessons - teachers - instruments 
+-- a lesson can be described with this: date -  time - room
+
+-- teachers n---m instruments 
+-- teachers 1---n lessons 
+-- students n---m lessons 
+-- instruments 1---n lessons 
+-- some kind of lesson TABLE would tie them all together as the "bridge" 
 
 
 			
