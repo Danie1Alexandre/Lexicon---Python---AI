@@ -45,9 +45,27 @@ WHERE status = 'cancelled'
 
 SELECT count (*) from orders;
 
+-- student | phone_numbers | course1 | course2 | course3. 
+-- A student can have many numbers , not just one. 
+-- No key for student or course? 
+-- Hard to search on individual courses since they are all in one place. 
+-- A student may only read one course ; waste of space to ALWAYS force 3.
+ -- Or a student may read 5 courses, but there are only 3 courses in the column.
 
+CREATE TABLE order_sheet 
+(  order_no INTEGER,  
+	customer TEXT,  
+	email    TEXT,  
+	city     TEXT,  
+	products TEXT,  
+	total    REAL
+	);
 
-
+-- breaks 1NF since products have no ID . 
+-- Products should not be a list of products, they need a separate table like order_items. 
+-- Breaks 2NF since city and email should be in customers. 
+-- An order doesn't have an email; a person does.
+	
 
 
 			
