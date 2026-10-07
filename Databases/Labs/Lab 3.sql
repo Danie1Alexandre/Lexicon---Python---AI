@@ -27,6 +27,25 @@ UPDATE orders
 SET status = 'shipped'
 WHERE order_id = 12;
 
+SELECT * from products WHERE name = 'Water Bottle';	
+UPDATE products
+SET stock = 50
+WHERE product_id = 5;
+
+SELECT * from products WHERE category = 'Accessories';
+UPDATE products
+SET price = price * 1.1
+WHERE category = 'Accessories';
+
+SELECT * from orders WHERE status = 'cancelled';
+DELETE FROM orders
+WHERE status = 'cancelled'
+-- Result: FOREIGN KEY constraint failed
+-- item is still used in a FOREIGN key, can not be delteted.
+
+SELECT count (*) from orders;
+
+
 
 
 
