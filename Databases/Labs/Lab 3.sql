@@ -18,6 +18,17 @@ SELECT * from order_items;
 INSERT INTO order_items (order_id, product_id, quantity, unit_price)
 VALUES (16, 10, 2, 179);
 
+INSERT INTO order_items (order_id, product_id, quantity, unit_price)
+VALUES (16, 10, 0, 179);
+-- Result: CHECK constraint failed: quantity > 0 (can not be zero)
+
+SELECT * from orders WHERE order_id = 12;	
+UPDATE orders
+SET status = 'shipped'
+WHERE order_id = 12;
+
+
+
 
 
 			
