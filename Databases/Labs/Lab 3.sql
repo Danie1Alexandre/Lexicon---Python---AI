@@ -77,7 +77,8 @@ CREATE TABLE order_sheet
 -- teachers 1---n lessons 
 -- students n---m lessons 
 -- instruments 1---n lessons 
--- some kind of lesson TABLE would tie them all together as the "bridge" 
+-- some kind of lesson TABLE would tie them all together as the "bridge" (Junction table)
+ 
 
 
 			
