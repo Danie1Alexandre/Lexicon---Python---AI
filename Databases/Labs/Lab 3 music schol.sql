@@ -14,8 +14,10 @@ name NOT NULL
 
 CREATE TABLE instruments(
 instrument_id INTEGER PRIMARY KEY,
-name NOT NULL
+name NOT NULL UNIQUE
 );
+
+
 
 CREATE TABLE lessons(
 lesson_id INTEGER PRIMARY KEY,
@@ -36,7 +38,12 @@ FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE,
 FOREIGN KEY (lesson_id) REFERENCES lessons(lesson_id) ON DELETE CASCADE
 );
  
-
+CREATE TABLE teacher_instrument(
+teacher_id INTEGER,
+instrument_id INTEGER,
+FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id) ON DELETE CASCADE,
+FOREIGN KEY (instrument_id) REFERENCES instruments(instrument_id)
+);
 
 
 
