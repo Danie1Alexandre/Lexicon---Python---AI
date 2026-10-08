@@ -1,4 +1,4 @@
-CREATE TABLE(
-student_id
-name
+CREATE TABLE students(
+student_id PRIMARY KEY,
+name NOT NULL
 );
