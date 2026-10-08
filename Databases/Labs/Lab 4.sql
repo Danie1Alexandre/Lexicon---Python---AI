@@ -56,3 +56,11 @@ FROM products
 LEFT JOIN order_items ON order_items.product_id = products.product_id
 WHERE order_items.order_id IS NULL
 
+SELECT customers.first_name, products.name, order_items.quantity
+FROM order_items
+JOIN orders ON orders.order_id = order_items.order_id
+JOIN customers ON customers.customer_id = orders.customer_id
+JOIN products ON  products.product_id = order_items.product_id
+WHERE customers.city = 'Uppsala' 
+ORDER BY customers.first_name
+
