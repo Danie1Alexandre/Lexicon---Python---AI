@@ -47,4 +47,12 @@ JOIN customers ON customers.customer_id = orders.customer_id
 JOIN products ON products.product_id = order_items.product_id
 WHERE products.name = "Hoodie Black"
 
+SELECT customers.first_name, orders.order_id, orders.order_date, orders.status
+FROM customers
+left JOIN orders ON orders.customer_id = customers.customer_id;
+
+SELECT  products.name
+FROM products
+LEFT JOIN order_items ON order_items.product_id = products.product_id
+WHERE order_items.order_id IS NULL
 
