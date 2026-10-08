@@ -80,5 +80,4 @@ CREATE TABLE order_sheet
 -- some kind of lesson TABLE would tie them all together as the "bridge" (Junction table)
  
 
-
 			
