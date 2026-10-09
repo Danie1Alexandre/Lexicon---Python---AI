@@ -14,3 +14,8 @@ FROM order_items
 JOIN products ON order_items.product_id = products.product_id
 WHERE line_total > 500
 ORDER BY price DESC;
+
+SELECT DISTINCT customers.first_name, customers.city
+FROM customers
+JOIN orders ON orders.customer_id = customers.customer_id
+WHERE city = 'Uppsala' or city = 'Stockholm'
