@@ -33,6 +33,22 @@ JOIN order_items ON order_items.product_id = products.product_id
 JOIN orders on orders.order_id = order_items.order_id
 WHERE orders.order_id = 16;
 
-
+SELECT * FROM orders
+WHERE order_id = 12;
+SELECT * FROM order_items
+WHERE order_id = 12;
+UPDATE orders 
+SET status = 'cancelled'
+WHERE order_id = 12;
+SELECT products
+UPDATE products
+SET stock = stock + 1
+WHERE products.product_id = 4;
+UPDATE products
+SET stock = stock + 1
+WHERE products.product_id = 9;
+SELECT name, stock 
+FROM products 
+WHERE product_id IN (4, 9);
 
 
