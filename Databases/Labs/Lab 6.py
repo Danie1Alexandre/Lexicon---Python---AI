@@ -20,14 +20,32 @@ cursor = conn.cursor()
 
 
 #3
-category = "Clothing"
+# category = "Clothing"
 
-cursor.execute("SELECT count() name  FROM products WHERE category = ?", (category,))
-clothing = cursor.fetchall()
+# cursor.execute("SELECT count() name  FROM products WHERE category = ?", (category,))
+# clothing = cursor.fetchall()
 
-for cloth in clothing:
-    print (f" {cloth[0]}")
+# for cloth in clothing:
+#     print (f" {cloth[0]}")
 
+#4
+# You nedd to tell SQL that you are sending a text string and not code?
+# A placeholder seprte the user input from the sql question.
+ 
+ #9
+
+cursor.execute("""
+SELECT DISTINCT products.name
+FROM order_items
+JOIN products ON products.product_id = order_items.product_id
+JOIN orders ON orders.order_id = order_items.order_id
+JOIN customers ON customers.customer_id = orders.customer_id
+WHERE customers.first_name = 'Anna'
+ """)              
+anna_product_info = cursor.fetchall()
+
+for product in anna_product_info:
+    print(product[0])
 
 cursor.close()
 conn.close()
