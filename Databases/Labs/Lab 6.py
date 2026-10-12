@@ -10,13 +10,24 @@ cursor = conn.cursor()
 #     print (f" {first} {last} {city}")
 
 #2
-max_price = 300
+# max_price = 300
 
-cursor.execute("select price FROM products WHERE price <= ?",(max_price,))
-prices = cursor.fetchall()
+# cursor.execute("select price FROM products WHERE price <= ?",(max_price,))
+# prices = cursor.fetchall()
 
-for price in prices:
-    print (f" {price[0]}")
+# for price in prices:
+#     print (f" {price[0]}")
+
+
+#3
+category = "Clothing"
+
+cursor.execute("SELECT name FROM products WHERE category = ?", ("Clothing",))
+clothing = cursor.fetchall()
+
+for cloth in clothing:
+    print (f" {cloth[0]}")
+
 
 cursor.close()
 conn.close()
