@@ -40,7 +40,7 @@ FROM order_items
 JOIN products ON products.product_id = order_items.product_id
 JOIN orders ON orders.order_id = order_items.order_id
 JOIN customers ON customers.customer_id = orders.customer_id
-WHERE customers.first_name = 'Anna'
+WHERE customers.customer_id = 1
  """)              
 anna_product_info = cursor.fetchall()
 
