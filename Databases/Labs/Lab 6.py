@@ -22,7 +22,7 @@ cursor = conn.cursor()
 #3
 category = "Clothing"
 
-cursor.execute("SELECT name FROM products WHERE category = ?", ("Clothing",))
+cursor.execute("SELECT count() name  FROM products WHERE category = ?", (category,))
 clothing = cursor.fetchall()
 
 for cloth in clothing:
