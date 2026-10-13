@@ -20,6 +20,8 @@ db = client["webshop"]
 #     print(f"{product['name']:<25} {product['price'] :<8}")
 
 #4
+# print(db.customers.count_documents({"city": "Uppsala"}))
 
-print(db.customers.count_documents({"city": "Uppsala"}))
+#5
+print(db.products.find_one({"name": "Sandals"}, {"_id": 0, "stock": 1}))#removes id from the search and prints stock
 
