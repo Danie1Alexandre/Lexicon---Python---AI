@@ -3,12 +3,13 @@ client = MongoClient("mongodb://localhost:27017/", serverSelectionTimeoutMS=3000
 
 db = client["webshop"]
 
-products = db["products"]
+#products_db = db["products"]
+# query = {"category": "Accessories"}
+# accessories = products_db.find(query,{"_id": 0, "name": 1})
+# for product in accessories:
+#     print(product["name"])
 
 
-query = {"category": "Accessories"}
-
-results = products.find(query,{"_id": 0, "name": 1})
-
-for product in results:
-    print(product["name"])
+for customer in db.customers.find():
+    if customer.get("city", "X") == "Göteborg":
+        print(customer["first_name"], customer["last_name"], customer.get("city"))
