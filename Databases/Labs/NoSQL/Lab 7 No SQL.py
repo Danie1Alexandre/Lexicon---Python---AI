@@ -16,5 +16,10 @@ db = client["webshop"]
 #         print(customer["first_name"], customer["last_name"], customer["city"])
 
 #3
-for product in db.products.find():
-    print(product["name"], product["price"])
+# for product in db.products.find():
+#     print(f"{product['name']:<25} {product['price'] :<8}")
+
+#4
+
+print(db.customers.count_documents({"city": "Uppsala"}))
+
