@@ -23,5 +23,19 @@ db = client["webshop"]
 # print(db.customers.count_documents({"city": "Uppsala"}))
 
 #5
-print(db.products.find_one({"name": "Sandals"}, {"_id": 0, "stock": 1}))#removes id from the search and prints stock
+# print(db.products.find_one({"name": "Sandals"}, {"_id": 0, "stock": 1}))#removes id from the search and prints stock
 
+#6
+# for customer in db.customers.find({"newsletter": True}):
+#     print(customer["first_name"])
+
+#7
+
+add_me = db.customers.insert_one({
+    "fist_name": "dan",
+    "last_name" : "alex",
+    "email": "exeample@mail.com",
+    "city": "Stockholm"   
+})
+
+print(add_me.inserted_id)
