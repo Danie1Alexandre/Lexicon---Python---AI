@@ -58,5 +58,19 @@ cursor = conn.cursor()
 # conn.commit()
 
 
+#11
+
+# cursor.execute("""
+# SELECT customers.customer_id, customers.first_name , customers.city, count(orders.order_id)
+# FROM customers
+# LEFT JOIN orders ON orders.customer_id = customers.customer_id
+# GROUP BY customers.customer_id, customers.first_name , customers.city               
+# """)
+# customer_overview = cursor.fetchall()
+# for id, first_name, city, order_amount in customer_overview:
+#     print(id, first_name, city, order_amount)
+
+#12
+
 cursor.close()
 conn.close()
