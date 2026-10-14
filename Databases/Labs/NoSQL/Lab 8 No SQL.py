@@ -28,5 +28,17 @@ db = client["webshop"]
 
 #6
 
-for product in db.products.find().sort("price", 1):
-    print(f"{product['name']:<25} {product['price'] :<8}")
+# for product in db.products.find().sort("price", 1):
+#     print(f"{product['name']:<25} {product['price'] :<8}")
+
+#7
+
+for order in db.orders.find({"items.product_id": 2}):
+    print(f"customer id: {order.get('customer_id')} order id: {order['_id']}")
+
+
+#8
+# for product in db.products.find({"category": "Accessories"}):
+#     print(f"{product['name']:<25} {product['price'] :<8}")
+
+# for product in db.products.update_many({"category": "Accessories"}):
