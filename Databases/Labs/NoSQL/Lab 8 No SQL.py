@@ -9,5 +9,10 @@ db = client["webshop"]
 
 #2
 
-for order in db.orders.find({"status": {"$ne": "delivered"}}):
-        print(order["_id"], order["status"])
+# for order in db.orders.find({"status": {"$ne": "delivered"}}):
+#         print(order["_id"], order["status"])
+
+#3
+
+for customer in db.customers.find({"city": {"$in": ["Stockholm", "Göteborg"]}}):
+    print(customer["first_name"], customer["city"])
