@@ -33,12 +33,21 @@ db = client["webshop"]
 
 #7
 
-for order in db.orders.find({"items.product_id": 2}):
-    print(f"customer id: {order.get('customer_id')} order id: {order['_id']}")
+# for order in db.orders.find({"items.product_id": 2}):
+#     print(f"customer id: {order.get('customer_id')} order id: {order['_id']}")
 
 
 #8
+
+##check
 # for product in db.products.find({"category": "Accessories"}):
 #     print(f"{product['name']:<25} {product['price'] :<8}")
 
-# for product in db.products.update_many({"category": "Accessories"}):
+##update
+# result = db.products.update_many(
+#     {"category": "Accessories"},
+#     {"$inc": {"price": 20} }
+#     )
+
+# print(f"matched {result.matched_count} modified {result.modified_count}")
+
