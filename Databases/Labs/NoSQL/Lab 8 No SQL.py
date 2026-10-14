@@ -19,7 +19,9 @@ db = client["webshop"]
 
 #4 
 
-for product in db.products.find({"details.color": "white"} ):
-         print(product["name"], product["details"]["color"])
+# for product in db.products.find({"details.color": "white"} ):
+#          print(product["name"], product["details"]["color"])
 
 # 5
+# for product in db.products.find({"tags": "sport"}, {"_id": 0}):
+#          print(product["name"], product["tags"])
