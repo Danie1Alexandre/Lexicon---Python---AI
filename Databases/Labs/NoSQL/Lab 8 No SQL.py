@@ -14,5 +14,10 @@ db = client["webshop"]
 
 #3
 
-for customer in db.customers.find({"city": {"$in": ["Stockholm", "Malmö"]}}):
-    print(customer["first_name"], customer["city"])
+# for customer in db.customers.find({"city": {"$in": ["Stockholm", "Malmö"]}}):
+#     print(customer["first_name"], customer["city"])
+
+#4 
+
+for product in db.products.find({"details.color": "black"} ):
+         print(product["name"], product["details"]["color"])
