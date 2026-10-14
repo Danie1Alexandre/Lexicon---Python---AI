@@ -34,18 +34,29 @@ cursor = conn.cursor()
  
  #9
 
-cursor.execute("""
-SELECT DISTINCT products.name
-FROM order_items
-JOIN products ON products.product_id = order_items.product_id
-JOIN orders ON orders.order_id = order_items.order_id
-JOIN customers ON customers.customer_id = orders.customer_id
-WHERE customers.customer_id = 1
- """)              
-anna_product_info = cursor.fetchall()
+# cursor.execute("""
+# SELECT DISTINCT products.name
+# FROM order_items
+# JOIN products ON products.product_id = order_items.product_id
+# JOIN orders ON orders.order_id = order_items.order_id
+# JOIN customers ON customers.customer_id = orders.customer_id
+# WHERE customers.customer_id = 1
+#  """)              
+# anna_product_info = cursor.fetchall()
 
-for product in anna_product_info:
-    print(product[0])
+# for product in anna_product_info:
+#     print(product[0])
+
+#10
+
+# cursor.execute("""
+#     UPDATE customers
+#     SET email = ?
+#     WHERE first_name = 'Erik'
+                 
+# """,["erik.johansson@example.com"])
+# conn.commit()
+
 
 cursor.close()
 conn.close()
