@@ -74,4 +74,12 @@ db = client["webshop"]
 
 #10
 
-for order in db.order
+for nr, order in enumerate (db.orders.find(), start = 1):
+
+    product_items = order.get("items", [])
+
+    amount_items = len(product_items)
+
+    print(f"{nr} have: {amount_items} items")
+
+
