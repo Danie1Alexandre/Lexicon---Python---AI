@@ -31,11 +31,37 @@ db = client["webshop"]
 
 #7
 
-add_me = db.customers.insert_one({
-    "fist_name": "dan",
-    "last_name" : "alex",
-    "email": "exeample@mail.com",
-    "city": "Stockholm"   
-})
+# add_me = db.customers.insert_one({
+#     "fist_name": "dan",
+#     "last_name" : "alex",
+#     "email": "exeample@mail.com",
+#     "city": "Stockholm"   
+# })
 
-print(add_me.inserted_id)
+# print(add_me.inserted_id)
+
+#8
+
+# add_products = db.products.insert_many(
+#     [
+#         {
+#             "_id": 14,
+#             "name": "Hoodie RED",
+#             "category": "Clothing",
+#             "price": 799,
+#             "stock": 21,
+#             "tags": ["red", "cotton"]
+#         },
+
+#         {
+#             "_id": 15,
+#             "name": "cool shoe",
+#             "category": "Accessories",
+#             "price": 799,
+#             "stock": 21,
+#             "tags": ["white", "cotton"]
+#         }   
+#     ]  
+# )
+# print(add_products.inserted_ids)
+print(db.products.count_documents({}))
