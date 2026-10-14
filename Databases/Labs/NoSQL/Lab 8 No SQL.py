@@ -25,3 +25,8 @@ db = client["webshop"]
 # 5
 # for product in db.products.find({"tags": "sport"}, {"_id": 0}):
 #          print(product["name"], product["tags"])
+
+#6
+
+for product in db.products.find().sort("price", 1):
+    print(f"{product['name']:<25} {product['price'] :<8}")
