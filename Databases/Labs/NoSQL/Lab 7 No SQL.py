@@ -64,4 +64,14 @@ db = client["webshop"]
 #     ]  
 # )
 # print(add_products.inserted_ids)
-print(db.products.count_documents({}))
+# print(db.products.count_documents({}))
+
+#9
+
+# for customer in db.customers.find():
+#     print(customer["first_name"], customer["last_name"], customer.get("city", "unknown"))
+
+
+#10
+
+for order in db.order
