@@ -71,6 +71,8 @@ cursor = conn.cursor()
 #     print(id, first_name, city, order_amount)
 
 #12
+# You should only collect information that is needed for the app. 
+# # Therefore, "just in case" is not a valid reason ; it creates unnecessary security risk.
 
 cursor.close()
 conn.close()
