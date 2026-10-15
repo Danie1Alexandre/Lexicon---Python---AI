@@ -51,3 +51,23 @@ db = client["webshop"]
 
 # print(f"matched {result.matched_count} modified {result.modified_count}")
 
+#9
+
+# result = db.products.find_one(
+#     {"name": "Rain Jacket"},
+
+# )
+# print(result)
+
+# from datetime import datetime
+
+# result = db.products.update_one(
+#     {"name": "Rain Jacket"},
+#     {
+#         "$addToSet": {"tags": "new"},
+#         "$set": {"restock_date": datetime.now()} 
+#     }
+# )
+
+# print(f"matched {result.matched_count} modified {result.modified_count}")
+
