@@ -71,3 +71,15 @@ db = client["webshop"]
 
 # print(f"matched {result.matched_count} modified {result.modified_count}")
 
+#10
+# from datetime import datetime
+
+# filter = {
+#     "status": "new",
+#     "order_date": {"$lt": datetime(2026, 3, 20)}
+#     }   
+
+# print(db.orders.count_documents(filter))                      
+
+# result = db.orders.delete_many(filter)
+# print(f"delted: {result.deleted_count}")
