@@ -68,10 +68,27 @@ def receipt(conn):
         print("-"*30)
         print(f"TOTAL SUM: {total_order_sum:>19} kr")
 
+
+def best_selling_products(conn):
+    
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT products.name, SUM(order_items.quantity) AS total_sold
+        FROM products
+        JOIN order_items On order_items.product_id = products.product_id
+        GROUP BY products.product_id   
+        ORDER BY total_sold DESC
+        LIMIT 3
+    """)
+    items = cursor.fetchall()
+    for index, (name, total_sold) in enumerate(items, start = 1):
+        print(f"{index}, {name}, Total Sold: {total_sold}")
+
+
 def main():
     conn = connect()
     while True:
-        print("\n1) List products  2) Search customers  3) Add product 4) Change Stock 5) receipt  0) Quit")
+        print("\n1) List products  2) Search customers  3) Add product 4) Change Stock 5) receipt 6) Best Selling Products  0) Quit")
         choice = input("> ")
         if choice == "1":
             list_products(conn)
@@ -83,9 +100,10 @@ def main():
             change_stock_of_product(conn)
         elif choice == "5":
             receipt(conn)
+        elif choice == "6":
+            best_selling_products(conn)
         elif choice == "0":
             break
     conn.close()
-
 
 main()
