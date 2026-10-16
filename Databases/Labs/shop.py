@@ -36,10 +36,16 @@ def add_product(conn):
     print("Saved!")
 
 def change_stock_of_product(conn):
-    product_id = input("product id: ")
-    new_stock = input("new stock: ")
-
-
+    product_id =  int (input("product id: "))
+    new_stock = int (input("new stock: "))
+    cursor = conn.cursor()
+    cursor.execute("""
+        UPDATE products
+        SET stock = ?
+        WHERE product_id = ?
+    """,(new_stock, product_id))
+    conn.commit()
+    print("stock updated!")
 
 def main():
     conn = connect()
@@ -53,7 +59,7 @@ def main():
         elif choice == "3":
             add_product(conn)
         elif choice == "4":
-            break
+            change_stock_of_product(conn)
         elif choice == "0":
             break
     conn.close()
