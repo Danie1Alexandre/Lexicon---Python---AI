@@ -35,11 +35,16 @@ def add_product(conn):
     conn.commit()
     print("Saved!")
 
+def change_stock_of_product(conn):
+    product_id = input("product id: ")
+    new_stock = input("new stock: ")
+
+
 
 def main():
     conn = connect()
     while True:
-        print("\n1) List products  2) Search customers  3) Add product  0) Quit")
+        print("\n1) List products  2) Search customers  3) Add product 4) Change Stock  0) Quit")
         choice = input("> ")
         if choice == "1":
             list_products(conn)
@@ -47,6 +52,8 @@ def main():
             search_customers(conn)
         elif choice == "3":
             add_product(conn)
+        elif choice == "4":
+            break
         elif choice == "0":
             break
     conn.close()

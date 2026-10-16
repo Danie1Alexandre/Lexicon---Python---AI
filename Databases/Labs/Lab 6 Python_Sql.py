@@ -32,7 +32,7 @@ cursor = conn.cursor()
 # You nedd to tell SQL that you are sending a text string and not code?
 # A placeholder seprte the user input from the sql question.
  
- #9
+#9
 
 # cursor.execute("""
 # SELECT DISTINCT products.name
