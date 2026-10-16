@@ -47,10 +47,31 @@ def change_stock_of_product(conn):
     conn.commit()
     print("stock updated!")
 
+def receipt(conn):
+    order_id =  int (input("order id: "))
+    cursor = conn.cursor()
+    total_order_sum = 0    
+    
+    cursor = conn.execute("""
+        SELECT products.name, order_items.quantity, products.price  
+        FROM products
+        JOIN order_items ON order_items.product_id = products.product_id
+        JOIN orders ON orders.order_id = order_items.order_id
+        WHERE orders.order_id = ?          
+    """, (order_id,))
+
+    items = cursor.fetchall()
+    for name, quantity, price in items:
+        item_total = quantity * price
+        total_order_sum += item_total
+        print(f"{name:<15} {quantity}x {price:>6} kr = {item_total:>7} kr")
+        print("-"*30)
+        print(f"TOTAL SUM: {total_order_sum:>19} kr")
+
 def main():
     conn = connect()
     while True:
-        print("\n1) List products  2) Search customers  3) Add product 4) Change Stock  0) Quit")
+        print("\n1) List products  2) Search customers  3) Add product 4) Change Stock 5) receipt  0) Quit")
         choice = input("> ")
         if choice == "1":
             list_products(conn)
@@ -60,6 +81,8 @@ def main():
             add_product(conn)
         elif choice == "4":
             change_stock_of_product(conn)
+        elif choice == "5":
+            receipt(conn)
         elif choice == "0":
             break
     conn.close()
