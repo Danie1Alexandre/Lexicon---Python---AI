@@ -1,5 +1,6 @@
 import requests
 
+from api_client import get_json
 
 #1
 # response = requests.get("https://fakestoreapi.com/products")
@@ -11,8 +12,8 @@ import requests
 
 
 #2
-response = requests.get("https://fakestoreapi.com/products/categories")
-categorys = response.json()
+response = get_json("https://fakestoreapi.com/products/categories")
+categorys = response
 
 print(categorys)
 
@@ -22,3 +23,5 @@ products = response.json()
 print(len(products))
 cheapest = min(products, key=lambda product: product['price'])
 print(f"{cheapest['title']} Price: {cheapest['price']}")
+
+
