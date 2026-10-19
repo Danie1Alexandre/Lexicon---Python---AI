@@ -1,5 +1,3 @@
-import requests
-
 from api_client import get_json
 
 #1
@@ -12,14 +10,13 @@ from api_client import get_json
 
 
 #2
-response = get_json("https://fakestoreapi.com/products/categories")
-categorys = response
+categorys = get_json("https://fakestoreapi.com/products/categories")
 
 print(categorys)
 
 user_input = input('pick category: ')
-response = requests.get(f"https://fakestoreapi.com/products/category/{user_input}")
-products = response.json()
+products = get_json(f"https://fakestoreapi.com/products/category/{user_input}")
+
 print(len(products))
 cheapest = min(products, key=lambda product: product['price'])
 print(f"{cheapest['title']} Price: {cheapest['price']}")
