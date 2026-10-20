@@ -9,3 +9,6 @@ movies = [
     {"id": 4, "title": "Ratatouille", "director": "Brad Bird", "year": 2007},
 ]
 
+@app.get("/movies")
+def get_movies():
+    return movies
