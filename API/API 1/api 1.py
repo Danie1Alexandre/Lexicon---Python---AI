@@ -21,4 +21,6 @@ print(len(products))
 cheapest = min(products, key=lambda product: product['price'])
 print(f"{cheapest['title']} Price: {cheapest['price']}")
 
+#requests.post("https://fakestoreapi.com/products")
+
 
