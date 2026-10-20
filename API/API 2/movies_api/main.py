@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+#part 1
 movies = [
     {"id": 1, "title": "Toy Story", "director": "John Lasseter", "year": 1995},
     {"id": 2, "title": "A Bug's Life", "director": "John Lasseter", "year": 1998},
@@ -14,16 +15,17 @@ movies = [
     {"id": 8, "title": "WALL-E", "director": "Andrew Stanton", "year": 2008}
 ]
 
+
 # @app.get("/movies")
 # def get_movies():
 #     return movies
 
-@app.get("/movies/{movie_id}")
-def get_movie(movie_id: int):
-    for movie in movies:
-        if movie["id"] == movie_id:
-            return movie
-    raise HTTPException(status_code=404, detail= "Movie Not Found")
+# @app.get("/movies/{movie_id}")
+# def get_movie(movie_id: int):
+#     for movie in movies:
+#         if movie["id"] == movie_id:
+#             return movie
+#     raise HTTPException(status_code=404, detail= "Movie Not Found")
 
 
 @app.get("/movies")
@@ -58,7 +60,33 @@ def create_movie(movie: Movie):
 
 # Adding incorrect data will create an error: 422 Invalid data
 # you ned to follw the syntax for the bas class.
-        
 
+#1:5
+
+def find_movie(movie_id: int):
+    for movie in movies:
+        if movie['id'] == movie_id:
+            return movie
+    raise HTTPException(status_code=404, detail= "Movie Not Found")
+
+
+@app.get("/movies/{movie_id}")
+def get_movie(movie_id: int):
+    return find_movie(movie_id)
+
+@app.put("/movies/{movie_id}")
+def update_movie(movie_id: int, updated_movie: Movie):
+    movie = find_movie(movie_id)
+
+    movie["title"] = updated_movie.title
+    movie["director"] = updated_movie.director
+    movie["year"] = updated_movie.year
+    return movie
+
+
+
+
+
+#part 2
 
 
