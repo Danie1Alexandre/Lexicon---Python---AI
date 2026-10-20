@@ -84,6 +84,16 @@ def update_movie(movie_id: int, updated_movie: Movie):
     return movie
 
 
+from fastapi import Response 
+@app.delete("/movies/{movie_id}", status_code = 204)
+def delte_movie(movie_id: int):
+    movie = find_movie(movie_id) 
+
+    movies.remove(movie)
+    return Response(status_code=204) 
+# Response is optional; makes an "empty" return  
+# # If you try to delete a movie twice or that  doesn't exist, you get ..
+#  "detail": "Movie Not Found" since that is a raised HTTPException from the function (find movie = find_movie(movie_id)) 
 
 
 
