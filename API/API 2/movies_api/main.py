@@ -95,6 +95,8 @@ def delte_movie(movie_id: int):
 # # If you try to delete a movie twice or that  doesn't exist, you get ..
 #  "detail": "Movie Not Found" since that is a raised HTTPException from the function (find movie = find_movie(movie_id)) 
 
+# Any change will be deleted when the server is restarted , since we use the computer's " RAM memory" and not a database.
+
 
 
 #part 2
