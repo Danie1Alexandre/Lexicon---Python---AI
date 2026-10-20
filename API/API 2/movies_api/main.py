@@ -55,6 +55,9 @@ def create_movie(movie: Movie):
     movies.append(new_movie)
 
     return new_movie
+
+# Adding incorrect data will create an error: 422 Invalid data
+# you ned to follw the syntax for the bas class.
         
 
 
