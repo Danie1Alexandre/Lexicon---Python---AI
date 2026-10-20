@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -37,6 +38,23 @@ def get_movie(director: str | None = None, year: int | None = None):
             if movie["year"]== year]
     
     return filtered_movies
+
+class Movie(BaseModel):
+    title: str
+    director: str
+    year: int
+
+@app.post("/movies", status_code= 201)
+def create_movie(movie: Movie):
+    next_id = max([movie["id"] for movie in movies]) + 1 if movies else 1
+
+    new_movie = movie.model_dump()
+
+    new_movie['id'] = next_id
+
+    movies.append(new_movie)
+
+    return new_movie
         
 
 
