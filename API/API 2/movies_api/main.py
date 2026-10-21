@@ -118,5 +118,8 @@ def patch_movie(movie_id: int, updated_movie_data: UpdateMovie):
 # 422	Validation Error
 #404 Undocumented Error: Not Found
 
-# Use PATCH when only updating value 
+# Use PATCH when updating One value 
 # # Use PUT to replace everything .
+
+# Part 3
+
