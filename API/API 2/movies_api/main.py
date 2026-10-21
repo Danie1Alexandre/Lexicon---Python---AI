@@ -15,6 +15,23 @@ movies = [
     {"id": 8, "title": "WALL-E", "director": "Andrew Stanton", "year": 2008}
 ]
 
+# Part 3
+from dotenv import load_dotenv
+import os
+from fastapi import Header, Depends
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+
+def check_key(x_api_key: str | None = Header(None)):
+    
+    if not API_KEY:
+        raise HTTPException(status_code=500, detail="Server Configuration error")
+    
+    if x_api_key !=API_KEY:
+        raise HTTPException(status_code=401, detail= "not valid API key")
+
 
 # @app.get("/movies")
 # def get_movies():
@@ -46,7 +63,7 @@ class Movie(BaseModel):
     director: str
     year: int
 
-@app.post("/movies", status_code= 201)
+@app.post("/movies", status_code= 201, dependencies=[Depends(check_key)] )
 def create_movie(movie: Movie):
     next_id = max([movie["id"] for movie in movies]) + 1 if movies else 1
 
@@ -74,7 +91,7 @@ def find_movie(movie_id: int):
 def get_movie(movie_id: int):
     return find_movie(movie_id)
 
-@app.put("/movies/{movie_id}")
+@app.put("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def update_movie(movie_id: int, updated_movie: Movie):
     movie = find_movie(movie_id)
 
@@ -85,7 +102,7 @@ def update_movie(movie_id: int, updated_movie: Movie):
 
 
 from fastapi import Response 
-@app.delete("/movies/{movie_id}", status_code = 204)
+@app.delete("/movies/{movie_id}", status_code = 204, dependencies=[Depends(check_key)])
 def delte_movie(movie_id: int):
     movie = find_movie(movie_id) 
 
@@ -104,7 +121,7 @@ class UpdateMovie(BaseModel):
 
 #part 2
 
-@app.patch("/movies/{movie_id}")
+@app.patch("/movies/{movie_id}", dependencies=[Depends(check_key)])
 def patch_movie(movie_id: int, updated_movie_data: UpdateMovie):
     movie = find_movie(movie_id)
    
@@ -121,5 +138,5 @@ def patch_movie(movie_id: int, updated_movie_data: UpdateMovie):
 # Use PATCH when updating One value 
 # # Use PUT to replace everything .
 
-# Part 3
+
 

@@ -1,18 +1,32 @@
 from api_client import get_json
 import requests
+from dotenv import load_dotenv
+import os
 
-BASE = "http://127.0.0.1:8000"
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 
-books = get_json(f"{BASE}/movies")
-for book in books:
-    print(book)
+URL = "http://127.0.0.1:8000"
 
-New_book = {
-  "title": "New_book",
+
+
+New_Movie = {
+  "title": "New_Movie",
   "director": "bob",
   "year": 2000
 }
-response = requests.post(f"{BASE}/movies", json=New_book, timeout= 5)
+
+get_json(f"{URL}/movies/97")
+
+#with no key
+response = requests.post(f"{URL}/movies", json=New_Movie, timeout= 5)
 print(response.status_code, response.json())
 
-get_json(f"{BASE}/movies/97")
+
+
+#using key
+
+response_using_key = requests.post(f"{URL}/movies", json=New_Movie, timeout= 5, headers={"X-API-Key": API_KEY}) 
+print("using key")
+print(response_using_key.status_code, response_using_key.json())
+
