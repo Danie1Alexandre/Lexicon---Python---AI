@@ -97,8 +97,26 @@ def delte_movie(movie_id: int):
 
 # Any change will be deleted when the server is restarted , since we use the computer's " RAM memory" and not a database.
 
-
+class UpdateMovie(BaseModel):
+    title: str | None = None
+    director: str | None = None
+    year: int | None = None
 
 #part 2
 
+@app.patch("/movies/{movie_id}")
+def patch_movie(movie_id: int, updated_movie_data: UpdateMovie):
+    movie = find_movie(movie_id)
+   
+    update = updated_movie_data.model_dump(exclude_unset=True)
+    for key, value in update.items():
+        movie[key] = value
+    
+    return movie
 
+#200	Successful Response
+# 422	Validation Error
+#404 Undocumented Error: Not Found
+
+# Use PATCH when only updating value 
+# # Use PUT to replace everything .
