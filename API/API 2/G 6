@@ -1,79 +1,67 @@
 Grupp 6
 
 1: 
-product owner: daniel 
-scrum master: sanne 
+product owner: Daniel 
+scrum master: Sanne 
 devloper: Martin
-devloper. dmitr
-
+devloper: Dmitri
+------------------------------------------------------------------------
 2:  Create a useful booking system for a gym that meets the customer's requirements.
 
-3
+--------------------------------------------------------------------
+3: Product Backlog
 
-As a member, I want to see the schedule so I know when the class starts and if there is a spot available. 
+3:1. [Schedule] As a gym member, I want to see the schedule with times, class types, and available places, so that I can see what time the classes are.
 
-As staff, I want to be able to add new classes and change times. 
+3:2. [Booking] As a gym member, I want to be able to book a class using the booking system, so that I can reserve a place digitally in advance.
 
-As a member, I want to be able to cancel a booked session.
+3:3. [Cancellation] As a gym member, I want to be able to cancel a class up to 2 hours before it starts, so that I can cancel if my schedule changes and avoid a no-show.
 
-As an instructor, I want to see the list of members who have booked my class, so that I know who is attending.
+3:4. [Waitlist] As a gym member, I want to be able to join a class waitlist if it is fully booked, so that I get a spot automatically if someone cancels.
 
-As a user, I want to be able to see the schedule with times, class type and available places, so that I can see what time the classes are.
- 
-As a user, I want to be able to book a class using the booking system so that I can book a class digitally.
- 
-As a user, I want to be able to cancel a class up to 2 hours before it starts, so that I can cancel if my schedule changes.
- 
-As an instructor, I want to be able to see the list of participants for a class, so that I know who is attending.
- 
-As an instructor, I want to mark who attended my class, so that I can keep track of class attendance.
- 
-As a reception staff member, I want to be able to add new classes, so that I can keep the class repertoire updated.
- 
-As a reception staff member, I want to be able to change the time of a class, so that I can keep the class schedule updated.
- 
-As a user, I want to be able to join a class waitlist if it is fully booked, so that I get a spot automatically if someone cancels.
- 
-As a user, I want the booking system to be usable on mobile devices, so that I can use my phone to book and view classes.
- 
-As a user, I want to get a reminder for my class a day before, so that I do not forget to attend.
- 
-As a reception staff member, I want to keep track of user who booked a class but did not show up, so I can contact the users who did not show up.
+3:5. [Mobile Optimization] As a gym member, I want the booking system to be usable on mobile devices, so that I can use my phone to book and view classes.
 
-As a gym member, I want to book a group training class, so that I can reserve a place in advance.
- 
-As a gym member, I want to cancel my booking, so that someone else can take my place if I cannot attend.
- 
-As an instructor, I want to see the list of members who have booked my class, so that I know who is attending.
- 
-Acceptance Criteria: The gym member should be able to see a list of training classes to choose from after logging in and be able to reserve a booking.
+3:6. [Reminder] As a gym member, I want to get a reminder for my class a day before, so that I do not forget to attend.
 
+3:7. [Attendee List] As an instructor, I want to be able to see the list of participants for my class, so that I know who is attending.
 
-4
-top storys
-A. As a gym member, I want to book a group training class, so that I can reserve a place in advance.
+3:8. [Attendance Tracking] As an instructor, I want to mark who attended my class, so that I can keep track of class attendance.
+
+3:9. [Create Class] As a reception staff member, I want to be able to add new classes, so that I can keep the class repertoire updated.
+
+3:10. [Edit Class] As a reception staff member, I want to be able to change the time of a class, so that I can keep the class schedule updated.
+
+------------------------------------------------------------------------
+4 top storys
+
+4:1. [Booking] As a gym member, I want to be able to book a class using the booking system, so that I can reserve a place digitally in advance.
 
 Acceptance Criteria: The gym member should be able to see a list of training classes to choose from after logging in and be able to reserve a booking.
 
-B. As an instructor, I want to see the list of members who have booked my class, so that I know who is attending
+
+4:2. [Attendance Tracking] As an instructor, I want to mark who attended my class, so that I can keep track of class attendance.
 
 Acceptance Criteria: only instructor shuld be able
 to see how is attending. instructor shuld be able to view the mebers attending
 
-C. As a user, I want to be able to cancel a class up to 2 hours before it starts, so that I can cancel if my schedule changes.
+4:3 [Cancellation] As a gym member, I want to be able to cancel a class up to 2 hours before it starts, so that I can cancel if my schedule changes and avoid a no-show.
 
 Acceptance Criteria: 
-meber needs to bne able to cancel booked class
+meber needs to be able to cancel booked class
 
-D. As staff, I want to be able to add new classes and change times. 
+
+4:4 [Create Class] As a reception staff member, I want to be able to add new classes, so that I can keep the class repertoire updated.
+
 Acceptance Criteria: 
 Staff have a dedicated dashboard to create a new class and 
 meber shuld be able to see new class
 
-E. As a user, I want to be able to see the schedule with times, class type and available places, so that I can see what time the classes are.
+4:5 [Schedule] As a gym member, I want to see the schedule with times, class types, and available places, so that I can see what time the classes are.
 
 Acceptance Criteria: A Meber can see the schedule.
 schedule is public. A class can have limted particpants
+
+
 
 Definition of done :
 	* Automatic tests pass
@@ -86,24 +74,26 @@ Definition of done :
     Mebers can do bookings, view classes
     staff can post a class with time and date.
 
-5.
-A 5
-B 3
-C 5
-D 5
-E 5
+--------------------------------------------------------
+5. estimate the top stories
+
+A 4:1. [Booking] = 5
+B 4:2. [Attendance Tracking] = 3 
+C 4:3 [Cancellation] = 5
+D 4:4 [Create Class] = 5
+E 4:5 [Schedule] = 5
 
 6. Fist sprint
-A, book a group training class
-D, add new classes 
-E, able to see the schedule
+A, book a group training class [Booking]
+D, add new classes,  [Create Class]
+E, able to see the schedule, [Schedule]
 
 Sprint goal 
 Seeing the schedule 
 and booking a class
-and instuctor shuld able to post class.
+and instuctor shuld able to post a class.
 
-7. 
+7. Board
 
 To DO     In progress  Review    Done
 --------|-------------|-------|-------
@@ -117,10 +107,8 @@ D          wip
 ---------------------------------------
 E          wip
 
-8. Do not change anything in current sprint. the new information wil be saved in the backlog
-and potentialy used in the  next sprint.
+8. When new feedback comes in , do not change anything in the current sprint. The new information will be saved in the backlog  and potentially used in the next sprint.
 
-9.
 
 
 
