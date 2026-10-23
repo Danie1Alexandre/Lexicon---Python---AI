@@ -46,22 +46,46 @@ import requests
 
 #5
 
-1
-try :
-    response = requests.get("//fake.com")
-except requests.exceptions.MissingSchema: print("wrong url")
+# try :
+#     response = requests.get("//fake.com")
+# except requests.exceptions.MissingSchema: print("wrong url")
 
-try :
+# try :
 
-    response = requests.get("https://fakeeee.com/products")
+#     response = requests.get("https://fakeeee.com/products")
 
-except requests.exceptions.ConnectionError: print("wrong domain")
+# except requests.exceptions.ConnectionError: print("wrong domain")
 
-try :
-    response = requests.get("https://fakestoreapi.com/products/7", timeout= 0.001)
-
-
-except requests.exceptions.ConnectTimeout: print("connection timeout")
+# try :
+#     response = requests.get("https://fakestoreapi.com/products/7", timeout= 0.001)
 
 
+# except requests.exceptions.ConnectTimeout: print("connection timeout")
 
+#part 2
+
+response = requests.get('https://geocoding-api.open-meteo.com/v1/search', params={"name": "Stockholm", "count": 1})
+
+data= response.json()
+
+
+lat = data["results"][0]["latitude"]
+lon = data["results"][0]["longitude"]
+
+print(f"Latitude: {lat}")
+print(f"Longitude: {lon}")
+
+weather_params = {
+    "latitude": lat,
+    "longitude": lon,
+    "current": "temperature_2m,wind_speed_10m"
+}
+
+response = requests.get("https://api.open-meteo.com/v1/forecast", params = weather_params)
+
+weather_data = response.json()
+
+current_weather = weather_data["current"]
+print(current_weather)
+print(f"Temperature: {current_weather['temperature_2m']}°C")
+print(f"wind speed 10m: {current_weather['wind_speed_10m']} m/s")
