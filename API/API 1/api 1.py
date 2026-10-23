@@ -25,16 +25,43 @@ import requests
 #4
 
 
-new_product = {
-    "title": "new",
-    "price": 1299.50,
-    "description": "new",
-    "image": "https://pravatar.cc",
-    "category": "electronics"
-}
+# new_product = {
+#     "title": "new",
+#     "price": 1299.50,
+#     "description": "new",
+#     "image": "https://",
+#     "category": "electronics"
+# }
 
 
-new_product = response = requests.post("https://fakestoreapi.com/products", json=new_product, timeout= 5)
+# product  = requests.post("https://fakestoreapi.com/products", json=new_product, timeout= 5)
 
-print(f"status_code: {new_product.status_code}")
-print(new_product.json())
+# print(f"status_code: {product.status_code}")
+# print(product.json())
+
+# patch = requests.patch("https://fakestoreapi.com/products/7", json = {"price": 1499.00}, timeout=5)
+
+# print(patch.status_code)
+# print(patch.json())
+
+#5
+
+1
+try :
+    response = requests.get("//fake.com")
+except requests.exceptions.MissingSchema: print("wrong url")
+
+try :
+
+    response = requests.get("https://fakeeee.com/products")
+
+except requests.exceptions.ConnectionError: print("wrong domain")
+
+try :
+    response = requests.get("https://fakestoreapi.com/products/7", timeout= 0.001)
+
+
+except requests.exceptions.ConnectTimeout: print("connection timeout")
+
+
+
