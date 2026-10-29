@@ -8,7 +8,7 @@ def show_course():
 
 
 def print_separator():
-     print("_"*40)
+    print("_"*40)
 
 print_separator()
 greet()
